@@ -34,6 +34,13 @@ target 'CoolBox' do
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'AttributedString'
   pod 'SwiftDate'
+  #左右滑动切换视图
+  pod 'SegementSlide', :git => 'https://github.com/Jhin-zhou/SegementSlide.git'
+  pod 'TZImagePickerController'
+  #微信开放平台SDK
+  pod 'WechatOpenSDK'
+  pod 'MMKV'
+  pod 'WProgressHUD', '~> 0.1.1'
   
   
   # 界面调试
