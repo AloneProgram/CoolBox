@@ -1,0 +1,80 @@
+PODS:
+  - Alamofire (5.6.4)
+  - AttributedString (3.3.5)
+  - CYLTableViewPlaceHolder (1.0.9)
+  - HBDNavigationBar (1.9.6)
+  - IQKeyboardManagerSwift (6.3.0)
+  - JXPhotoBrowser (3.1.3)
+  - Kingfisher (6.3.1)
+  - LookinServer (1.1.5):
+    - LookinServer/Core (= 1.1.5)
+  - LookinServer/Core (1.1.5)
+  - MJRefresh (3.7.5)
+  - MMKV (1.2.15):
+    - MMKVCore (~> 1.2.15)
+  - MMKVCore (1.2.15)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Parchment (3.2.0)
+  - SnapKit (5.6.0)
+  - SwiftDate (6.3.1)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - AttributedString
+  - CYLTableViewPlaceHolder
+  - HBDNavigationBar (~> 1.9.3)
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - JXPhotoBrowser
+  - Kingfisher (~> 6.3.1)
+  - LookinServer
+  - MJRefresh
+  - MMKV
+  - Moya
+  - Parchment
+  - SnapKit
+  - SwiftDate
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AttributedString
+    - CYLTableViewPlaceHolder
+    - HBDNavigationBar
+    - IQKeyboardManagerSwift
+    - JXPhotoBrowser
+    - Kingfisher
+    - LookinServer
+    - MJRefresh
+    - MMKV
+    - MMKVCore
+    - Moya
+    - Parchment
+    - SnapKit
+    - SwiftDate
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  AttributedString: 6d2d9d65310119556c3b5c6e4ea8d1ca339b703c
+  CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
+  HBDNavigationBar: a997b65ab7194271e5584b87a952fc851832f692
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  JXPhotoBrowser: d32e94e1226d43bf5ed83164e3f5b651fed625e0
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  LookinServer: 2893f2bae53cbf3fd49bbe1a8ea1745582ef1317
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MMKV: 7f34558bbb5a33b0eaefae2de4b6a20a2ffdad6f
+  MMKVCore: ddf41b9d9262f058419f9ba7598719af56c02cd3
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 5857f7261c79117514efd5792f96b338442bb3c8
+
+COCOAPODS: 1.11.3

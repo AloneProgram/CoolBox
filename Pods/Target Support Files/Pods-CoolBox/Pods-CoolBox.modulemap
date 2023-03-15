@@ -1,0 +1,6 @@
+framework module Pods_CoolBox {
+  umbrella header "Pods-CoolBox-umbrella.h"
+
+  export *
+  module * { export * }
+}

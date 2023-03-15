@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB6FC429C1FBB700244F40 /* AppDelegate.swift */; };
-		96AB6FC729C1FBB700244F40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB6FC629C1FBB700244F40 /* SceneDelegate.swift */; };
 		96AB6FC929C1FBB700244F40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB6FC829C1FBB700244F40 /* ViewController.swift */; };
 		96AB6FCC29C1FBB700244F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AB6FCA29C1FBB700244F40 /* Main.storyboard */; };
 		96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB6FCD29C1FBB800244F40 /* Assets.xcassets */; };
 		96AB6FD129C1FBB800244F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AB6FCF29C1FBB800244F40 /* LaunchScreen.storyboard */; };
+		C47A0BE04FB0A4B6747BE220 /* Pods_CoolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		96AB6FC129C1FBB700244F40 /* CoolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB6FC429C1FBB700244F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96AB6FC629C1FBB700244F40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		96AB6FC829C1FBB700244F40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96AB6FCB29C1FBB700244F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96AB6FCD29C1FBB800244F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96AB6FD029C1FBB800244F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96AB6FD229C1FBB800244F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.release.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.release.xcconfig"; sourceTree = "<group>"; };
+		EB97887534DA9A67D4688675 /* Pods-CoolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.debug.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47A0BE04FB0A4B6747BE220 /* Pods_CoolBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4C20BDEA02B5DAE42528B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB97887534DA9A67D4688675 /* Pods-CoolBox.debug.xcconfig */,
+				A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		96AB6FB829C1FBB600244F40 = {
 			isa = PBXGroup;
 			children = (
 				96AB6FC329C1FBB700244F40 /* CoolBox */,
 				96AB6FC229C1FBB700244F40 /* Products */,
+				8E4C20BDEA02B5DAE42528B8 /* Pods */,
+				C0047AEA9771B6788878EB55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +70,54 @@
 		96AB6FC329C1FBB700244F40 /* CoolBox */ = {
 			isa = PBXGroup;
 			children = (
+				96AB701B29C2060B00244F40 /* Classes */,
+				96AB701A29C205EF00244F40 /* SupportFile */,
 				96AB6FC429C1FBB700244F40 /* AppDelegate.swift */,
-				96AB6FC629C1FBB700244F40 /* SceneDelegate.swift */,
 				96AB6FC829C1FBB700244F40 /* ViewController.swift */,
 				96AB6FCA29C1FBB700244F40 /* Main.storyboard */,
-				96AB6FCD29C1FBB800244F40 /* Assets.xcassets */,
 				96AB6FCF29C1FBB800244F40 /* LaunchScreen.storyboard */,
-				96AB6FD229C1FBB800244F40 /* Info.plist */,
 			);
 			path = CoolBox;
+			sourceTree = "<group>";
+		};
+		96AB701A29C205EF00244F40 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				96AB6FD229C1FBB800244F40 /* Info.plist */,
+				96AB6FCD29C1FBB800244F40 /* Assets.xcassets */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		96AB701B29C2060B00244F40 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96AB701C29C2061E00244F40 /* Home */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		96AB701C29C2061E00244F40 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				96AB701D29C2062800244F40 /* New Group */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		96AB701D29C2062800244F40 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C0047AEA9771B6788878EB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96AB6FD529C1FBB800244F40 /* Build configuration list for PBXNativeTarget "CoolBox" */;
 			buildPhases = (
+				8E9B697B03EF08C248537CEB /* [CP] Check Pods Manifest.lock */,
 				96AB6FBD29C1FBB700244F40 /* Sources */,
 				96AB6FBE29C1FBB700244F40 /* Frameworks */,
 				96AB6FBF29C1FBB700244F40 /* Resources */,
+				8CD7256491A241236A341644 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +188,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CD7256491A241236A341644 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E9B697B03EF08C248537CEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoolBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96AB6FBD29C1FBB700244F40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +237,6 @@
 			files = (
 				96AB6FC929C1FBB700244F40 /* ViewController.swift in Sources */,
 				96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */,
-				96AB6FC729C1FBB700244F40 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +378,13 @@
 		};
 		96AB6FD629C1FBB800244F40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB97887534DA9A67D4688675 /* Pods-CoolBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZSFT5ZHKKL;
+				DEVELOPMENT_TEAM = USW5Q2PS6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,7 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoolBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,12 +407,13 @@
 		};
 		96AB6FD729C1FBB800244F40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZSFT5ZHKKL;
+				DEVELOPMENT_TEAM = USW5Q2PS6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoolBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
