@@ -9,6 +9,7 @@ PODS:
   - LookinServer (1.1.5):
     - LookinServer/Core (= 1.1.5)
   - LookinServer/Core (1.1.5)
+  - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.5)
   - MMKV (1.2.15):
     - MMKVCore (~> 1.2.15)
@@ -18,9 +19,18 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Parchment (3.2.0)
+  - SegementSlide (3.0.0)
   - SnapKit (5.6.0)
   - SwiftDate (6.3.1)
   - SwiftyJSON (4.3.0)
+  - TZImagePickerController (3.8.3):
+    - TZImagePickerController/Basic (= 3.8.3)
+    - TZImagePickerController/Location (= 3.8.3)
+  - TZImagePickerController/Basic (3.8.3)
+  - TZImagePickerController/Location (3.8.3)
+  - WechatOpenSDK (2.0.2)
+  - WProgressHUD (0.1.1):
+    - MBProgressHUD (~> 1.0)
 
 DEPENDENCIES:
   - AttributedString
@@ -34,9 +44,13 @@ DEPENDENCIES:
   - MMKV
   - Moya
   - Parchment
+  - SegementSlide (from `https://github.com/Jhin-zhou/SegementSlide.git`)
   - SnapKit
   - SwiftDate
   - SwiftyJSON (~> 4.0)
+  - TZImagePickerController
+  - WechatOpenSDK
+  - WProgressHUD (~> 0.1.1)
 
 SPEC REPOS:
   trunk:
@@ -48,6 +62,7 @@ SPEC REPOS:
     - JXPhotoBrowser
     - Kingfisher
     - LookinServer
+    - MBProgressHUD
     - MJRefresh
     - MMKV
     - MMKVCore
@@ -56,6 +71,18 @@ SPEC REPOS:
     - SnapKit
     - SwiftDate
     - SwiftyJSON
+    - TZImagePickerController
+    - WechatOpenSDK
+    - WProgressHUD
+
+EXTERNAL SOURCES:
+  SegementSlide:
+    :git: https://github.com/Jhin-zhou/SegementSlide.git
+
+CHECKOUT OPTIONS:
+  SegementSlide:
+    :commit: 628821f30518cb2a1a75c5e81be3c81a24e589ea
+    :git: https://github.com/Jhin-zhou/SegementSlide.git
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -66,15 +93,20 @@ SPEC CHECKSUMS:
   JXPhotoBrowser: d32e94e1226d43bf5ed83164e3f5b651fed625e0
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   LookinServer: 2893f2bae53cbf3fd49bbe1a8ea1745582ef1317
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MMKV: 7f34558bbb5a33b0eaefae2de4b6a20a2ffdad6f
   MMKVCore: ddf41b9d9262f058419f9ba7598719af56c02cd3
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
+  SegementSlide: 51bd8e903b40ba0548243f74d8e3caf3fd27f12f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
+  WechatOpenSDK: e79349b37d44c015210f39fd6d2379f0ec60efe2
+  WProgressHUD: df72c6e4c0b3becd6e2a87f44ee22f9c39362e80
 
-PODFILE CHECKSUM: 5857f7261c79117514efd5792f96b338442bb3c8
+PODFILE CHECKSUM: c64c2b7733bdb0cbce6fa10fc7ab5c3104c224bc
 
 COCOAPODS: 1.11.3
