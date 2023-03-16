@@ -88,13 +88,5 @@ struct PermissionTool {
         return alert
     }
     
-    /// 检测是否开启定位
-    public static func checkLocation(_ completion: PermissionResult? = nil) {
-        if !LocationManager.shared.locationIsEnable {
-            let alert = alertForSystemSeeting(title: "位置")
-            completion?(alert)
-        }else {
-            completion?(nil)
-        }
-    }
+
 }

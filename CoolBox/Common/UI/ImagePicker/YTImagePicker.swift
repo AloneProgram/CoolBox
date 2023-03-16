@@ -96,8 +96,8 @@ private extension YTImagePicker {
         }
 
         do {
-            pickerVC.photoSelImage = pickerVC.showSelectedIndex ? R.image.icon_picker_number_bg() : R.image.icon_picker_prevc_sel()
-            pickerVC.photoOriginSelImage = R.image.icon_picker_original_sel()
+            pickerVC.photoSelImage = pickerVC.showSelectedIndex ? UIImage(named: "icon_picker_number_bg") : UIImage(named: "icon_picker_prevc_sel")
+            pickerVC.photoOriginSelImage = UIImage(named: "icon_picker_original_sel")
         }
         return pickerVC
     }

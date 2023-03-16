@@ -11,7 +11,7 @@ import MMKV
 import MMKVCore
 
 struct DataBase {
-    static let shared = MMKV(mmapID: "com.immotor.huandian", mode: .singleProcess)
+    static let shared = MMKV.default()
     static func initialize() {
         MMKV.initialize(rootDir: nil)
     }

@@ -45,13 +45,12 @@ class GuidVC: EViewController {
     
     func setRootViewController() {
         let keyWindow = UIApplication.shared.delegate?.window
-//        if Login.isLogged() {
+        if Login.isLogged() {
         //去除登陆限制，增加游客模式
             keyWindow??.rootViewController = AppTabBarController()
-//        }
-//        else {
-//            let navc = ENavigationController(rootViewController: BindPhoneVC())
-//            keyWindow??.rootViewController = navc
-//        }
+        }
+        else {
+            keyWindow??.rootViewController = LoginVC()
+        }
     }
 }

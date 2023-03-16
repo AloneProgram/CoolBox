@@ -10,6 +10,9 @@ import UIKit
 import WebKit
 
 class WebViewController: EViewController, PresentFromBottom,WebViewAction, EmptyPlaceholder {
+    func responseJsHandler(_ type: String, body: Any) {
+        
+    }
     
     init(urlString: String) {
         var url = URL(string: urlString)
@@ -158,22 +161,6 @@ class WebViewController: EViewController, PresentFromBottom,WebViewAction, Empty
         if shouldShowShare { addScriptMessageHandlerForShare() }
     }
     
-    func responseJsHandler(_ type: String, body: Any) {
-        let type = JSHandlerType(rawValue: type)
-        if type == .exitLogin {
-            Login.logout()
-            removeAllAndPush(viewController: LoginVC())
-        }
-        else if type == .trackH5 {
-            dealTrackH5Data(body)
-        }
-        else if type == .openBrowser, let body = body as? String {
-            let json = JSON(parseJSON: body)
-            if let url = URL(string: json["url"].stringValue) {
-                UIApplication.shared.open(url, options: [:])
-            }
-        }
-    }
     
     // MARK: - net error show empty
     func dealNetWorkingError() {
@@ -192,8 +179,6 @@ fileprivate extension WebViewController {
     
     func dealTrackH5Data(_ body: Any) {
         guard let body = body as? String else { return }
-        let json = JSON(parseJSON: body)
-        
   
     }
 }
@@ -213,7 +198,7 @@ fileprivate extension WebViewController {
         backButton.setTitleColor(normalColor, for: .normal)
         backButton.setTitleColor(highlightedColor, for: .highlighted)
 //        backButton.titleEdgeInsets = leftEdgeInsets
-        backButton.setImage(R.image.ic_backArrow(), for: .normal)
+        backButton.setImage(UIImage(named: "ic_backArrow"), for: .normal)
 //        backButton.imageEdgeInsets = leftEdgeInsets
         backButton.addTarget(self, action: #selector(buttonClickedAction(_:)), for: .touchUpInside)
         backButton.sizeToFit()
@@ -228,15 +213,7 @@ fileprivate extension WebViewController {
         closeButton.sizeToFit()
         closeButtonItem = UIBarButtonItem(customView: closeButton)
         
-        if shouldShowShare {
-            let shareButton = UIButton(type: .system)
-            shareButton.isHidden = true
-            shareButton.tintColor = normalColor.withAlphaComponent(0.7)
-            shareButton.setImage(R.image.icon_h5_share(), for: .normal)
-            shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
-            let shareButtonItem = UIBarButtonItem(customView: shareButton)
-            navigationItem.rightBarButtonItem = shareButtonItem
-        }
+
         
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         navigationItem.leftBarButtonItems = [backButtonItem]
@@ -285,13 +262,7 @@ fileprivate extension WebViewController {
     }
     
     func jsHandler(_ type: String, body: Any) {
-        switch JSHandlerType(rawValue: type) {
-        case .webShare:  shareAction()
-        case .shareData: webShareContent(body as? String)
-        case .showShare: hideShareButton(false)
-        case .hideShare: hideShareButton(true)
-        default: responseJsHandler(type, body: body)
-        }
+
     }
     
     func webShareContent(_ body: String? = nil) {

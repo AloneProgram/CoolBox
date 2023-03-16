@@ -20,8 +20,8 @@ class AppTabBarController: BaseTabBarController {
    private lazy var composeBtn : UIButton = {
        // 初始化按钮
         let composeBtn = UIButton()
-        composeBtn.setImage(UIImage(named: "img_tabAdd"), for: .normal)
-        composeBtn.setImage(UIImage(named: "img_tabAdd"), for: .highlighted)
+        composeBtn.setImage(UIImage(named: "img_tabadd"), for: .normal)
+        composeBtn.setImage(UIImage(named: "img_tabadd"), for: .highlighted)
         composeBtn.addTarget(self, action: #selector(touchPostBtn), for: .touchUpInside)
         composeBtn.sizeToFit()
         return composeBtn
@@ -81,9 +81,7 @@ class AppTabBarController: BaseTabBarController {
         }
         
         tabBar.addSubview(composeBtn)
-        let width: CGFloat = kScreenWidth / CGFloat(titles.count + 1)
-        let height: CGFloat = iPhoneXs ? 49 : 55
-        composeBtn.frame = CGRect(x: 2 * width, y: 0, width: width, height: height)
+        composeBtn.frame = CGRect(x: (kScreenWidth - 50)/2, y: -9, width: 50, height: 50)
         
         selecIdx = 0
     }
@@ -161,9 +159,6 @@ class AppTabBarController: BaseTabBarController {
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if !Login.isLogged() && item.tag == 2 {
-            return
-        }
         selecIdx = item.tag
     }
     
@@ -171,13 +166,7 @@ class AppTabBarController: BaseTabBarController {
 
 extension AppTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if !Login.isLogged(), let topVc = (viewController as? ENavigationController)?.topViewController, topVc.isKind(of: PersonalVC.classForCoder()) {
-//            present(BindPhoneVC(), animated: true, completion: nil)
-            if let vc = viewControllers?[selecIdx].children.first {
-                vc.push(BindPhoneVC())
-            }
-            return false
-        }
+
         return true
     }
 }

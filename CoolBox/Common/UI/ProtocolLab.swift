@@ -63,8 +63,8 @@ class ProtocolLab: UIView {
         font = Font(12)
         
         selectBtn.isSelected = true
-        selectBtn.setImage(R.image.ic_agree_nor(), for: .normal)
-        selectBtn.setImage(R.image.ic_agree_sel(), for: .selected)
+        selectBtn.setImage(UIImage(named: "ic_agree_nor"), for: .normal)
+        selectBtn.setImage(UIImage(named: "ic_agree_sel"), for: .selected)
         selectBtn.addTarget(self, action: #selector(agreeProtocol), for: .touchUpInside)
         addSubview(selectBtn)
         selectBtn.snp.makeConstraints { (make) in

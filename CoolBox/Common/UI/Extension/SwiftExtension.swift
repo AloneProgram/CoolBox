@@ -202,7 +202,7 @@ extension UIView {
             self.layer.shadowColor = newValue.cgColor
         }
     }
-    @IBInspectable var shadowOffset:CGSize{
+    @IBInspectable var cus_ShadowOffset:CGSize{
         get {
             return self.layer.shadowOffset
         }

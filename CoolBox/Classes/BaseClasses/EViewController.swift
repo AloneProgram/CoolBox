@@ -8,21 +8,19 @@
 
 import UIKit
 import HBDNavigationBar
-import Rswift
 
 enum NavigationBarStyle {
     /// 白底黑字
     case whiteBackground
     /// 透明白字
     case transparentBackground
-    ///透明无标题圆形背景返回按钮
-    case transparentCircleBack
+
     
     // 导航栏字体图标颜色
     var tintColor: UIColor {
         switch self {
         case .whiteBackground:          return .black
-        case .transparentBackground, .transparentCircleBack:    return .white
+        case .transparentBackground:    return .white
         }
     }
     
@@ -30,7 +28,7 @@ enum NavigationBarStyle {
     var barTintColor: UIColor {
         switch self {
         case .whiteBackground:          return .white
-        case .transparentBackground, .transparentCircleBack:    return .clear
+        case .transparentBackground:    return .clear
         }
     }
     
@@ -38,15 +36,14 @@ enum NavigationBarStyle {
     var barStyle: UIBarStyle {
         switch self {
         case .whiteBackground:          return .default
-        case .transparentBackground, .transparentCircleBack:    return .black
+        case .transparentBackground:    return .black
         }
     }
     
     var backIcon: UIImage? {
         switch self {
-        case .whiteBackground:          return R.image.ic_backArrow()
-        case .transparentBackground:    return R.image.ic_back_white()
-        case .transparentCircleBack:    return R.image.detail_back()
+        case .whiteBackground:          return UIImage(named: "ic_backArrow")
+        case .transparentBackground:    return UIImage(named: "ic_back_white")
         }
     }
 }
@@ -138,7 +135,7 @@ private extension EViewController {
         self.hbd_barStyle = navigationBarStyle.barStyle
         self.hbd_barShadowHidden = true
         self.hbd_barHidden = false
-        if navigationBarStyle == .transparentBackground || navigationBarStyle == .transparentCircleBack {
+        if navigationBarStyle == .transparentBackground {
             self.hbd_barAlpha = 0
             self.hbd_setNeedsUpdateNavigationBar()
         }

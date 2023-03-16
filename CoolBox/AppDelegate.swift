@@ -7,12 +7,22 @@
 
 import UIKit
 import Kingfisher
+import IQKeyboardManagerSwift
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //MMKV初始化
+        DataBase.initialize()
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        let authorization = Login.authorization()
+        EApiConfig.setApp(url: AppAPIBaseURLString, authorization: authorization)
+
         
         KingfisherManager.shared.defaultOptions += [
             .cacheOriginalImage,

@@ -81,7 +81,7 @@ public final class PhotoBrowser: UIViewController {
     fileprivate var doneButton: UIBarButtonItem!
     fileprivate lazy var saveButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(R.image.icon_save_photo(), for: .normal)
+//        button.setImage(nil, for: .normal)
         button.addTarget(self, action: #selector(saveButtonPress), for: .touchUpInside)
         return button
     }()

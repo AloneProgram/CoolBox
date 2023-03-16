@@ -11,7 +11,7 @@ import SnapKit
 
 // MARK: - 服务器请求的 BaseURL
 #if RELEASE  //生产环境
-    let AppAPIBaseURLString = "https://s-rc-shopmate.ehuandian.net"
+    let AppAPIBaseURLString = "https://api.kubaoxiao.com"
 #else
     let ApiBaseURLKey = "APIBaseURL"
     func getBaseUrl() -> String {
@@ -19,7 +19,7 @@ import SnapKit
             return baseUrl
         }
         else {
-            return "http://t-rc-shopmate.ehuandian.net"
+            return "https://api.kubaoxiao.com"
         }
     }
     let AppAPIBaseURLString = getBaseUrl()
@@ -99,61 +99,4 @@ func carInfo() -> String {
     return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/"
 }
 
-
-//-----分享小程序path----
-///门店详情页
-func sotrePath(storeId: String) -> String {
-    return "/pages/package-discover/shop-detail/main?storeId=\(storeId)&isShareFromMessage=1"
-}
-///商品详情页
-func goodsPath(goodsId: String) -> String {
-    let shareUuid = shareUUid(id: goodsId)
-    BrowseApi.sharePost(.goods, id: goodsId)
-    return "/pages/commodity-show/main?goodsId=\(goodsId)&uuid=\(shareUuid)"
-}
-
-///服务详情页
-func servicesPath(serviceId: String) -> String {
-    let shareUuid = shareUUid(id: serviceId)
-    BrowseApi.sharePost(.services, id: serviceId)
-    return "pages/package-common/service-details/main?businessId=\(serviceId)&uuid=\(shareUuid)"
-}
-
-///内容详情页
-func contentPath(contentId: String) -> String {
-    let shareUuid = shareUUid(id: contentId)
-    BrowseApi.sharePost(.content, id: contentId)
-    return "/pages/package-discover/content-detail/main?id=\(contentId)&uuid=\(shareUuid)"
-}
-///视频
-func videoPath(videoId: String) -> String {
-    let shareUuid = shareUUid(id: videoId)
-    BrowseApi.sharePost(.content, id: videoId)
-    return "/packages/video/video-detail/video-detail?videoId=\(videoId)&uuid=\(shareUuid)"
-}
-
-//短视频
-func shortVideoPath(videoId: String) -> String {
-    let shareUuid = shareUUid(id: videoId)
-    BrowseApi.sharePost(.content, id: videoId)
-    return "/pages/package-common/video/main?clickVideoId=\(videoId)&uuid=\(shareUuid)"
-}
-
-//个人中心
-func personalPath(userId: String, role: Int) -> String {
-    let shareUuid = shareUUid(id: userId)
-    BrowseApi.sharePost(.user, id: userId)
-    return "/pages/package-mine/user-center/main?id=\(userId)&uuid=\(shareUuid)&role=\(role)"
-}
-
-
-func shareUUid(id: String) -> String {
-    guard let phone = Login.currentAccount().userPhone else { return ""  }
-    return "\((id))_\(phone)_\(ENetworking.timestamp())"
-}
-
-//获取视频首帧画面图片
-func videoToImg(videoUrl: String) -> String {
-    return videoUrl + "?x-oss-process=video/snapshot,t_1000,m_fast,ar_auto"
-}
 

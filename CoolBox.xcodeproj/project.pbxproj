@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96A374DC29C3445500B4727C /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DB29C3445500B4727C /* AppAccount.swift */; };
+		96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DD29C34C1D00B4727C /* LoginVC.swift */; };
+		96A374E029C34C2700B4727C /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374DF29C34C2700B4727C /* LoginVC.xib */; };
+		96A374E229C35A1900B4727C /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374E129C35A1900B4727C /* LoginApi.swift */; };
+		96A374E529C362AD00B4727C /* CompleteInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374E329C362AD00B4727C /* CompleteInfoVC.swift */; };
+		96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374E729C364A100B4727C /* CompleteInfoVC.xib */; };
+		96A374ED29C36E7800B4727C /* EToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374EA29C36E7800B4727C /* EToast.swift */; };
+		96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A374EC29C36E7800B4727C /* Toast.xcassets */; };
 		96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB6FC429C1FBB700244F40 /* AppDelegate.swift */; };
 		96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB6FCD29C1FBB800244F40 /* Assets.xcassets */; };
 		96AB702B29C2087A00244F40 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB702529C2087A00244F40 /* DataBase.swift */; };
@@ -14,18 +22,14 @@
 		96AB702D29C2087A00244F40 /* EApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB702829C2087A00244F40 /* EApiConfig.swift */; };
 		96AB702E29C2087A00244F40 /* ETargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB702929C2087A00244F40 /* ETargetType.swift */; };
 		96AB702F29C2087A00244F40 /* ENetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB702A29C2087A00244F40 /* ENetworking.swift */; };
-		96AB709D29C2088E00244F40 /* EToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703229C2088E00244F40 /* EToast.swift */; };
 		96AB709E29C2088E00244F40 /* EColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703429C2088E00244F40 /* EColor.swift */; };
 		96AB709F29C2088E00244F40 /* EButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703529C2088E00244F40 /* EButton.swift */; };
-		96AB70A029C2088E00244F40 /* EBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703629C2088E00244F40 /* EBottomView.swift */; };
 		96AB70A129C2088E00244F40 /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703729C2088E00244F40 /* SwiftExtension.swift */; };
 		96AB70A229C2088E00244F40 /* EFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703829C2088E00244F40 /* EFont.swift */; };
 		96AB70A329C2088E00244F40 /* String+Hashes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703929C2088E00244F40 /* String+Hashes.swift */; };
 		96AB70A429C2088E00244F40 /* YTImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703B29C2088E00244F40 /* YTImagePicker.swift */; };
 		96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB703C29C2088E00244F40 /* ImagePicker.xcassets */; };
 		96AB70A629C2088E00244F40 /* PresentBottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703D29C2088E00244F40 /* PresentBottomVC.swift */; };
-		96AB70A729C2088E00244F40 /* UpdateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB703F29C2088E00244F40 /* UpdateAlert.swift */; };
-		96AB70A829C2088E00244F40 /* UpdateAlert.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB704029C2088E00244F40 /* UpdateAlert.xcassets */; };
 		96AB70A929C2088E00244F40 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB704129C2088E00244F40 /* UILabelPadding.swift */; };
 		96AB70AA29C2088E00244F40 /* ProtocolLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB704229C2088E00244F40 /* ProtocolLab.swift */; };
 		96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB704329C2088E00244F40 /* CusCodeBtn.swift */; };
@@ -116,6 +120,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolBox-Bridging-Header.h"; sourceTree = "<group>"; };
+		96A374DB29C3445500B4727C /* AppAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccount.swift; sourceTree = "<group>"; };
+		96A374DD29C34C1D00B4727C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		96A374DF29C34C2700B4727C /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		96A374E129C35A1900B4727C /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		96A374E329C362AD00B4727C /* CompleteInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInfoVC.swift; sourceTree = "<group>"; };
+		96A374E729C364A100B4727C /* CompleteInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteInfoVC.xib; sourceTree = "<group>"; };
+		96A374EA29C36E7800B4727C /* EToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EToast.swift; sourceTree = "<group>"; };
+		96A374EC29C36E7800B4727C /* Toast.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Toast.xcassets; sourceTree = "<group>"; };
 		96AB6FC129C1FBB700244F40 /* CoolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB6FC429C1FBB700244F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96AB6FCD29C1FBB800244F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,18 +138,14 @@
 		96AB702829C2087A00244F40 /* EApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EApiConfig.swift; sourceTree = "<group>"; };
 		96AB702929C2087A00244F40 /* ETargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETargetType.swift; sourceTree = "<group>"; };
 		96AB702A29C2087A00244F40 /* ENetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENetworking.swift; sourceTree = "<group>"; };
-		96AB703229C2088E00244F40 /* EToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EToast.swift; sourceTree = "<group>"; };
 		96AB703429C2088E00244F40 /* EColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EColor.swift; sourceTree = "<group>"; };
 		96AB703529C2088E00244F40 /* EButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EButton.swift; sourceTree = "<group>"; };
-		96AB703629C2088E00244F40 /* EBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBottomView.swift; sourceTree = "<group>"; };
 		96AB703729C2088E00244F40 /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtension.swift; sourceTree = "<group>"; };
 		96AB703829C2088E00244F40 /* EFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFont.swift; sourceTree = "<group>"; };
 		96AB703929C2088E00244F40 /* String+Hashes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hashes.swift"; sourceTree = "<group>"; };
 		96AB703B29C2088E00244F40 /* YTImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTImagePicker.swift; sourceTree = "<group>"; };
 		96AB703C29C2088E00244F40 /* ImagePicker.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImagePicker.xcassets; sourceTree = "<group>"; };
 		96AB703D29C2088E00244F40 /* PresentBottomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentBottomVC.swift; sourceTree = "<group>"; };
-		96AB703F29C2088E00244F40 /* UpdateAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateAlert.swift; sourceTree = "<group>"; };
-		96AB704029C2088E00244F40 /* UpdateAlert.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UpdateAlert.xcassets; sourceTree = "<group>"; };
 		96AB704129C2088E00244F40 /* UILabelPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 		96AB704229C2088E00244F40 /* ProtocolLab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolLab.swift; sourceTree = "<group>"; };
 		96AB704329C2088E00244F40 /* CusCodeBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CusCodeBtn.swift; sourceTree = "<group>"; };
@@ -249,6 +258,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		96A3749429C3423300B4727C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				96A374DB29C3445500B4727C /* AppAccount.swift */,
+				96A374E129C35A1900B4727C /* LoginApi.swift */,
+				96A374DD29C34C1D00B4727C /* LoginVC.swift */,
+				96A374DF29C34C2700B4727C /* LoginVC.xib */,
+				96A374E329C362AD00B4727C /* CompleteInfoVC.swift */,
+				96A374E729C364A100B4727C /* CompleteInfoVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		96A374E929C36E7800B4727C /* EToast */ = {
+			isa = PBXGroup;
+			children = (
+				96A374EA29C36E7800B4727C /* EToast.swift */,
+				96A374EB29C36E7800B4727C /* Assets */,
+			);
+			path = EToast;
+			sourceTree = "<group>";
+		};
+		96A374EB29C36E7800B4727C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				96A374EC29C36E7800B4727C /* Toast.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		96AB6FB829C1FBB600244F40 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +314,7 @@
 				96AB702329C2087A00244F40 /* Mediator */,
 				96AB701B29C2060B00244F40 /* Classes */,
 				96AB701A29C205EF00244F40 /* SupportFile */,
+				96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */,
 			);
 			path = CoolBox;
 			sourceTree = "<group>";
@@ -283,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				96AB6FD229C1FBB800244F40 /* Info.plist */,
+				96AB70FC29C208F900244F40 /* App.xcassets */,
 				96AB6FCD29C1FBB800244F40 /* Assets.xcassets */,
 			);
 			path = SupportFile;
@@ -291,6 +332,7 @@
 		96AB701B29C2060B00244F40 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				96A3749429C3423300B4727C /* Login */,
 				96AB704C29C2088E00244F40 /* BaseClasses */,
 				96AB70F529C208F900244F40 /* App */,
 				96AB701C29C2061E00244F40 /* fapiao */,
@@ -382,11 +424,10 @@
 		96AB703129C2088E00244F40 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				96AB703229C2088E00244F40 /* EToast.swift */,
+				96A374E929C36E7800B4727C /* EToast */,
 				96AB703329C2088E00244F40 /* Extension */,
 				96AB703A29C2088E00244F40 /* ImagePicker */,
 				96AB703D29C2088E00244F40 /* PresentBottomVC.swift */,
-				96AB703E29C2088E00244F40 /* UpadteAlert */,
 				96AB704129C2088E00244F40 /* UILabelPadding.swift */,
 				96AB704229C2088E00244F40 /* ProtocolLab.swift */,
 				96AB704329C2088E00244F40 /* CusCodeBtn.swift */,
@@ -404,7 +445,6 @@
 			children = (
 				96AB703429C2088E00244F40 /* EColor.swift */,
 				96AB703529C2088E00244F40 /* EButton.swift */,
-				96AB703629C2088E00244F40 /* EBottomView.swift */,
 				96AB703729C2088E00244F40 /* SwiftExtension.swift */,
 				96AB703829C2088E00244F40 /* EFont.swift */,
 				96AB703929C2088E00244F40 /* String+Hashes.swift */,
@@ -419,15 +459,6 @@
 				96AB703C29C2088E00244F40 /* ImagePicker.xcassets */,
 			);
 			path = ImagePicker;
-			sourceTree = "<group>";
-		};
-		96AB703E29C2088E00244F40 /* UpadteAlert */ = {
-			isa = PBXGroup;
-			children = (
-				96AB703F29C2088E00244F40 /* UpdateAlert.swift */,
-				96AB704029C2088E00244F40 /* UpdateAlert.xcassets */,
-			);
-			path = UpadteAlert;
 			sourceTree = "<group>";
 		};
 		96AB704829C2088E00244F40 /* Share */ = {
@@ -631,7 +662,6 @@
 				96AB70F829C208F900244F40 /* CollectionSegment */,
 				96AB70FA29C208F900244F40 /* AppTabBarController.swift */,
 				96AB70FB29C208F900244F40 /* GuidVC.swift */,
-				96AB70FC29C208F900244F40 /* App.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -774,6 +804,7 @@
 				TargetAttributes = {
 					96AB6FC029C1FBB700244F40 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -806,16 +837,18 @@
 				96AB70C629C2088E00244F40 /* blackArrow@2x.png in Resources */,
 				96AB70C429C2088E00244F40 /* whiteArrow@2x.png in Resources */,
 				96AB70EF29C2088E00244F40 /* jpAssets.xcassets in Resources */,
+				96A374E029C34C2700B4727C /* LoginVC.xib in Resources */,
+				96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */,
 				96AB70C529C2088E00244F40 /* whiteArrow.png in Resources */,
 				96AB710229C208FA00244F40 /* App.xcassets in Resources */,
 				96AB70C829C2088E00244F40 /* grayArrow@2x.png in Resources */,
 				96AB70F029C2088E00244F40 /* PhotoAlbum.storyboard in Resources */,
 				96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */,
-				96AB70A829C2088E00244F40 /* UpdateAlert.xcassets in Resources */,
 				96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */,
 				96AB70C129C2088E00244F40 /* blackArrow.png in Resources */,
 				96AB70F229C2088E00244F40 /* PhotoAlbumSelectCell.xib in Resources */,
 				96AB70C729C2088E00244F40 /* blueArrow.png in Resources */,
+				96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */,
 				96AB70B229C2088E00244F40 /* Share.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +921,7 @@
 				96AB70A229C2088E00244F40 /* EFont.swift in Sources */,
 				96AB70E629C2088E00244F40 /* Photo.swift in Sources */,
 				96AB70EC29C2088E00244F40 /* DragCellCollectionView.swift in Sources */,
+				96A374ED29C36E7800B4727C /* EToast.swift in Sources */,
 				96AB70B429C2088E00244F40 /* AppRouter.swift in Sources */,
 				96AB70B529C2088E00244F40 /* EmptyPlaceholder.swift in Sources */,
 				96AB70CA29C2088E00244F40 /* BGWaterfallsFlowLayout.swift in Sources */,
@@ -914,13 +948,13 @@
 				96AB70D929C2088E00244F40 /* RightImageButton.swift in Sources */,
 				96AB70B329C2088E00244F40 /* BaseTabBarController.swift in Sources */,
 				96AB70A129C2088E00244F40 /* SwiftExtension.swift in Sources */,
+				96A374E229C35A1900B4727C /* LoginApi.swift in Sources */,
 				96AB70BC29C2088E00244F40 /* CusSlideView.swift in Sources */,
 				96AB70BD29C2088E00244F40 /* EViewController.swift in Sources */,
 				96AB709F29C2088E00244F40 /* EButton.swift in Sources */,
 				96AB711029C210BA00244F40 /* FPViewController.swift in Sources */,
 				96AB702B29C2087A00244F40 /* DataBase.swift in Sources */,
 				96AB70D529C2088E00244F40 /* OrderedDictionary.swift in Sources */,
-				96AB70A029C2088E00244F40 /* EBottomView.swift in Sources */,
 				96AB710129C208FA00244F40 /* GuidVC.swift in Sources */,
 				96AB70B729C2088E00244F40 /* ViewControllerAdapt.swift in Sources */,
 				96AB70B629C2088E00244F40 /* UIViewController+Refresh.swift in Sources */,
@@ -932,11 +966,10 @@
 				96AB70AF29C2088E00244F40 /* CustomAlert.swift in Sources */,
 				96AB70AA29C2088E00244F40 /* ProtocolLab.swift in Sources */,
 				96AB70AE29C2088E00244F40 /* PresentCenterVC.swift in Sources */,
-				96AB70A729C2088E00244F40 /* UpdateAlert.swift in Sources */,
 				96AB710029C208FA00244F40 /* AppTabBarController.swift in Sources */,
-				96AB709D29C2088E00244F40 /* EToast.swift in Sources */,
 				96AB70E929C2088E00244F40 /* JHPhotoBrowserProtocol.swift in Sources */,
 				96AB711629C210EB00244F40 /* MineViewController.swift in Sources */,
+				96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */,
 				96AB70B929C2088E00244F40 /* WebResponseJS.swift in Sources */,
 				96AB70D129C2088E00244F40 /* PermissionTool.swift in Sources */,
 				96AB70E829C2088E00244F40 /* TapDetectingView.swift in Sources */,
@@ -954,8 +987,10 @@
 				96AB70C929C2088E00244F40 /* EGORefreshTableHeaderView.swift in Sources */,
 				96AB70DF29C2088E00244F40 /* CropView.swift in Sources */,
 				96AB70C029C2088E00244F40 /* BGWaterfallsFlowView.swift in Sources */,
+				96A374E529C362AD00B4727C /* CompleteInfoVC.swift in Sources */,
 				96AB70CF29C2088E00244F40 /* Queue.swift in Sources */,
 				96AB70B029C2088E00244F40 /* ShareTool.swift in Sources */,
+				96A374DC29C3445500B4727C /* AppAccount.swift in Sources */,
 				96AB70ED29C2088E00244F40 /* UploadPhotoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1083,6 +1118,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
@@ -1090,19 +1126,26 @@
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CoolBox/CoolBox-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1112,6 +1155,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
@@ -1119,19 +1163,25 @@
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CoolBox/CoolBox-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

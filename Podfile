@@ -3,6 +3,19 @@
 
 source 'https://cdn.cocoapods.org'
 
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+            
+            config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+            config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+            config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+        end
+    end
+end
+
+
 target 'CoolBox' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -22,6 +35,8 @@ target 'CoolBox' do
   pod 'SnapKit'
   # 上下拉刷新
   pod 'MJRefresh'
+  pod 'AttributedString'
+  pod 'MBProgressHUD'
   
   # 分页
   pod 'Parchment'
@@ -40,7 +55,6 @@ target 'CoolBox' do
   #微信开放平台SDK
   pod 'WechatOpenSDK'
   pod 'MMKV'
-  pod 'WProgressHUD', '~> 0.1.1'
   
   
   # 界面调试

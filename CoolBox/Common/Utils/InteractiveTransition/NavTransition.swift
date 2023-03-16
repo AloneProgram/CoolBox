@@ -47,8 +47,6 @@ class NavTransition: NSObject, UIViewControllerAnimatedTransitioning {
      *  执行push过渡动画
      */
     private func doPushAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        //目前该转场动画只添加从逛逛点击跳转详情页
-        guard let fromVC = fromVC as? BrowseContentVC, let toVC = toVC as? ContentDetailVC else { return }
         
     }
     

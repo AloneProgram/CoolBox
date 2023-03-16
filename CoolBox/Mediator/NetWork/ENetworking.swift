@@ -17,7 +17,7 @@ struct ENetworking {
     enum ResultCode: Int {
         case success = 200
         case needLogin = 202
-        case failure
+        case failure = 0
     }
     
     typealias SuccessClosure = (JSON) -> Void
@@ -67,17 +67,22 @@ struct ENetworking {
                     success(json["result"])
                 }
                 else if code == .needLogin {
-                    NotificationCenter.default.post(name: AppNeedLoginNotificationKey, object: json)
+                    EToast.showFailed(json["message"].stringValue)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        NotificationCenter.default.post(name: AppNeedLoginNotificationKey, object: json)
+                    }
                 }
                 else {
                     failure(MoyaError.statusCode(moyaResponse), json)
+                    EToast.showFailed(json["message"].stringValue)
                 }
                 
             } catch {
-                failure(MoyaError.statusCode(moyaResponse), JSON(["msg": "JSON 解析错误"]))
+                failure(MoyaError.statusCode(moyaResponse), JSON(["message": "JSON 解析错误"]))
+                EToast.showFailed("JSON 解析错误")
             }
         case let .failure(error):
-            failure(error, JSON(["msg": "网络错误"]))
+            failure(error, JSON(["message": "网络错误"]))
         }
     }
     

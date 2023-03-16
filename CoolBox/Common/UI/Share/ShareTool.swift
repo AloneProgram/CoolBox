@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Rswift
 
 enum ShareScene: Int {
 //    WXSceneSession   = 0,   /**< 聊天界面    */
@@ -165,7 +164,7 @@ extension ShareViewController {
             make.top.equalTo(12)
         }
         
-        let sessionButton = ShareViewItem(title: "微信好友", imageName: R.image.icon_wx_session.name)
+        let sessionButton = ShareViewItem(title: "微信好友", imageName: "")
         sessionButton.tag = 100
         sessionButton.addTarget(self, action: #selector(doSahre(_:)), for: .touchUpInside)
         

@@ -29,8 +29,6 @@ PODS:
   - TZImagePickerController/Basic (3.8.3)
   - TZImagePickerController/Location (3.8.3)
   - WechatOpenSDK (2.0.2)
-  - WProgressHUD (0.1.1):
-    - MBProgressHUD (~> 1.0)
 
 DEPENDENCIES:
   - AttributedString
@@ -40,6 +38,7 @@ DEPENDENCIES:
   - JXPhotoBrowser
   - Kingfisher (~> 6.3.1)
   - LookinServer
+  - MBProgressHUD
   - MJRefresh
   - MMKV
   - Moya
@@ -50,7 +49,6 @@ DEPENDENCIES:
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
   - WechatOpenSDK
-  - WProgressHUD (~> 0.1.1)
 
 SPEC REPOS:
   trunk:
@@ -73,7 +71,6 @@ SPEC REPOS:
     - SwiftyJSON
     - TZImagePickerController
     - WechatOpenSDK
-    - WProgressHUD
 
 EXTERNAL SOURCES:
   SegementSlide:
@@ -105,8 +102,7 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
   WechatOpenSDK: e79349b37d44c015210f39fd6d2379f0ec60efe2
-  WProgressHUD: df72c6e4c0b3becd6e2a87f44ee22f9c39362e80
 
-PODFILE CHECKSUM: c64c2b7733bdb0cbce6fa10fc7ab5c3104c224bc
+PODFILE CHECKSUM: 16e2dddafe24594bf626541b4f6ecb5743a56fa7
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
