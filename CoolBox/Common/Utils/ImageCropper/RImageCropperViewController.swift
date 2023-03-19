@@ -127,7 +127,7 @@ class RImageCropperViewController: EViewController {
         self.view.addSubview(self.overlayView!)
 
         self.ratioView = UIView(frame: self.cropFrame!)
-        self.ratioView?.layer.borderColor = UIColor(hexString: "#FF7513").cgColor
+        self.ratioView?.layer.borderColor = UIColor(hexString: "#165DFF").cgColor
         self.ratioView?.layer.borderWidth = 1.0
         self.view.addSubview(self.ratioView!)
 

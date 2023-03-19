@@ -38,13 +38,15 @@ struct SelectAlertAction {
 /// 仿微信 底部弹起选择
 class SelectAlert: UIView {
     
+    fileprivate var alertTitle = ""
     
+    fileprivate let alertTitleHeight: CGFloat = 54
     fileprivate let viewSpace: CGFloat = 8
     fileprivate var selectActionCount: CGFloat = 0
-    fileprivate let selectActionHeight: CGFloat = 55
+    fileprivate let selectActionHeight: CGFloat = 54
     
-    fileprivate let lineColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
-    fileprivate let textColor = UIColor(red: 0.1333, green: 0.1333, blue: 0.1333, alpha: 1)
+    fileprivate let lineColor = UIColor(hexString: "#F2F3F5")
+    fileprivate let textColor = UIColor(hexString: "#1D2129")
     
     fileprivate lazy var selectView: UIView = {
         let view = UIView(frame: frame)
@@ -58,8 +60,10 @@ class SelectAlert: UIView {
         return view
     }()
     
-    init() {
+    init(alertTitle: String) {
         super.init(frame: CGRect(x: 0, y: 0, width: jp_screenWidth, height: jp_screenHeight))
+        self.alertTitle = alertTitle
+        
         setupSubviews()
     }
     
@@ -149,7 +153,7 @@ fileprivate extension SelectAlert {
         button.frame = view.bounds
         button.setTitleColor(textColor, for: .normal)
         button.setTitleColor(textColor.withAlphaComponent(0.6), for: .highlighted)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.backgroundColor = .white
         
         view.addSubview(button)
@@ -170,14 +174,16 @@ fileprivate extension SelectAlert {
         let count = actions.count
         actions = actions.reversed()
         for (i, item) in actions.enumerated() {
-            var y = CGFloat(i) * selectActionHeight
-            var height = selectActionHeight
+            var y = CGFloat(i) * selectActionHeight + alertTitleHeight
+            let height = selectActionHeight
             if i == count - 1 {
+                let line = UILabel(frame: CGRect(x: 0, y: y, width: kScreenWidth, height: viewSpace))
+                line.backgroundColor = UIColor(hexString: "#F2F3F5")
+                selectView.addSubview(line)
                 y += viewSpace
-                height += jp_bottomSpace
             }
             let itemFrame = CGRect(x: 0, y: y, width: jp_screenWidth, height: height)
-            let button = self.selectViewItem(itemFrame, showLine: true)
+            let button = self.selectViewItem(itemFrame, showLine: i != count - 1)
             button.tag = i
             button.setTitle(item.title, for: .normal)
             button.addTarget(self, action: #selector(buttonClickedAction(_:)), for: .touchUpInside)
@@ -185,15 +191,24 @@ fileprivate extension SelectAlert {
     }
     
     func setSelectBgView() {
-        let height: CGFloat = selectActionCount * selectActionHeight + viewSpace + jp_bottomSpace
+        let titleLabel = UILabel(text: alertTitle, font: SCFont(16), nColor: UIColor(hexString: "#86909C"))
+        titleLabel.textAlignment = .center
+        selectView.addSubview(titleLabel)
+        let line = UIView(frame: CGRect(x: 0, y: alertTitleHeight - 0.5, width: frame.width, height: 0.5))
+        line.backgroundColor = lineColor
+        selectView.addSubview(line)
+        
+        titleLabel.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: alertTitleHeight)
+        
+        let height: CGFloat = selectActionCount * selectActionHeight + viewSpace + jp_bottomSpace + alertTitleHeight
         let frame = CGRect(x: 0, y: jp_screenHeight, width: jp_screenWidth, height: height)
         selectView.frame = frame
         
-        selectView.backgroundColor = UIColor(red: 0.945, green: 0.945, blue: 0.945, alpha: 1)
+        selectView.backgroundColor = .white
         
         let maskPath = UIBezierPath(roundedRect: selectView.bounds,
                                     byRoundingCorners: UIRectCorner(rawValue: UIRectCorner.topLeft.rawValue | UIRectCorner.topRight.rawValue),
-                                    cornerRadii: CGSize(width: 15, height: 15))
+                                    cornerRadii: CGSize(width: 10, height: 10))
         
         let maskLayer = CAShapeLayer()
         maskLayer.frame = selectView.bounds

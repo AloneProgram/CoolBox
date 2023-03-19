@@ -22,7 +22,7 @@ protocol BlankMsgViewType {
 
 extension UIView {
     
-    /// 没有消息时, 纯文本的空白提示图
+    // 没有消息时, 纯文本的空白提示图
 //    static func blankMsgView(_ hint: String) -> UIView {
 //
 //        let blankView = UIView()
@@ -31,12 +31,13 @@ extension UIView {
 //
 //        let textLabel = UILabel()
 //        textLabel.textAlignment = .center
-//        textLabel.textColor = UIColor.lightText
+//        textLabel.textColor = UIColor(hexString: "#939AA3")
 //        textLabel.frame = blankView.bounds
+//        textLabel.font = SCFont(14)
 //        textLabel.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
 //        textLabel.text = hint
 //        blankView.addSubview(textLabel)
-//        
+//
 //        return blankView
 //
 //    }
@@ -63,6 +64,7 @@ extension UIView {
         image.snp.makeConstraints { (make) in
             make.top.equalTo(100)
             make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 100, height: 80))
         }
         
         textLabel.snp.makeConstraints { (make) in

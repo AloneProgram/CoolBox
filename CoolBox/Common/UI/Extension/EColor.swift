@@ -108,7 +108,7 @@ class EColor: UIColor {
     /** 页面背景 - #FFFFFF */
     @objc public static var viewBgColor: UIColor {
         get {
-            return UIColor(hexString: "#FFFFFF")
+            return UIColor(redInt: 246, greenInt: 247, blueInt: 249, alpha: 1)
         }
     }
     

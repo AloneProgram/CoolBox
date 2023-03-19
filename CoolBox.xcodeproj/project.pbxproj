@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961D173029C7066800853FCB /* CompanyInviteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D172F29C7066800853FCB /* CompanyInviteAlert.swift */; };
+		961D173329C70B8000853FCB /* CommonInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173129C70B8000853FCB /* CommonInputCell.swift */; };
+		961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173229C70B8000853FCB /* CommonInputCell.xib */; };
+		961D173729C738C300853FCB /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173529C738C300853FCB /* CreateVC.swift */; };
+		961D173829C738C300853FCB /* CreateCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173629C738C300853FCB /* CreateCompanyVC.xib */; };
+		961D173A29C738E300853FCB /* CommonInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173929C738E300853FCB /* CommonInputModel.swift */; };
+		964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E718B29C5C48200118D43 /* OSSConfigModel.swift */; };
+		964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */; };
+		964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */; };
+		964E71D429C5F44D00118D43 /* TwoInpuAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964E71D329C5F44D00118D43 /* TwoInpuAlertView.xib */; };
+		964E71D629C6B42500118D43 /* DeleteAccountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D529C6B42500118D43 /* DeleteAccountAlert.swift */; };
+		964E71DB29C6BC6A00118D43 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D929C6BC6A00118D43 /* AboutVC.swift */; };
+		964E71DC29C6BC6A00118D43 /* AboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964E71DA29C6BC6A00118D43 /* AboutVC.xib */; };
+		964E71DF29C6EBCF00118D43 /* CompanyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71DD29C6EBCF00118D43 /* CompanyListVC.swift */; };
+		964E71E029C6EBCF00118D43 /* CompanyListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964E71DE29C6EBCF00118D43 /* CompanyListVC.xib */; };
+		964E71E329C6ED3D00118D43 /* BaseHeightBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71E229C6ED3D00118D43 /* BaseHeightBottomView.swift */; };
+		964E71E529C6ED5200118D43 /* BaseHeightBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964E71E429C6ED5200118D43 /* BaseHeightBottomView.xib */; };
+		965820FC29C570EE0005C6AA /* QRGeneratorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965820F929C570EE0005C6AA /* QRGeneratorTool.swift */; };
+		965820FD29C570EE0005C6AA /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965820FA29C570EE0005C6AA /* QRScanViewController.swift */; };
+		965820FE29C570EE0005C6AA /* QRscan.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965820FB29C570EE0005C6AA /* QRscan.xcassets */; };
+		9658210029C5721D0005C6AA /* CommonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965820FF29C5721D0005C6AA /* CommonInfoModel.swift */; };
+		9658210329C59FD70005C6AA /* MineApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210229C59FD70005C6AA /* MineApi.swift */; };
+		9658210529C5A1420005C6AA /* CompanyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210429C5A1410005C6AA /* CompanyListModel.swift */; };
+		9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */; };
+		9658210929C5A85A0005C6AA /* AccountInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9658210829C5A85A0005C6AA /* AccountInfoVC.xib */; };
+		9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */; };
 		96A374DC29C3445500B4727C /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DB29C3445500B4727C /* AppAccount.swift */; };
 		96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DD29C34C1D00B4727C /* LoginVC.swift */; };
 		96A374E029C34C2700B4727C /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374DF29C34C2700B4727C /* LoginVC.xib */; };
@@ -15,6 +41,10 @@
 		96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374E729C364A100B4727C /* CompleteInfoVC.xib */; };
 		96A374ED29C36E7800B4727C /* EToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374EA29C36E7800B4727C /* EToast.swift */; };
 		96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A374EC29C36E7800B4727C /* Toast.xcassets */; };
+		96A3757F29C56DF700B4727C /* MineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3757D29C56DF700B4727C /* MineHeadView.swift */; };
+		96A3758029C56DF700B4727C /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A3757E29C56DF700B4727C /* MineHeadView.xib */; };
+		96A3758429C5702F00B4727C /* CommonInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3758229C5702F00B4727C /* CommonInfoCell.swift */; };
+		96A3758529C5702F00B4727C /* CommonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A3758329C5702F00B4727C /* CommonInfoCell.xib */; };
 		96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB6FC429C1FBB700244F40 /* AppDelegate.swift */; };
 		96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB6FCD29C1FBB800244F40 /* Assets.xcassets */; };
 		96AB702B29C2087A00244F40 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB702529C2087A00244F40 /* DataBase.swift */; };
@@ -120,6 +150,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		961D172F29C7066800853FCB /* CompanyInviteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInviteAlert.swift; sourceTree = "<group>"; };
+		961D173129C70B8000853FCB /* CommonInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputCell.swift; sourceTree = "<group>"; };
+		961D173229C70B8000853FCB /* CommonInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInputCell.xib; sourceTree = "<group>"; };
+		961D173529C738C300853FCB /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		961D173629C738C300853FCB /* CreateCompanyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCompanyVC.xib; sourceTree = "<group>"; };
+		961D173929C738E300853FCB /* CommonInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputModel.swift; sourceTree = "<group>"; };
+		964E718B29C5C48200118D43 /* OSSConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSConfigModel.swift; sourceTree = "<group>"; };
+		964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInputAlert.swift; sourceTree = "<group>"; };
+		964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInpuAlertView.swift; sourceTree = "<group>"; };
+		964E71D329C5F44D00118D43 /* TwoInpuAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoInpuAlertView.xib; sourceTree = "<group>"; };
+		964E71D529C6B42500118D43 /* DeleteAccountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlert.swift; sourceTree = "<group>"; };
+		964E71D929C6BC6A00118D43 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		964E71DA29C6BC6A00118D43 /* AboutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutVC.xib; sourceTree = "<group>"; };
+		964E71DD29C6EBCF00118D43 /* CompanyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListVC.swift; sourceTree = "<group>"; };
+		964E71DE29C6EBCF00118D43 /* CompanyListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyListVC.xib; sourceTree = "<group>"; };
+		964E71E229C6ED3D00118D43 /* BaseHeightBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeightBottomView.swift; sourceTree = "<group>"; };
+		964E71E429C6ED5200118D43 /* BaseHeightBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseHeightBottomView.xib; sourceTree = "<group>"; };
+		965820F929C570EE0005C6AA /* QRGeneratorTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRGeneratorTool.swift; sourceTree = "<group>"; };
+		965820FA29C570EE0005C6AA /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		965820FB29C570EE0005C6AA /* QRscan.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRscan.xcassets; sourceTree = "<group>"; };
+		965820FF29C5721D0005C6AA /* CommonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoModel.swift; sourceTree = "<group>"; };
+		9658210229C59FD70005C6AA /* MineApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineApi.swift; sourceTree = "<group>"; };
+		9658210429C5A1410005C6AA /* CompanyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListModel.swift; sourceTree = "<group>"; };
+		9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoVC.swift; sourceTree = "<group>"; };
+		9658210829C5A85A0005C6AA /* AccountInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoVC.xib; sourceTree = "<group>"; };
+		9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingelInputAlert.swift; sourceTree = "<group>"; };
 		96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolBox-Bridging-Header.h"; sourceTree = "<group>"; };
 		96A374DB29C3445500B4727C /* AppAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccount.swift; sourceTree = "<group>"; };
 		96A374DD29C34C1D00B4727C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -129,6 +185,10 @@
 		96A374E729C364A100B4727C /* CompleteInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteInfoVC.xib; sourceTree = "<group>"; };
 		96A374EA29C36E7800B4727C /* EToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EToast.swift; sourceTree = "<group>"; };
 		96A374EC29C36E7800B4727C /* Toast.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Toast.xcassets; sourceTree = "<group>"; };
+		96A3757D29C56DF700B4727C /* MineHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineHeadView.swift; sourceTree = "<group>"; };
+		96A3757E29C56DF700B4727C /* MineHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
+		96A3758229C5702F00B4727C /* CommonInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoCell.swift; sourceTree = "<group>"; };
+		96A3758329C5702F00B4727C /* CommonInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInfoCell.xib; sourceTree = "<group>"; };
 		96AB6FC129C1FBB700244F40 /* CoolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB6FC429C1FBB700244F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96AB6FCD29C1FBB800244F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,6 +318,46 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		964E718A29C5C46E00118D43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				964E718B29C5C48200118D43 /* OSSConfigModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		964E71E129C6ECF000118D43 /* BaseBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				964E71E229C6ED3D00118D43 /* BaseHeightBottomView.swift */,
+				964E71E429C6ED5200118D43 /* BaseHeightBottomView.xib */,
+			);
+			path = BaseBottomView;
+			sourceTree = "<group>";
+		};
+		965820F829C570EE0005C6AA /* QRScaner */ = {
+			isa = PBXGroup;
+			children = (
+				965820F929C570EE0005C6AA /* QRGeneratorTool.swift */,
+				965820FA29C570EE0005C6AA /* QRScanViewController.swift */,
+				965820FB29C570EE0005C6AA /* QRscan.xcassets */,
+			);
+			path = QRScaner;
+			sourceTree = "<group>";
+		};
+		9658210A29C5B46F0005C6AA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */,
+				964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */,
+				964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */,
+				964E71D329C5F44D00118D43 /* TwoInpuAlertView.xib */,
+				964E71D529C6B42500118D43 /* DeleteAccountAlert.swift */,
+				961D172F29C7066800853FCB /* CompanyInviteAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		96A3749429C3423300B4727C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +386,19 @@
 				96A374EC29C36E7800B4727C /* Toast.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		96A3758129C56FF200B4727C /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				96A3758229C5702F00B4727C /* CommonInfoCell.swift */,
+				96A3758329C5702F00B4727C /* CommonInfoCell.xib */,
+				965820FF29C5721D0005C6AA /* CommonInfoModel.swift */,
+				961D173129C70B8000853FCB /* CommonInputCell.swift */,
+				961D173229C70B8000853FCB /* CommonInputCell.xib */,
+				961D173929C738E300853FCB /* CommonInputModel.swift */,
+			);
+			path = BaseCell;
 			sourceTree = "<group>";
 		};
 		96AB6FB829C1FBB600244F40 = {
@@ -376,6 +489,7 @@
 		96AB702029C2070600244F40 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				9658210229C59FD70005C6AA /* MineApi.swift */,
 				96AB710E29C20FE900244F40 /* controller */,
 				96AB710D29C20FE900244F40 /* model */,
 				96AB710C29C20FE900244F40 /* view */,
@@ -474,6 +588,9 @@
 		96AB704C29C2088E00244F40 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9658210A29C5B46F0005C6AA /* Alert */,
+				964E71E129C6ECF000118D43 /* BaseBottomView */,
+				96A3758129C56FF200B4727C /* BaseCell */,
 				96AB704D29C2088E00244F40 /* BaseTabBarController.swift */,
 				96AB704E29C2088E00244F40 /* AppRouter.swift */,
 				96AB704F29C2088E00244F40 /* EmptyPlaceholder.swift */,
@@ -493,6 +610,7 @@
 		96AB705929C2088E00244F40 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				965820F829C570EE0005C6AA /* QRScaner */,
 				96AB705A29C2088E00244F40 /* Stack.swift */,
 				96AB705B29C2088E00244F40 /* BGWaterfallsFlowView */,
 				96AB706829C2088E00244F40 /* BackgroundTimer.swift */,
@@ -657,6 +775,7 @@
 		96AB70F529C208F900244F40 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				964E718A29C5C46E00118D43 /* Model */,
 				96AB70F629C208F900244F40 /* ItemView.swift */,
 				96AB70F729C208F900244F40 /* PrivacyProtocolAlert.swift */,
 				96AB70F829C208F900244F40 /* CollectionSegment */,
@@ -743,6 +862,8 @@
 		96AB710C29C20FE900244F40 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				96A3757D29C56DF700B4727C /* MineHeadView.swift */,
+				96A3757E29C56DF700B4727C /* MineHeadView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -750,6 +871,7 @@
 		96AB710D29C20FE900244F40 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9658210429C5A1410005C6AA /* CompanyListModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -758,6 +880,14 @@
 			isa = PBXGroup;
 			children = (
 				96AB711529C210EB00244F40 /* MineViewController.swift */,
+				9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */,
+				9658210829C5A85A0005C6AA /* AccountInfoVC.xib */,
+				964E71D929C6BC6A00118D43 /* AboutVC.swift */,
+				964E71DA29C6BC6A00118D43 /* AboutVC.xib */,
+				964E71DD29C6EBCF00118D43 /* CompanyListVC.swift */,
+				964E71DE29C6EBCF00118D43 /* CompanyListVC.xib */,
+				961D173529C738C300853FCB /* CreateVC.swift */,
+				961D173629C738C300853FCB /* CreateCompanyVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -835,21 +965,31 @@
 				96AB70F129C2088E00244F40 /* PhotoAlbumSelectView.xib in Resources */,
 				96AB70C229C2088E00244F40 /* blueArrow@2x.png in Resources */,
 				96AB70C629C2088E00244F40 /* blackArrow@2x.png in Resources */,
+				964E71E529C6ED5200118D43 /* BaseHeightBottomView.xib in Resources */,
 				96AB70C429C2088E00244F40 /* whiteArrow@2x.png in Resources */,
+				9658210929C5A85A0005C6AA /* AccountInfoVC.xib in Resources */,
 				96AB70EF29C2088E00244F40 /* jpAssets.xcassets in Resources */,
 				96A374E029C34C2700B4727C /* LoginVC.xib in Resources */,
+				965820FE29C570EE0005C6AA /* QRscan.xcassets in Resources */,
 				96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */,
 				96AB70C529C2088E00244F40 /* whiteArrow.png in Resources */,
 				96AB710229C208FA00244F40 /* App.xcassets in Resources */,
+				961D173829C738C300853FCB /* CreateCompanyVC.xib in Resources */,
+				961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */,
 				96AB70C829C2088E00244F40 /* grayArrow@2x.png in Resources */,
+				96A3758529C5702F00B4727C /* CommonInfoCell.xib in Resources */,
+				964E71D429C5F44D00118D43 /* TwoInpuAlertView.xib in Resources */,
 				96AB70F029C2088E00244F40 /* PhotoAlbum.storyboard in Resources */,
 				96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */,
 				96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */,
+				964E71E029C6EBCF00118D43 /* CompanyListVC.xib in Resources */,
 				96AB70C129C2088E00244F40 /* blackArrow.png in Resources */,
+				964E71DC29C6BC6A00118D43 /* AboutVC.xib in Resources */,
 				96AB70F229C2088E00244F40 /* PhotoAlbumSelectCell.xib in Resources */,
 				96AB70C729C2088E00244F40 /* blueArrow.png in Resources */,
 				96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */,
 				96AB70B229C2088E00244F40 /* Share.xcassets in Resources */,
+				96A3758029C56DF700B4727C /* MineHeadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,15 +1045,19 @@
 				96AB70E129C2088E00244F40 /* CropImageTool.swift in Sources */,
 				96AB70A929C2088E00244F40 /* UILabelPadding.swift in Sources */,
 				96AB70E429C2088E00244F40 /* SystemHelper.swift in Sources */,
+				965820FC29C570EE0005C6AA /* QRGeneratorTool.swift in Sources */,
 				96AB70FD29C208FA00244F40 /* ItemView.swift in Sources */,
 				96AB70BF29C2088E00244F40 /* Stack.swift in Sources */,
 				96AB70CE29C2088E00244F40 /* NavTransition.swift in Sources */,
 				96AB711229C210D100244F40 /* BXViewController.swift in Sources */,
 				96AB70E329C2088E00244F40 /* CircularProgressLayer.swift in Sources */,
+				961D173029C7066800853FCB /* CompanyInviteAlert.swift in Sources */,
 				96AB70EB29C2088E00244F40 /* UploadPhotoView.swift in Sources */,
 				96AB70CD29C2088E00244F40 /* InteractiveTransition.swift in Sources */,
+				9658210329C59FD70005C6AA /* MineApi.swift in Sources */,
 				96AB702E29C2087A00244F40 /* ETargetType.swift in Sources */,
 				96AB70CB29C2088E00244F40 /* BackgroundTimer.swift in Sources */,
+				961D173A29C738E300853FCB /* CommonInputModel.swift in Sources */,
 				96AB70E029C2088E00244F40 /* CropViewController.swift in Sources */,
 				96AB70B129C2088E00244F40 /* ImageDownloader.swift in Sources */,
 				96AB70E529C2088E00244F40 /* PhotoBrowser.swift in Sources */,
@@ -939,12 +1083,15 @@
 				96AB70AD29C2088E00244F40 /* ETextView.swift in Sources */,
 				96AB70A429C2088E00244F40 /* YTImagePicker.swift in Sources */,
 				96AB70DC29C2088E00244F40 /* PhotoAlbumCell.swift in Sources */,
+				965820FD29C570EE0005C6AA /* QRScanViewController.swift in Sources */,
 				96AB70FE29C208FA00244F40 /* PrivacyProtocolAlert.swift in Sources */,
 				96AB70D729C2088E00244F40 /* PhotoAlbumSelectCell.swift in Sources */,
 				96AB70BB29C2088E00244F40 /* DataLoading.swift in Sources */,
 				96AB70DD29C2088E00244F40 /* CropToolbar.swift in Sources */,
+				964E71DB29C6BC6A00118D43 /* AboutVC.swift in Sources */,
 				96AB702C29C2087A00244F40 /* BracketLessGetEncoding.swift in Sources */,
 				96AB70BE29C2088E00244F40 /* BaseSegementSubVC.swift in Sources */,
+				964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */,
 				96AB70D929C2088E00244F40 /* RightImageButton.swift in Sources */,
 				96AB70B329C2088E00244F40 /* BaseTabBarController.swift in Sources */,
 				96AB70A129C2088E00244F40 /* SwiftExtension.swift in Sources */,
@@ -955,32 +1102,45 @@
 				96AB711029C210BA00244F40 /* FPViewController.swift in Sources */,
 				96AB702B29C2087A00244F40 /* DataBase.swift in Sources */,
 				96AB70D529C2088E00244F40 /* OrderedDictionary.swift in Sources */,
+				9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */,
 				96AB710129C208FA00244F40 /* GuidVC.swift in Sources */,
 				96AB70B729C2088E00244F40 /* ViewControllerAdapt.swift in Sources */,
 				96AB70B629C2088E00244F40 /* UIViewController+Refresh.swift in Sources */,
 				96AB70FF29C208FA00244F40 /* BaseCollectionSegmentVC.swift in Sources */,
 				96AB70DA29C2088E00244F40 /* PhotoAlbumViewController.swift in Sources */,
+				9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */,
 				96AB70D329C2088E00244F40 /* RImageCropperViewController.swift in Sources */,
 				96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */,
 				96AB70B829C2088E00244F40 /* EWebViewController.swift in Sources */,
 				96AB70AF29C2088E00244F40 /* CustomAlert.swift in Sources */,
+				9658210529C5A1420005C6AA /* CompanyListModel.swift in Sources */,
+				961D173729C738C300853FCB /* CreateVC.swift in Sources */,
+				96A3757F29C56DF700B4727C /* MineHeadView.swift in Sources */,
 				96AB70AA29C2088E00244F40 /* ProtocolLab.swift in Sources */,
 				96AB70AE29C2088E00244F40 /* PresentCenterVC.swift in Sources */,
 				96AB710029C208FA00244F40 /* AppTabBarController.swift in Sources */,
 				96AB70E929C2088E00244F40 /* JHPhotoBrowserProtocol.swift in Sources */,
+				964E71E329C6ED3D00118D43 /* BaseHeightBottomView.swift in Sources */,
 				96AB711629C210EB00244F40 /* MineViewController.swift in Sources */,
 				96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */,
+				964E71D629C6B42500118D43 /* DeleteAccountAlert.swift in Sources */,
 				96AB70B929C2088E00244F40 /* WebResponseJS.swift in Sources */,
+				961D173329C70B8000853FCB /* CommonInputCell.swift in Sources */,
 				96AB70D129C2088E00244F40 /* PermissionTool.swift in Sources */,
 				96AB70E829C2088E00244F40 /* TapDetectingView.swift in Sources */,
 				96AB70DB29C2088E00244F40 /* PhotoAlbumTool.swift in Sources */,
 				96AB70D429C2088E00244F40 /* RDevice.swift in Sources */,
+				9658210029C5721D0005C6AA /* CommonInfoModel.swift in Sources */,
 				96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */,
 				96AB70BA29C2088E00244F40 /* WebViewController.swift in Sources */,
+				964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */,
+				96A3758429C5702F00B4727C /* CommonInfoCell.swift in Sources */,
 				96AB70E229C2088E00244F40 /* SelectAlert.swift in Sources */,
 				96AB709E29C2088E00244F40 /* EColor.swift in Sources */,
 				96AB70DE29C2088E00244F40 /* CropOverlayView.swift in Sources */,
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
+				964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */,
+				964E71DF29C6EBCF00118D43 /* CompanyListVC.swift in Sources */,
 				96AB70A629C2088E00244F40 /* PresentBottomVC.swift in Sources */,
 				96AB70AC29C2088E00244F40 /* BlankMsgView.swift in Sources */,
 				96AB70E729C2088E00244F40 /* TapDetectingImageView.swift in Sources */,
@@ -1124,6 +1284,8 @@
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -1135,7 +1297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1161,6 +1323,8 @@
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -1172,7 +1336,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

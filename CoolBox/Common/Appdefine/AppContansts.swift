@@ -51,6 +51,8 @@ func ELog<N>(message: N, fileName: NSString = #file, methodName: String = #funct
     print("----------------------------------------")
 }
 
+let QNBassUrl = "http://oss.kubaoxiao.com/"
+
 /** 分页数据，默认分页大小 */
 let kPageSize: Int = 18
 
@@ -78,25 +80,9 @@ let kBottomSpace : CGFloat = iPhoneXs ? 34 : 0
 let kTabBarHeight: CGFloat = (kBottomSpace + 49)
 
 //协议
-///---注册
-func userSerUrl() -> String{
-    return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/Agreement"
-}
-//隐私政策
-func policyUrl()-> String {
-    return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/policy"
-}
-///----FAQ_merchant
-func faqMerchant() -> String {
-    return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/agentCmProblem"
-}
-///----FAQ_user
-func faqUser() -> String {
-    return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/userCmProblem"
-}
-///--cardInfo
-func carInfo() -> String {
-    return "https://h5-vue.ehuandian.net/rentalScooter/huandian/dist/index.html#/"
-}
+let UserAreegemnt = "https://app.kubaoxiao.com/agreement.html"
 
+let PrivacyPlice = "https://app.kubaoxiao.com/privacy.html"
+
+let FeedbackUrl = "https://support.qq.com/products/474933"
 

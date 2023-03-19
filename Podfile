@@ -55,6 +55,7 @@ target 'CoolBox' do
   #微信开放平台SDK
   pod 'WechatOpenSDK'
   pod 'MMKV'
+  pod 'Qiniu'
   
   
   # 界面调试

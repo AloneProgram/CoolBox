@@ -65,11 +65,17 @@ class LoginVC: EViewController {
     
     
     @IBAction func getVerCode(_ sender: CusCodeBtn) {
-
         guard let text = phoneTF.text, AppSecurity.checkTelNumber(text)  else {
             EToast.showFailed("手机号格式不正确")
             return
         }
+        guard hasAgree else {
+            EToast.showFailed("请阅读并同意《用户协议》和《隐私政策》")
+            verCodeTF.resignFirstResponder()
+            phoneTF.resignFirstResponder()
+            return
+        }
+        
         //自动选中验证码输入框
         verCodeTF.becomeFirstResponder()
         
@@ -94,7 +100,7 @@ class LoginVC: EViewController {
             EToast.showFailed("验证码不可为空")
             return
         }
-                LoginApi.phoneLogin(phone: phone, smsCode: vCode) { success in
+        LoginApi.phoneLogin(phone: phone, smsCode: vCode) { success in
             if success {
                 let keyWindow = UIApplication.shared.delegate?.window
                 if Login.currentAccount().nickname.contains("****") {
@@ -109,11 +115,11 @@ class LoginVC: EViewController {
     }
     
     func clickPlicy(_ result: ASAttributedString.Action.Result) {
-        
+        pushToWebView(UserAreegemnt)
     }
     
     func clickPrivicy(_ result: ASAttributedString.Action.Result) {
-        
+        pushToWebView(PrivacyPlice)
     }
     
     @objc private func agreeProtocol() {

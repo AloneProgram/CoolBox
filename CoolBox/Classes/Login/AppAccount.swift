@@ -44,7 +44,6 @@ struct Login {
     }
     
     static func update(account: Account) {
- 
         Account.share.update(account: account)
         AccountData.save(Account.share)
         EApiConfig.updateApp(authorization: authorization())
@@ -56,12 +55,6 @@ struct Login {
         }
         return Account(fromJson: json)
     }
-}
-
-enum UserRole: Int {
-    case merchants = 1 //商家
-    case user = 2 // 平台用户
-    case unkown
 }
 
 class Account {
@@ -94,6 +87,11 @@ class Account {
     var token: String?
     var uid = ""
     var username = ""
+    //用户类型 1个人 2企业
+    var type = ""
+    var companyId = ""
+    var companyName = ""
+    var isCompanyAdmin = false
   
     init(fromJson json: JSON? = nil){
         guard let json = json else { return }
@@ -109,6 +107,11 @@ class Account {
         token = json["token"].stringValue
         uid = json["uid"].stringValue
         username = json["username"].stringValue
+        type = json["type"].stringValue
+        companyId = json["company_id"].stringValue
+        companyName = json["company_name"].stringValue
+        isCompanyAdmin = json["is_company_admin"].intValue == 3
+
     }
     
     fileprivate func toJson() -> JSON {
@@ -124,7 +127,10 @@ class Account {
         json["token"].string = token
         json["uid"].string = uid
         json["username"].string = username
-
+        json["type"].string = type
+        json["companyId"].string = companyId
+        json["companyName"].string = companyName
+        json["isCompanyAdmin"].string = isCompanyAdmin ? "3" : "1"
         
         return json
     }
@@ -141,6 +147,10 @@ class Account {
         token = nil
         uid = ""
         username = ""
+        type = ""
+        companyId = ""
+        companyName = ""
+        isCompanyAdmin = false
     }
     
     fileprivate func update(account: Account) {
@@ -156,7 +166,10 @@ class Account {
         token = account.token
         uid = account.uid
         username = account.username
-        
+        type = account.type
+        companyId = account.companyId
+        companyName = account.companyName
+        isCompanyAdmin = account.isCompanyAdmin
     }
     
     @objc fileprivate func needLogin(_ noti: NSNotification) {

@@ -31,17 +31,17 @@ class CompleteInfoVC: EViewController {
     
     @objc func setAvatar() {
         
-        let alert = SelectAlert()
+        let alert = SelectAlert(alertTitle: "上传头像")
         let cancel = SelectAlertAction(title: "取消", type: .cancel)
-        let takePhoto  = SelectAlertAction(title: "拍照") { [weak self] in
+        let takePhoto = SelectAlertAction(title: "拍照上传") { [weak self] in
             self?.takePhoto()
         }
-        let selectPhoto  = SelectAlertAction(title: "从手机相册选择") { [weak self] in
+        let selectPhoto = SelectAlertAction(title: "相册上传") { [weak self] in
             self?.selectPhoto()
         }
-        
-        alert.addAction(takePhoto)
+
         alert.addAction(selectPhoto)
+        alert.addAction(takePhoto)
         alert.addAction(cancel)
         alert.show()
     }

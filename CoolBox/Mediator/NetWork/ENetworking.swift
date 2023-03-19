@@ -15,9 +15,9 @@ let AppNeedLoginNotificationKey = NSNotification.Name(rawValue: "AppNeedLoginNot
 
 struct ENetworking {
     enum ResultCode: Int {
-        case success = 200
-        case needLogin = 202
-        case failure = 0
+        case success = 1
+        case needLogin = 2
+        case failure
     }
     
     typealias SuccessClosure = (JSON) -> Void
@@ -61,10 +61,11 @@ struct ENetworking {
                 let json = try JSON(moyaResponse.mapJSON())
                 guard let codeValue = json["code"].int,
                       let code = ResultCode(rawValue: codeValue) else {
+                    EToast.showFailed(json["message"].stringValue)
                     return failure(MoyaError.statusCode(moyaResponse), json)
                 }
                 if code == .success {
-                    success(json["result"])
+                    success(json["data"])
                 }
                 else if code == .needLogin {
                     EToast.showFailed(json["message"].stringValue)
@@ -143,7 +144,7 @@ fileprivate struct ENetworkingAdapt {
             }
         }
         if let token = EApiConfig.appToken() {
-            newEndpoint = newEndpoint.adding(newHTTPHeaderFields: ["AccessToken": token])
+            newEndpoint = newEndpoint.adding(newHTTPHeaderFields: ["x-auth-token": token])
         }
         return newEndpoint
     }

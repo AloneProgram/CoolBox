@@ -49,7 +49,7 @@ class WebViewController: EViewController, PresentFromBottom,WebViewAction, Empty
         let width = UIScreen.main.bounds.width
         let view = UIProgressView(frame: CGRect.zero)
         view.trackTintColor = UIColor.white
-        view.progressTintColor = EColor.themeColor
+        view.progressTintColor = .black
         return view
     }()
     
@@ -189,7 +189,7 @@ fileprivate extension WebViewController {
         
         let normalColor = UIColor.black
         let highlightedColor = UIColor.black.withAlphaComponent(0.5)
-        let font = UIFont.systemFont(ofSize: 14)
+        let font = SCMediumFont(18)
 //        let leftEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         
         let backButton = UIButton(type: .custom)

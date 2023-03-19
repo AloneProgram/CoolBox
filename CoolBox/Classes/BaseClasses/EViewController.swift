@@ -78,9 +78,23 @@ class EViewController: UIViewController, ParamAdaptAction {
     // 设置导航栏颜色 默认是 白底黑字
     var navigationBarStyle: NavigationBarStyle { return .whiteBackground }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .default }
+    
+    var leftTitle: String = "" {
+        didSet {
+            let backBtn = LeftImageButton(type: .custom)
+            backBtn.setImage(navigationBarStyle.backIcon, for: .normal)
+            backBtn.setTitle(leftTitle, for: .normal)
+            backBtn.titleLabel?.font = SCMediumFont(18)
+            backBtn.setTitleColor(UIColor(hexString: "#1D2129"), for: .normal)
+            backBtn.addTarget(self, action: #selector(customPopAction), for: .touchUpInside)
+            
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = EColor.viewBgColor
         setupNavigationBar()
     }
 }

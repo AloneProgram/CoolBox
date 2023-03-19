@@ -67,9 +67,9 @@ private extension PrivacyProtocolAlert {
         introTv.delegate = self
         introTv.showsVerticalScrollIndicator = false
         introTv.appendLinkString(string: "感谢您选择欢电APP！\n我们非常重视您的个人信息和隐私保护，为了更好地保障您的权益，请您在使用我们的产品前，务必审慎阅读我们的")
-        introTv.appendLinkString(string: "《用户协议》", withURLString: userSerUrl())
+        introTv.appendLinkString(string: "《用户协议》", withURLString: UserAreegemnt)
         introTv.appendLinkString(string: "和")
-        introTv.appendLinkString(string: "《隐私政策》", withURLString: policyUrl())
+        introTv.appendLinkString(string: "《隐私政策》", withURLString: PrivacyPlice)
         introTv.appendLinkString(string: "内的所有条款。\n如果您同意以上协议内容，请点击“同意并继续”，开始体验我们的产品和服务！\n您点击“同意并继续”的行为即表示您已阅读完毕并同意以上协议的全部内容。")
         introTv.backgroundColor = .clear
         introTv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#FF6B01"),
@@ -119,7 +119,7 @@ private extension PrivacyProtocolAlert {
 
 extension PrivacyProtocolAlert: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        if URL.relativeString == userSerUrl() ||  URL.relativeString == policyUrl() {
+        if URL.relativeString == UserAreegemnt ||  URL.relativeString == PrivacyPlice {
             let webVC = EWebViewController(urlString: URL.absoluteString)
             let nav = ENavigationController(rootViewController: webVC)
             present(nav, animated: true, completion: nil)

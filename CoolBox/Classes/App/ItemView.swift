@@ -88,7 +88,7 @@ extension UILabel {
     convenience init(text: String?,
                      font: UIFont?,
                      nColor: UIColor?,
-                     hlColor: UIColor?
+                     hlColor: UIColor? = nil
                      ) {
         self.init()
         
