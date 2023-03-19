@@ -122,7 +122,7 @@ class EColor: UIColor {
     /** 分割线 #E6E6E6 */
     @objc public static var lineColor: UIColor {
         get {
-            return UIColor(hexString: "#FF6B00")
+            return UIColor(hexString: "#E5E6EB")
         }
     }
     

@@ -27,6 +27,11 @@ fileprivate enum ApiTarget: ETargetType {
     //扫码登录
     case scaneLogin(_ token: String)
 
+    //发票抬头列表
+    case invoiceTitleList
+    
+    //设置默认企业
+    case setDefaultCompamny(cId: String)
 
     var path: String {
         switch self {
@@ -36,6 +41,8 @@ fileprivate enum ApiTarget: ETargetType {
         case .changeMobile:     return "/api/user/changeMobile"
         case .deleteAccount:      return "/api/user/cancel"
         case .scaneLogin:       return "/api/user/scanLogin"
+        case .invoiceTitleList:     return "/api/invoice/config"
+        case .setDefaultCompamny:   return "/api/user/setUserSetting"
         }
     }
     
@@ -58,6 +65,10 @@ fileprivate enum ApiTarget: ETargetType {
             return [
                 "action": "scan_code",
                 "token": token
+            ]
+        case .setDefaultCompamny(let cId):
+            return [
+                "c_id": cId
             ]
         default: return nil
         }
@@ -140,6 +151,25 @@ struct MineApi {
             result()
         }) { (err, json) in
            
+        }
+    }
+    
+    static func getInvoiceTitleList(result: @escaping ([String])->Void) {
+        let target = ApiTarget.invoiceTitleList
+        ENetworking.request(target, success: { (json) in
+            let list: [String] = json["title"].arrayObject as? [String] ?? []
+            result(list)
+        }) { (err, json) in
+           
+        }
+    }
+    
+    static func setDefaultCompany(cid: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.setDefaultCompamny(cId: cid)
+        ENetworking.request(target, success: { (json) in
+            result(true)
+        }) { (err, json) in
+            
         }
     }
     

@@ -11,8 +11,11 @@
 		961D173329C70B8000853FCB /* CommonInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173129C70B8000853FCB /* CommonInputCell.swift */; };
 		961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173229C70B8000853FCB /* CommonInputCell.xib */; };
 		961D173729C738C300853FCB /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173529C738C300853FCB /* CreateVC.swift */; };
-		961D173829C738C300853FCB /* CreateCompanyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173629C738C300853FCB /* CreateCompanyVC.xib */; };
+		961D173829C738C300853FCB /* CreateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173629C738C300853FCB /* CreateVC.xib */; };
 		961D173A29C738E300853FCB /* CommonInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173929C738E300853FCB /* CommonInputModel.swift */; };
+		961D177E29C763E500853FCB /* CommonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D177D29C763E500853FCB /* CommonApi.swift */; };
+		961D178129C7649E00853FCB /* GlobalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178029C7649E00853FCB /* GlobalConfigManager.swift */; };
+		961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178229C764DC00853FCB /* CompanyInfoConfig.swift */; };
 		964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E718B29C5C48200118D43 /* OSSConfigModel.swift */; };
 		964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */; };
 		964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */; };
@@ -154,8 +157,11 @@
 		961D173129C70B8000853FCB /* CommonInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputCell.swift; sourceTree = "<group>"; };
 		961D173229C70B8000853FCB /* CommonInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInputCell.xib; sourceTree = "<group>"; };
 		961D173529C738C300853FCB /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
-		961D173629C738C300853FCB /* CreateCompanyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCompanyVC.xib; sourceTree = "<group>"; };
+		961D173629C738C300853FCB /* CreateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateVC.xib; sourceTree = "<group>"; };
 		961D173929C738E300853FCB /* CommonInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputModel.swift; sourceTree = "<group>"; };
+		961D177D29C763E500853FCB /* CommonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonApi.swift; sourceTree = "<group>"; };
+		961D178029C7649E00853FCB /* GlobalConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigManager.swift; sourceTree = "<group>"; };
+		961D178229C764DC00853FCB /* CompanyInfoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoConfig.swift; sourceTree = "<group>"; };
 		964E718B29C5C48200118D43 /* OSSConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSConfigModel.swift; sourceTree = "<group>"; };
 		964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInputAlert.swift; sourceTree = "<group>"; };
 		964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInpuAlertView.swift; sourceTree = "<group>"; };
@@ -318,6 +324,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		961D177F29C7646B00853FCB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				961D177D29C763E500853FCB /* CommonApi.swift */,
+				961D178029C7649E00853FCB /* GlobalConfigManager.swift */,
+				961D178229C764DC00853FCB /* CompanyInfoConfig.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		964E718A29C5C46E00118D43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +461,7 @@
 		96AB701B29C2060B00244F40 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				961D177F29C7646B00853FCB /* Common */,
 				96A3749429C3423300B4727C /* Login */,
 				96AB704C29C2088E00244F40 /* BaseClasses */,
 				96AB70F529C208F900244F40 /* App */,
@@ -887,7 +904,7 @@
 				964E71DD29C6EBCF00118D43 /* CompanyListVC.swift */,
 				964E71DE29C6EBCF00118D43 /* CompanyListVC.xib */,
 				961D173529C738C300853FCB /* CreateVC.swift */,
-				961D173629C738C300853FCB /* CreateCompanyVC.xib */,
+				961D173629C738C300853FCB /* CreateVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -974,7 +991,7 @@
 				96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */,
 				96AB70C529C2088E00244F40 /* whiteArrow.png in Resources */,
 				96AB710229C208FA00244F40 /* App.xcassets in Resources */,
-				961D173829C738C300853FCB /* CreateCompanyVC.xib in Resources */,
+				961D173829C738C300853FCB /* CreateVC.xib in Resources */,
 				961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */,
 				96AB70C829C2088E00244F40 /* grayArrow@2x.png in Resources */,
 				96A3758529C5702F00B4727C /* CommonInfoCell.xib in Resources */,
@@ -1075,6 +1092,7 @@
 				96AB70A329C2088E00244F40 /* String+Hashes.swift in Sources */,
 				96AB70D029C2088E00244F40 /* CountdownTool.swift in Sources */,
 				96AB702F29C2087A00244F40 /* ENetworking.swift in Sources */,
+				961D177E29C763E500853FCB /* CommonApi.swift in Sources */,
 				96AB70EA29C2088E00244F40 /* ZoomingScrollView.swift in Sources */,
 				96AB711429C210DF00244F40 /* SPViewController.swift in Sources */,
 				96AB70F329C2088E00244F40 /* AppContansts.swift in Sources */,
@@ -1095,11 +1113,13 @@
 				96AB70D929C2088E00244F40 /* RightImageButton.swift in Sources */,
 				96AB70B329C2088E00244F40 /* BaseTabBarController.swift in Sources */,
 				96AB70A129C2088E00244F40 /* SwiftExtension.swift in Sources */,
+				961D178129C7649E00853FCB /* GlobalConfigManager.swift in Sources */,
 				96A374E229C35A1900B4727C /* LoginApi.swift in Sources */,
 				96AB70BC29C2088E00244F40 /* CusSlideView.swift in Sources */,
 				96AB70BD29C2088E00244F40 /* EViewController.swift in Sources */,
 				96AB709F29C2088E00244F40 /* EButton.swift in Sources */,
 				96AB711029C210BA00244F40 /* FPViewController.swift in Sources */,
+				961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */,
 				96AB702B29C2087A00244F40 /* DataBase.swift in Sources */,
 				96AB70D529C2088E00244F40 /* OrderedDictionary.swift in Sources */,
 				9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */,

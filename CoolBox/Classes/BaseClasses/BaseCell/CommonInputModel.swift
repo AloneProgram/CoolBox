@@ -17,6 +17,7 @@ class CommonInputModel: NSObject {
     var tfType: UIKeyboardType = .default
     var showBtn = false
     var btnTitlte = ""
+    var showLine = true
     
     init(showRedPoint: Bool = true,
          leftText: String = "",
@@ -25,7 +26,8 @@ class CommonInputModel: NSObject {
          tfText: String = "",
          tfType: UIKeyboardType = .default,
          showBtn: Bool = false,
-         btnTitlte: String = "")
+         btnTitlte: String = "",
+         showLine: Bool = true )
     {
         self.showRedPoint = showRedPoint
         self.leftText = leftText
@@ -35,6 +37,7 @@ class CommonInputModel: NSObject {
         self.tfType = tfType
         self.showBtn = showBtn
         self.btnTitlte = btnTitlte
+        self.showLine = showLine
     }
 
 }

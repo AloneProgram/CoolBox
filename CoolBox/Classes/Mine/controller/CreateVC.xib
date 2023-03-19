@@ -11,8 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateVC" customModule="CoolBox" customModuleProvider="target">
             <connections>
-                <outlet property="bottimViewHeight" destination="XWx-qu-qVi" id="2WP-RJ-1UJ"/>
+                <outlet property="bottomBtn" destination="reC-SS-xam" id="bG1-KH-ikI"/>
                 <outlet property="bottomView" destination="og2-tk-aKI" id="i9g-5j-ycr"/>
+                <outlet property="bottomViewHeight" destination="XWx-qu-qVi" id="0xp-RS-8SF"/>
                 <outlet property="tableVIew" destination="FoQ-nW-6iI" id="X17-zs-hwM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-nW-6iI">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-nW-6iI">
                     <rect key="frame" x="0.0" y="59" width="393" height="745"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -46,6 +47,9 @@
                                     <size key="value" width="0.0" height="-3"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickBottomBtnAction:" destination="-1" eventType="touchUpInside" id="36D-Lc-xmS"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

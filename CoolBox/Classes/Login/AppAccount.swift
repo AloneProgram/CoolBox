@@ -92,6 +92,15 @@ class Account {
     var companyId = ""
     var companyName = ""
     var isCompanyAdmin = false
+    
+    var containsStart: Bool {
+        return nickname.contains("****")
+    }
+    
+    //有些地方使用nickname需要判断是否包含****, 包含则说明昵称未被修改,不可直接使用
+    var usedNickName: String {
+        return containsStart ? "" : nickname
+    }
   
     init(fromJson json: JSON? = nil){
         guard let json = json else { return }

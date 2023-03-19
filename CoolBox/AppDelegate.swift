@@ -19,15 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         
         let authorization = Login.authorization()
         EApiConfig.setApp(url: AppAPIBaseURLString, authorization: authorization)
-
         
         KingfisherManager.shared.defaultOptions += [
             .cacheOriginalImage,
             .backgroundDecode,
         ]
+        
+        GlobalConfigManager.shared.requestCompanyInfoConfig()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = GuidVC()

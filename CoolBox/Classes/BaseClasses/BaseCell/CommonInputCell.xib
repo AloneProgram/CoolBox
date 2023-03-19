@@ -30,16 +30,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-F5-54I">
-                        <rect key="frame" x="85.666666666666671" y="17.666666666666664" width="182.33333333333331" height="18.666666666666664"/>
+                        <rect key="frame" x="85.666666666666671" y="17.666666666666664" width="153.33333333333331" height="18.666666666666664"/>
                         <color key="textColor" red="0.30588235294117649" green="0.34901960784313724" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkW-j7-e45">
-                        <rect key="frame" x="308" y="12.666666666666664" width="43" height="29"/>
+                        <rect key="frame" x="279" y="12.666666666666664" width="72" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="58D-Ca-Fd8"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="Button">
+                        <state key="normal" title="从抬头导入">
                             <color key="titleColor" red="0.086274509799999996" green="0.36470588240000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                         <connections>
@@ -62,9 +65,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="actionBtn" destination="mkW-j7-e45" id="bzW-1j-YrB"/>
+                <outlet property="btnWid" destination="58D-Ca-Fd8" id="w40-jA-hMo"/>
                 <outlet property="leftTitleLabel" destination="KYO-wp-ZKS" id="z0V-qn-eM1"/>
                 <outlet property="redPointLabel" destination="Nhz-HO-PnX" id="qcx-cl-LMn"/>
                 <outlet property="textfield" destination="HPg-F5-54I" id="IYy-cM-5UX"/>
+                <outlet property="toBtnMargin" destination="R8t-2r-BwD" id="5Vc-vC-wfn"/>
             </connections>
             <point key="canvasLocation" x="139" y="21"/>
         </tableViewCell>

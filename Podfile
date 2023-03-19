@@ -57,9 +57,13 @@ target 'CoolBox' do
   pod 'MMKV'
   pod 'Qiniu'
   
+  pod "McPicker"
+  
   
   # 界面调试
   pod 'LookinServer', :configurations => ['Debug']
+  
+  
 
 
 end

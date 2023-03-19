@@ -56,7 +56,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="leftAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="R2J-Ay-or0"/>
                         <action selector="rightAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="360-jb-AYn"/>
                     </connections>
                 </button>

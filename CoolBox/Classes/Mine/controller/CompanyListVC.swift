@@ -30,6 +30,11 @@ class CompanyListVC: EViewController, PresentToCenter {
         return footerView
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCompanylist()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,12 +56,10 @@ class CompanyListVC: EViewController, PresentToCenter {
         
         bottomContentView.bottomType = .companyList
         bottomContentView.leftBlock = { [weak self] in
-            //TODO:加入组织
             self?.clickJoinCompany()
-            
         }
         bottomContentView.rightBlock = { [weak self] in
-            //TODO:创建组织
+            self?.push(CreateVC(.createCompany))
         }
         bottomView.addSubview(bottomContentView)
         bottomContentView.snp.makeConstraints { make in
@@ -64,15 +67,13 @@ class CompanyListVC: EViewController, PresentToCenter {
             make.height.equalTo(76)
         }
         
-        
         view.addSubview(footerView)
         footerView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.height.equalTo(36)
             make.bottom.equalTo(bottomView.snp.top)
         }
-        
-        getCompanylist()
+       
     }
     
     func getCompanylist() {
@@ -101,7 +102,6 @@ extension CompanyListVC: UITableViewDelegate, UITableViewDataSource {
         return companyList.count
     }
     
-    // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companyList.count
     }
@@ -118,29 +118,9 @@ extension CompanyListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0:
-            switch indexPath.row {
-            case 0:
-                pushToWebView(UserAreegemnt)
-            case 1:
-                pushToWebView(PrivacyPlice)
-            default:
-                break
-            }
-        case 1:
-            VersionCheckManager.checkVersion(appId: "1660515353") { equal in
-                DispatchQueue.main.async {
-                    if !equal {
-                        let str = "itms-apps://itunes.apple.com/app/id1660515353"
-                        guard let url = URL(string: str) else { return }
-                        UIApplication.shared.open(url)
-                    }else {
-                        EToast.showInfo("当前为最新版本")
-                    }
-                }
-            }
-        default: break
+        let c = companyList[indexPath.row]
+        MineApi.setDefaultCompany(cid: c.companyId) { _ in
+            tableView.reloadData()
         }
     }
     
