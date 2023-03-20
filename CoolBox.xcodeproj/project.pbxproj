@@ -36,6 +36,10 @@
 		9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */; };
 		9658210929C5A85A0005C6AA /* AccountInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9658210829C5A85A0005C6AA /* AccountInfoVC.xib */; };
 		9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */; };
+		9690FC7E29C8983F008E88CF /* McPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7729C8983F008E88CF /* McPicker.swift */; };
+		9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */; };
+		9690FC8029C8983F008E88CF /* McTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7929C8983F008E88CF /* McTextField.swift */; };
+		9690FC8129C8983F008E88CF /* McPickerPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7A29C8983F008E88CF /* McPickerPopoverViewController.swift */; };
 		96A374DC29C3445500B4727C /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DB29C3445500B4727C /* AppAccount.swift */; };
 		96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DD29C34C1D00B4727C /* LoginVC.swift */; };
 		96A374E029C34C2700B4727C /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374DF29C34C2700B4727C /* LoginVC.xib */; };
@@ -182,6 +186,10 @@
 		9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoVC.swift; sourceTree = "<group>"; };
 		9658210829C5A85A0005C6AA /* AccountInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoVC.xib; sourceTree = "<group>"; };
 		9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingelInputAlert.swift; sourceTree = "<group>"; };
+		9690FC7729C8983F008E88CF /* McPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPicker.swift; sourceTree = "<group>"; };
+		9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPickerBarButtonItem.swift; sourceTree = "<group>"; };
+		9690FC7929C8983F008E88CF /* McTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McTextField.swift; sourceTree = "<group>"; };
+		9690FC7A29C8983F008E88CF /* McPickerPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPickerPopoverViewController.swift; sourceTree = "<group>"; };
 		96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolBox-Bridging-Header.h"; sourceTree = "<group>"; };
 		96A374DB29C3445500B4727C /* AppAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccount.swift; sourceTree = "<group>"; };
 		96A374DD29C34C1D00B4727C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -374,6 +382,33 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		9690FC7529C8983F008E88CF /* McPicker */ = {
+			isa = PBXGroup;
+			children = (
+				9690FC7629C8983F008E88CF /* Classes */,
+				9690FC7C29C8983F008E88CF /* Assets */,
+			);
+			path = McPicker;
+			sourceTree = "<group>";
+		};
+		9690FC7629C8983F008E88CF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9690FC7729C8983F008E88CF /* McPicker.swift */,
+				9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */,
+				9690FC7929C8983F008E88CF /* McTextField.swift */,
+				9690FC7A29C8983F008E88CF /* McPickerPopoverViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9690FC7C29C8983F008E88CF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		96A3749429C3423300B4727C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +590,7 @@
 		96AB703129C2088E00244F40 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9690FC7529C8983F008E88CF /* McPicker */,
 				96A374E929C36E7800B4727C /* EToast */,
 				96AB703329C2088E00244F40 /* Extension */,
 				96AB703A29C2088E00244F40 /* ImagePicker */,
@@ -1065,9 +1101,11 @@
 				965820FC29C570EE0005C6AA /* QRGeneratorTool.swift in Sources */,
 				96AB70FD29C208FA00244F40 /* ItemView.swift in Sources */,
 				96AB70BF29C2088E00244F40 /* Stack.swift in Sources */,
+				9690FC8129C8983F008E88CF /* McPickerPopoverViewController.swift in Sources */,
 				96AB70CE29C2088E00244F40 /* NavTransition.swift in Sources */,
 				96AB711229C210D100244F40 /* BXViewController.swift in Sources */,
 				96AB70E329C2088E00244F40 /* CircularProgressLayer.swift in Sources */,
+				9690FC7E29C8983F008E88CF /* McPicker.swift in Sources */,
 				961D173029C7066800853FCB /* CompanyInviteAlert.swift in Sources */,
 				96AB70EB29C2088E00244F40 /* UploadPhotoView.swift in Sources */,
 				96AB70CD29C2088E00244F40 /* InteractiveTransition.swift in Sources */,
@@ -1093,6 +1131,7 @@
 				96AB70D029C2088E00244F40 /* CountdownTool.swift in Sources */,
 				96AB702F29C2087A00244F40 /* ENetworking.swift in Sources */,
 				961D177E29C763E500853FCB /* CommonApi.swift in Sources */,
+				9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */,
 				96AB70EA29C2088E00244F40 /* ZoomingScrollView.swift in Sources */,
 				96AB711429C210DF00244F40 /* SPViewController.swift in Sources */,
 				96AB70F329C2088E00244F40 /* AppContansts.swift in Sources */,
@@ -1158,6 +1197,7 @@
 				96AB70E229C2088E00244F40 /* SelectAlert.swift in Sources */,
 				96AB709E29C2088E00244F40 /* EColor.swift in Sources */,
 				96AB70DE29C2088E00244F40 /* CropOverlayView.swift in Sources */,
+				9690FC8029C8983F008E88CF /* McTextField.swift in Sources */,
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
 				964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */,
 				964E71DF29C6EBCF00118D43 /* CompanyListVC.swift in Sources */,

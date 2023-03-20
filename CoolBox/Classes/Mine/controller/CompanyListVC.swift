@@ -73,7 +73,7 @@ class CompanyListVC: EViewController, PresentToCenter {
             make.height.equalTo(36)
             make.bottom.equalTo(bottomView.snp.top)
         }
-       
+        bottomContentView.bottomType = .joinCompany
     }
     
     func getCompanylist() {
@@ -82,6 +82,7 @@ class CompanyListVC: EViewController, PresentToCenter {
                 self?.companyList = listModel.list
                 self?.tableview.cyl_reloadData()
                 self?.footerView.isHidden = listModel.list.count == 0
+                self?.bottomContentView.bottomType = listModel.list.count == 0 ? .companyList : .joinCompany
             }
         }
     }

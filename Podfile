@@ -56,9 +56,7 @@ target 'CoolBox' do
   pod 'WechatOpenSDK'
   pod 'MMKV'
   pod 'Qiniu'
-  
-  pod "McPicker"
-  
+    
   
   # 界面调试
   pod 'LookinServer', :configurations => ['Debug']

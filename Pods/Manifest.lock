@@ -11,7 +11,6 @@ PODS:
     - LookinServer/Core (= 1.1.5)
   - LookinServer/Core (1.1.5)
   - MBProgressHUD (1.2.0)
-  - McPicker (3.0.0)
   - MJRefresh (3.7.5)
   - MMKV (1.2.15):
     - MMKVCore (~> 1.2.15)
@@ -43,7 +42,6 @@ DEPENDENCIES:
   - Kingfisher (~> 6.3.1)
   - LookinServer
   - MBProgressHUD
-  - McPicker
   - MJRefresh
   - MMKV
   - Moya
@@ -68,7 +66,6 @@ SPEC REPOS:
     - Kingfisher
     - LookinServer
     - MBProgressHUD
-    - McPicker
     - MJRefresh
     - MMKV
     - MMKVCore
@@ -101,7 +98,6 @@ SPEC CHECKSUMS:
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   LookinServer: 2893f2bae53cbf3fd49bbe1a8ea1745582ef1317
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  McPicker: ba38be56a8194faa5249eca4226c364eed628044
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MMKV: 7f34558bbb5a33b0eaefae2de4b6a20a2ffdad6f
   MMKVCore: ddf41b9d9262f058419f9ba7598719af56c02cd3
@@ -115,6 +111,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
   WechatOpenSDK: e79349b37d44c015210f39fd6d2379f0ec60efe2
 
-PODFILE CHECKSUM: 9d6d0fbcae6444b01aa59f66ff9f49c18037a914
+PODFILE CHECKSUM: b74b8b21e05cc8a57509a22139b119e4124e9688
 
 COCOAPODS: 1.12.0

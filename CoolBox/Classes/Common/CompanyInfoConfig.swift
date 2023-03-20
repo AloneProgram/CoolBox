@@ -26,7 +26,7 @@ struct CompanyInfoModel {
     var children: [CompanyInfoModel] = []
     
     init(_ json: JSON) {
-        id = json["json"].stringValue
+        id = json["id"].stringValue
         name = json["name"].stringValue
         children = json["children"].arrayValue.map({CompanyInfoModel($0)})
     }

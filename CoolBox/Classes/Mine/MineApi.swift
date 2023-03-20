@@ -33,6 +33,9 @@ fileprivate enum ApiTarget: ETargetType {
     //设置默认企业
     case setDefaultCompamny(cId: String)
 
+    //创建企业
+    case createCompany(_ params: [String: Any])
+    
     var path: String {
         switch self {
         case .getUserInfo:       return "/api/user/userInfo"
@@ -43,6 +46,7 @@ fileprivate enum ApiTarget: ETargetType {
         case .scaneLogin:       return "/api/user/scanLogin"
         case .invoiceTitleList:     return "/api/invoice/config"
         case .setDefaultCompamny:   return "/api/user/setUserSetting"
+        case .createCompany:        return "/api/company/createCompany"
         }
     }
     
@@ -70,6 +74,8 @@ fileprivate enum ApiTarget: ETargetType {
             return [
                 "c_id": cId
             ]
+        case .createCompany(let params):
+            return params
         default: return nil
         }
     }
@@ -173,4 +179,16 @@ struct MineApi {
         }
     }
     
+    static func createCompany(params: [String: Any], result: @escaping (Bool)->Void) {
+        let target = ApiTarget.createCompany(params)
+        ENetworking.request(target, success: { (json) in
+            EToast.showSuccess("组织创建成功")
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    
+   
 }

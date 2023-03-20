@@ -7,8 +7,6 @@
 
 import UIKit
 
-@_exported import McPicker
-
 enum CreateType {
     //创建组织
     case createCompany
@@ -83,6 +81,9 @@ class CreateVC: EViewController {
     
     var list: [[CommonInputModel]] = []
     
+    var industryType = ""
+    var staffType = ""
+    
     init(_ type: CreateType) {
         self.type = type
         super.init(nibName: nil, bundle: nil)
@@ -130,15 +131,22 @@ class CreateVC: EViewController {
             saveMember()
         }
     }
-    
-    
-    
 }
 
 //MARK: Request
 extension CreateVC {
     func createCompanyRequest() {
-        
+        let params: [String : Any] = [
+            "name": list[0][0].tfText,
+            "industry_type": industryType,
+            "staff_count_type": staffType,
+            "contacts_name": list[1][0].tfText,
+            "contacts_mobile": list[1][1].tfText,
+            "contacts_email": list[1][2].tfText
+            ]
+        MineApi.createCompany(params: params) {[weak self] success in
+            self?.popViewController()
+        }
     }
     
     func saveDepart() {
@@ -152,7 +160,12 @@ extension CreateVC {
     func getInvoiceTitleList() {
         MineApi.getInvoiceTitleList { list in
             if list.count > 0 {
-                let picker = McPicker(data: [list])
+                var tmp: [[String]] = []
+                list.forEach { str in
+                    let t = [str]
+                    tmp.append(t)
+                }
+                let picker = McPicker(data: [tmp])
                 picker.fontSize = 16
                 picker.toolbarBarTintColor = .white
                 let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 16)
@@ -160,9 +173,9 @@ extension CreateVC {
                 let fireButton = McPickerBarButtonItem.done(mcPicker: picker, title: "确定") // Set custom Text
                 let cancelButton = McPickerBarButtonItem.cancel(mcPicker: picker, title: "取消", barButtonSystemItem: .cancel) // or system items
                 picker.setToolbarItems(items: [fixedSpace, cancelButton, flexibleSpace, fireButton, fixedSpace])
-                picker.show(doneHandler: { [weak self] (selections: [Int:String]) in
-                    if let name = selections[0] {
-                        self?.list[0][0].tfText = name
+                picker.show(doneHandler: { [weak self] (selections: [Int: String]) in
+                    if let text = selections.values.first {
+                        self?.list[0][0].tfText = text
                         self?.tableVIew.reloadData()
                     }
                 })
@@ -186,15 +199,78 @@ extension CreateVC {
     
     func selectIndustry() {
         guard let config = GlobalConfigManager.shared.companyInfoConfig else { return}
-        var list: [[String]] = []
-        config.industryList.forEach { industry in
-            
+       
+        var firstC: [[String]] = []
+        var secondC: [[String]] = []
+        config.industryList.forEach { info in
+            firstC.append([info.name])
+            var temp: [String] = []
+            info.children.forEach { obj in
+                temp.append(obj.name)
+            }
+            secondC.append(temp)
         }
-        
+        let list = [firstC, secondC]
+        let picker = McPicker(data: list)
+        picker.fontSize = 16
+        picker.toolbarBarTintColor = .white
+        let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 16)
+        let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
+        let fireButton = McPickerBarButtonItem.done(mcPicker: picker, title: "确定") // Set custom Text
+        let cancelButton = McPickerBarButtonItem.cancel(mcPicker: picker, title: "取消", barButtonSystemItem: .cancel) // or system items
+        picker.setToolbarItems(items: [fixedSpace, cancelButton, flexibleSpace, fireButton, fixedSpace])
+        picker.show(doneHandler: { [weak self] (selections: [Int: String]) in
+            if selections.values.count == 1 {
+                self?.list[0][1].tfText = selections[0] ?? ""
+                config.industryList.forEach { info in
+                    if info.name ==  self?.list[0][1].tfText  {
+                        self?.industryType = info.id
+                    }
+                }
+            }else {
+                self?.list[0][1].tfText = selections[1] ?? ""
+                config.industryList.forEach { info in
+                    if info.name == selections[0] ?? ""  {
+                        info.children.forEach { obj in
+                            if obj.name ==  selections[1] ?? "" {
+                                self?.industryType = obj.id
+                            }
+                        }
+                    }
+                }
+            }
+            self?.tableVIew.reloadData()
+        })
+
     }
     
     func selectStaffType() {
         guard let config = GlobalConfigManager.shared.companyInfoConfig else { return}
+        
+        var tmp: [[String]] = []
+        config.staffTypeList.forEach { staff in
+            let t = [staff.name]
+            tmp.append(t)
+        }
+        let picker = McPicker(data: [tmp])
+        picker.fontSize = 16
+        picker.toolbarBarTintColor = .white
+        let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 16)
+        let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
+        let fireButton = McPickerBarButtonItem.done(mcPicker: picker, title: "确定") // Set custom Text
+        let cancelButton = McPickerBarButtonItem.cancel(mcPicker: picker, title: "取消", barButtonSystemItem: .cancel) // or system items
+        picker.setToolbarItems(items: [fixedSpace, cancelButton, flexibleSpace, fireButton, fixedSpace])
+        picker.show(doneHandler: { [weak self] (selections: [Int: String]) in
+            if let text = selections.values.first {
+                self?.list[0][2].tfText = text
+                config.staffTypeList.forEach { info in
+                    if info.name == text  {
+                        self?.staffType = info.id
+                    }
+                }
+            }
+            self?.tableVIew.reloadData()
+        })
     }
 }
 
@@ -215,6 +291,7 @@ extension CreateVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.bindInputModel(list[indexPath.section][indexPath.row])
         cell.clickBtnBlock = { [weak self] in
+            self?.view.endEditing(true)
             self?.fromTitleImport()
         }
         cell.textEndEditBlock = {  [weak self] text in
