@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ML_MemberCell" customModule="CoolBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99E-VI-h47">
+                        <rect key="frame" x="16" y="16" width="20" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Dr4-iQ-5hj"/>
+                            <constraint firstAttribute="width" constant="20" id="lBR-HV-dvr"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="ic_member_unselected"/>
+                        <state key="selected" image="ic_member_selected"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-Ag-SoB">
+                        <rect key="frame" x="44" y="17" width="40" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.12941176470588234" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztg-SL-UIr" customClass="PaddingLabel" customModule="CoolBox" customModuleProvider="target">
+                        <rect key="frame" x="94" y="16.666666666666668" width="42" height="21.000000000000004"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-MM-FSZ">
+                        <rect key="frame" x="283" y="18.666666666666668" width="77" height="17.000000000000004"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title=" 邀请加入" image="icon_share">
+                            <color key="titleColor" red="0.086274509799999996" green="0.36470588240000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="inviteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rU3-4w-25d"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="99E-VI-h47" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3kR-FG-RVQ"/>
+                    <constraint firstItem="99E-VI-h47" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6bK-ob-PPH"/>
+                    <constraint firstAttribute="trailing" secondItem="EA9-MM-FSZ" secondAttribute="trailing" constant="15" id="7bu-IJ-FEo"/>
+                    <constraint firstItem="AFI-Ag-SoB" firstAttribute="leading" secondItem="99E-VI-h47" secondAttribute="trailing" constant="8" id="8Hb-8F-i0J"/>
+                    <constraint firstItem="AFI-Ag-SoB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="8PE-Gi-ASr"/>
+                    <constraint firstItem="99E-VI-h47" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CSl-Qg-ZP6"/>
+                    <constraint firstItem="ztg-SL-UIr" firstAttribute="centerY" secondItem="AFI-Ag-SoB" secondAttribute="centerY" id="DfK-wm-HLm"/>
+                    <constraint firstItem="ztg-SL-UIr" firstAttribute="leading" secondItem="AFI-Ag-SoB" secondAttribute="trailing" constant="10" id="UBW-yX-SUL"/>
+                    <constraint firstItem="EA9-MM-FSZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="muY-pX-qC4"/>
+                    <constraint firstItem="AFI-Ag-SoB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uCn-a0-K2P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="inviteBtn" destination="EA9-MM-FSZ" id="Pmv-W4-oyD"/>
+                <outlet property="leftMargin" destination="CSl-Qg-ZP6" id="xwQ-nV-co4"/>
+                <outlet property="nameLabel" destination="AFI-Ag-SoB" id="gH9-Gf-Vzq"/>
+                <outlet property="nameLeftMargin" destination="8Hb-8F-i0J" id="vHM-5o-sny"/>
+                <outlet property="seelctWid" destination="lBR-HV-dvr" id="OUf-Ix-KRv"/>
+                <outlet property="selectBtn" destination="99E-VI-h47" id="K2r-8a-C2Z"/>
+                <outlet property="statusLabel" destination="ztg-SL-UIr" id="flb-RA-vMb"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_member_selected" width="20" height="20"/>
+        <image name="ic_member_unselected" width="20" height="20"/>
+        <image name="icon_share" width="16" height="16"/>
+    </resources>
+</document>

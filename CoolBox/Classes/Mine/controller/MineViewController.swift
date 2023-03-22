@@ -127,7 +127,7 @@ extension MineViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 push(CompanyListVC())
             default:
-                break
+                push(MemberListVC())
             }
         case 2:
             switch indexPath.row {

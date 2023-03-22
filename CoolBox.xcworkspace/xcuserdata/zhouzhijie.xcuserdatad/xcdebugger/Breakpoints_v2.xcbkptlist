@@ -16,53 +16,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA28BC38-4804-4C5F-91A5-3527B7E11F7D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoolBox/Classes/Mine/controller/CreateVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "selectIndustry()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DA28BC38-4804-4C5F-91A5-3527B7E11F7D - 3c55a9480d9a764a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Dictionary&lt;Swift.Int, Swift.String&gt;) -&gt; () in CoolBox.CreateVC.selectIndustry() -&gt; ()"
-                  moduleName = "CoolBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhouzhijie/CoolBox/CoolBox/Classes/Mine/controller/CreateVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "225"
-                  endingLineNumber = "225"
-                  offsetFromSymbolStart = "684">
-               </Location>
-               <Location
-                  uuid = "DA28BC38-4804-4C5F-91A5-3527B7E11F7D - 6c59b0d7f9632689"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (CoolBox.CompanyInfoModel) -&gt; () in closure #2 (Swift.Dictionary&lt;Swift.Int, Swift.String&gt;) -&gt; () in CoolBox.CreateVC.selectIndustry() -&gt; ()"
-                  moduleName = "CoolBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhouzhijie/CoolBox/CoolBox/Classes/Mine/controller/CreateVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "222"
-                  endingLineNumber = "222"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

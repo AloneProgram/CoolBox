@@ -17,14 +17,13 @@ enum BaseHeightBottomType {
     //添加成员
     case addMember
     
-    //选择审批人
-    case selctShenpi
+ 
     
     var leftTitle: String {
         switch self {
         case .companyList, .joinCompany:
             return "加入组织"
-        case .addMember, .selctShenpi:
+        case .addMember:
             return "添加部门"
         }
     }
@@ -33,7 +32,7 @@ enum BaseHeightBottomType {
         switch self {
         case .companyList:
             return "创建组织"
-        case .addMember, .selctShenpi:
+        case .addMember:
             return "添加成员"
         default:
             return ""

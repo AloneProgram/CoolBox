@@ -36,6 +36,12 @@ fileprivate enum ApiTarget: ETargetType {
     //创建企业
     case createCompany(_ params: [String: Any])
     
+    //部门列表
+    case departmentList(cId: String)
+    
+    //成员列表
+    case memberList(cId: String, mobile: String, name: String)
+    
     var path: String {
         switch self {
         case .getUserInfo:       return "/api/user/userInfo"
@@ -47,6 +53,8 @@ fileprivate enum ApiTarget: ETargetType {
         case .invoiceTitleList:     return "/api/invoice/config"
         case .setDefaultCompamny:   return "/api/user/setUserSetting"
         case .createCompany:        return "/api/company/createCompany"
+        case .departmentList:       return "/api/company/departmentList"
+        case .memberList:       return "/api/company/memberList"
         }
     }
     
@@ -76,6 +84,18 @@ fileprivate enum ApiTarget: ETargetType {
             ]
         case .createCompany(let params):
             return params
+        case .departmentList(let cId):
+            return [
+                "c_id": cId
+            ]
+        case .memberList(let cId, let mobile, let name):
+            return [
+                "c_id": cId,
+                "mobili": mobile,
+                "name": name,
+                "page": 1,
+                "page_size": 10000
+            ]
         default: return nil
         }
     }
@@ -96,13 +116,8 @@ struct MineApi {
             //仅更新部分资料
             let currentAcount = Login.currentAccount()
             let newInfo = Account(fromJson: json)
-            currentAcount.email = newInfo.email
-            currentAcount.username = newInfo.username
-            currentAcount.nickname = newInfo.nickname
-            currentAcount.avatarUrl = newInfo.avatarUrl
-            currentAcount.mobile = newInfo.mobile
-            currentAcount.type = newInfo.type
-            Login.update(account: currentAcount)
+            newInfo.token = currentAcount.token
+            Login.update(account: newInfo)
             result(true)
         }) { (err, json) in
             result(false)
@@ -189,6 +204,24 @@ struct MineApi {
         }
     }
     
+    static func requestDepartmentList(cid: String, result: @escaping (DepartmentListModel)->Void) {
+        let target = ApiTarget.departmentList(cId: cid)
+        ENetworking.request(target, success: { (json) in
+            let list = DepartmentListModel(fromJson: json)
+            result(list)
+        }) { (err, json) in
+            
+        }
+    }
     
+    static func requestMemeberList(cid: String, mobile: String = "", name: String = "", result: @escaping (MemeberListModel)->Void) {
+        let target = ApiTarget.memberList(cId: cid, mobile: mobile, name: name)
+        ENetworking.request(target, success: { (json) in
+            let list = MemeberListModel(fromJson: json)
+            result(list)
+        }) { (err, json) in
+            
+        }
+    }
    
 }

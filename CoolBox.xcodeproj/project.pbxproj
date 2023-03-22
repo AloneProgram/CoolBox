@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960F342C29CB3BBC000149A2 /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342529CB3BBC000149A2 /* ZJDefaultCell.swift */; };
+		960F342D29CB3BBC000149A2 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342629CB3BBC000149A2 /* ZJTableViewSection.swift */; };
+		960F342E29CB3BBD000149A2 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342729CB3BBC000149A2 /* ZJProtocol.swift */; };
+		960F342F29CB3BBD000149A2 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342829CB3BBC000149A2 /* ZJTableViewItem.swift */; };
+		960F343029CB3BBD000149A2 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342929CB3BBC000149A2 /* ZJTableViewManager.swift */; };
+		960F343129CB3BBD000149A2 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342B29CB3BBC000149A2 /* ZJExpandTreeCellItem.swift */; };
+		960F343429CB3C77000149A2 /* ML_DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F343229CB3C77000149A2 /* ML_DepartmentCell.swift */; };
+		960F343529CB3C77000149A2 /* ML_DepartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F343329CB3C77000149A2 /* ML_DepartmentCell.xib */; };
+		960F343829CB3C87000149A2 /* ML_MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F343629CB3C87000149A2 /* ML_MemberCell.swift */; };
+		960F343929CB3C87000149A2 /* ML_MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F343729CB3C87000149A2 /* ML_MemberCell.xib */; };
+		960F343C29CB61AC000149A2 /* SelectDepartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F343A29CB61AC000149A2 /* SelectDepartVC.swift */; };
+		960F343D29CB61AC000149A2 /* SelectDepartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F343B29CB61AC000149A2 /* SelectDepartVC.xib */; };
 		961D173029C7066800853FCB /* CompanyInviteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D172F29C7066800853FCB /* CompanyInviteAlert.swift */; };
 		961D173329C70B8000853FCB /* CommonInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173129C70B8000853FCB /* CommonInputCell.swift */; };
 		961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173229C70B8000853FCB /* CommonInputCell.xib */; };
@@ -36,6 +48,10 @@
 		9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */; };
 		9658210929C5A85A0005C6AA /* AccountInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9658210829C5A85A0005C6AA /* AccountInfoVC.xib */; };
 		9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */; };
+		9690147229CB2F40008E88CF /* DepartmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147129CB2F40008E88CF /* DepartmentListModel.swift */; };
+		9690147429CB3085008E88CF /* MemeberListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147329CB3085008E88CF /* MemeberListModel.swift */; };
+		9690147729CB3206008E88CF /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147529CB3206008E88CF /* MemberListVC.swift */; };
+		9690147829CB3206008E88CF /* MemberListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9690147629CB3206008E88CF /* MemberListVC.xib */; };
 		9690FC7E29C8983F008E88CF /* McPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7729C8983F008E88CF /* McPicker.swift */; };
 		9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */; };
 		9690FC8029C8983F008E88CF /* McTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7929C8983F008E88CF /* McTextField.swift */; };
@@ -157,6 +173,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960F342529CB3BBC000149A2 /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
+		960F342629CB3BBC000149A2 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
+		960F342729CB3BBC000149A2 /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
+		960F342829CB3BBC000149A2 /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
+		960F342929CB3BBC000149A2 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
+		960F342B29CB3BBC000149A2 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
+		960F343229CB3C77000149A2 /* ML_DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_DepartmentCell.swift; sourceTree = "<group>"; };
+		960F343329CB3C77000149A2 /* ML_DepartmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ML_DepartmentCell.xib; sourceTree = "<group>"; };
+		960F343629CB3C87000149A2 /* ML_MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_MemberCell.swift; sourceTree = "<group>"; };
+		960F343729CB3C87000149A2 /* ML_MemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ML_MemberCell.xib; sourceTree = "<group>"; };
+		960F343A29CB61AC000149A2 /* SelectDepartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartVC.swift; sourceTree = "<group>"; };
+		960F343B29CB61AC000149A2 /* SelectDepartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDepartVC.xib; sourceTree = "<group>"; };
 		961D172F29C7066800853FCB /* CompanyInviteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInviteAlert.swift; sourceTree = "<group>"; };
 		961D173129C70B8000853FCB /* CommonInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputCell.swift; sourceTree = "<group>"; };
 		961D173229C70B8000853FCB /* CommonInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInputCell.xib; sourceTree = "<group>"; };
@@ -186,6 +214,10 @@
 		9658210629C5A5BE0005C6AA /* AccountInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoVC.swift; sourceTree = "<group>"; };
 		9658210829C5A85A0005C6AA /* AccountInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoVC.xib; sourceTree = "<group>"; };
 		9658210B29C5B4AF0005C6AA /* SingelInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingelInputAlert.swift; sourceTree = "<group>"; };
+		9690147129CB2F40008E88CF /* DepartmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListModel.swift; sourceTree = "<group>"; };
+		9690147329CB3085008E88CF /* MemeberListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeberListModel.swift; sourceTree = "<group>"; };
+		9690147529CB3206008E88CF /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
+		9690147629CB3206008E88CF /* MemberListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListVC.xib; sourceTree = "<group>"; };
 		9690FC7729C8983F008E88CF /* McPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPicker.swift; sourceTree = "<group>"; };
 		9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPickerBarButtonItem.swift; sourceTree = "<group>"; };
 		9690FC7929C8983F008E88CF /* McTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McTextField.swift; sourceTree = "<group>"; };
@@ -330,6 +362,35 @@
 				A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		960F342329CB3BBC000149A2 /* ZJTableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				960F342429CB3BBC000149A2 /* Core */,
+				960F342A29CB3BBC000149A2 /* Other */,
+			);
+			path = ZJTableViewManager;
+			sourceTree = "<group>";
+		};
+		960F342429CB3BBC000149A2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				960F342529CB3BBC000149A2 /* ZJDefaultCell.swift */,
+				960F342629CB3BBC000149A2 /* ZJTableViewSection.swift */,
+				960F342729CB3BBC000149A2 /* ZJProtocol.swift */,
+				960F342829CB3BBC000149A2 /* ZJTableViewItem.swift */,
+				960F342929CB3BBC000149A2 /* ZJTableViewManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		960F342A29CB3BBC000149A2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				960F342B29CB3BBC000149A2 /* ZJExpandTreeCellItem.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		961D177F29C7646B00853FCB /* Common */ = {
@@ -663,6 +724,7 @@
 		96AB705929C2088E00244F40 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				960F342329CB3BBC000149A2 /* ZJTableViewManager */,
 				965820F829C570EE0005C6AA /* QRScaner */,
 				96AB705A29C2088E00244F40 /* Stack.swift */,
 				96AB705B29C2088E00244F40 /* BGWaterfallsFlowView */,
@@ -917,6 +979,10 @@
 			children = (
 				96A3757D29C56DF700B4727C /* MineHeadView.swift */,
 				96A3757E29C56DF700B4727C /* MineHeadView.xib */,
+				960F343229CB3C77000149A2 /* ML_DepartmentCell.swift */,
+				960F343329CB3C77000149A2 /* ML_DepartmentCell.xib */,
+				960F343629CB3C87000149A2 /* ML_MemberCell.swift */,
+				960F343729CB3C87000149A2 /* ML_MemberCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -925,6 +991,8 @@
 			isa = PBXGroup;
 			children = (
 				9658210429C5A1410005C6AA /* CompanyListModel.swift */,
+				9690147129CB2F40008E88CF /* DepartmentListModel.swift */,
+				9690147329CB3085008E88CF /* MemeberListModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -941,6 +1009,10 @@
 				964E71DE29C6EBCF00118D43 /* CompanyListVC.xib */,
 				961D173529C738C300853FCB /* CreateVC.swift */,
 				961D173629C738C300853FCB /* CreateVC.xib */,
+				9690147529CB3206008E88CF /* MemberListVC.swift */,
+				9690147629CB3206008E88CF /* MemberListVC.xib */,
+				960F343A29CB61AC000149A2 /* SelectDepartVC.swift */,
+				960F343B29CB61AC000149A2 /* SelectDepartVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1014,6 +1086,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960F343529CB3C77000149A2 /* ML_DepartmentCell.xib in Resources */,
 				96AB70C329C2088E00244F40 /* grayArrow.png in Resources */,
 				96AB70F129C2088E00244F40 /* PhotoAlbumSelectView.xib in Resources */,
 				96AB70C229C2088E00244F40 /* blueArrow@2x.png in Resources */,
@@ -1031,6 +1104,7 @@
 				961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */,
 				96AB70C829C2088E00244F40 /* grayArrow@2x.png in Resources */,
 				96A3758529C5702F00B4727C /* CommonInfoCell.xib in Resources */,
+				960F343929CB3C87000149A2 /* ML_MemberCell.xib in Resources */,
 				964E71D429C5F44D00118D43 /* TwoInpuAlertView.xib in Resources */,
 				96AB70F029C2088E00244F40 /* PhotoAlbum.storyboard in Resources */,
 				96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */,
@@ -1038,6 +1112,8 @@
 				964E71E029C6EBCF00118D43 /* CompanyListVC.xib in Resources */,
 				96AB70C129C2088E00244F40 /* blackArrow.png in Resources */,
 				964E71DC29C6BC6A00118D43 /* AboutVC.xib in Resources */,
+				9690147829CB3206008E88CF /* MemberListVC.xib in Resources */,
+				960F343D29CB61AC000149A2 /* SelectDepartVC.xib in Resources */,
 				96AB70F229C2088E00244F40 /* PhotoAlbumSelectCell.xib in Resources */,
 				96AB70C729C2088E00244F40 /* blueArrow.png in Resources */,
 				96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */,
@@ -1101,6 +1177,7 @@
 				965820FC29C570EE0005C6AA /* QRGeneratorTool.swift in Sources */,
 				96AB70FD29C208FA00244F40 /* ItemView.swift in Sources */,
 				96AB70BF29C2088E00244F40 /* Stack.swift in Sources */,
+				960F342E29CB3BBD000149A2 /* ZJProtocol.swift in Sources */,
 				9690FC8129C8983F008E88CF /* McPickerPopoverViewController.swift in Sources */,
 				96AB70CE29C2088E00244F40 /* NavTransition.swift in Sources */,
 				96AB711229C210D100244F40 /* BXViewController.swift in Sources */,
@@ -1130,6 +1207,7 @@
 				96AB70A329C2088E00244F40 /* String+Hashes.swift in Sources */,
 				96AB70D029C2088E00244F40 /* CountdownTool.swift in Sources */,
 				96AB702F29C2087A00244F40 /* ENetworking.swift in Sources */,
+				960F342D29CB3BBC000149A2 /* ZJTableViewSection.swift in Sources */,
 				961D177E29C763E500853FCB /* CommonApi.swift in Sources */,
 				9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */,
 				96AB70EA29C2088E00244F40 /* ZoomingScrollView.swift in Sources */,
@@ -1139,6 +1217,7 @@
 				96AB70D829C2088E00244F40 /* PhotoAlbumSelectView.swift in Sources */,
 				96AB70AD29C2088E00244F40 /* ETextView.swift in Sources */,
 				96AB70A429C2088E00244F40 /* YTImagePicker.swift in Sources */,
+				960F343C29CB61AC000149A2 /* SelectDepartVC.swift in Sources */,
 				96AB70DC29C2088E00244F40 /* PhotoAlbumCell.swift in Sources */,
 				965820FD29C570EE0005C6AA /* QRScanViewController.swift in Sources */,
 				96AB70FE29C208FA00244F40 /* PrivacyProtocolAlert.swift in Sources */,
@@ -1150,17 +1229,21 @@
 				96AB70BE29C2088E00244F40 /* BaseSegementSubVC.swift in Sources */,
 				964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */,
 				96AB70D929C2088E00244F40 /* RightImageButton.swift in Sources */,
+				9690147229CB2F40008E88CF /* DepartmentListModel.swift in Sources */,
 				96AB70B329C2088E00244F40 /* BaseTabBarController.swift in Sources */,
 				96AB70A129C2088E00244F40 /* SwiftExtension.swift in Sources */,
 				961D178129C7649E00853FCB /* GlobalConfigManager.swift in Sources */,
 				96A374E229C35A1900B4727C /* LoginApi.swift in Sources */,
+				960F343829CB3C87000149A2 /* ML_MemberCell.swift in Sources */,
 				96AB70BC29C2088E00244F40 /* CusSlideView.swift in Sources */,
+				960F343029CB3BBD000149A2 /* ZJTableViewManager.swift in Sources */,
 				96AB70BD29C2088E00244F40 /* EViewController.swift in Sources */,
 				96AB709F29C2088E00244F40 /* EButton.swift in Sources */,
 				96AB711029C210BA00244F40 /* FPViewController.swift in Sources */,
 				961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */,
 				96AB702B29C2087A00244F40 /* DataBase.swift in Sources */,
 				96AB70D529C2088E00244F40 /* OrderedDictionary.swift in Sources */,
+				9690147729CB3206008E88CF /* MemberListVC.swift in Sources */,
 				9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */,
 				96AB710129C208FA00244F40 /* GuidVC.swift in Sources */,
 				96AB70B729C2088E00244F40 /* ViewControllerAdapt.swift in Sources */,
@@ -1174,6 +1257,7 @@
 				96AB70AF29C2088E00244F40 /* CustomAlert.swift in Sources */,
 				9658210529C5A1420005C6AA /* CompanyListModel.swift in Sources */,
 				961D173729C738C300853FCB /* CreateVC.swift in Sources */,
+				960F343129CB3BBD000149A2 /* ZJExpandTreeCellItem.swift in Sources */,
 				96A3757F29C56DF700B4727C /* MineHeadView.swift in Sources */,
 				96AB70AA29C2088E00244F40 /* ProtocolLab.swift in Sources */,
 				96AB70AE29C2088E00244F40 /* PresentCenterVC.swift in Sources */,
@@ -1192,6 +1276,7 @@
 				9658210029C5721D0005C6AA /* CommonInfoModel.swift in Sources */,
 				96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */,
 				96AB70BA29C2088E00244F40 /* WebViewController.swift in Sources */,
+				960F343429CB3C77000149A2 /* ML_DepartmentCell.swift in Sources */,
 				964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */,
 				96A3758429C5702F00B4727C /* CommonInfoCell.swift in Sources */,
 				96AB70E229C2088E00244F40 /* SelectAlert.swift in Sources */,
@@ -1201,6 +1286,8 @@
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
 				964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */,
 				964E71DF29C6EBCF00118D43 /* CompanyListVC.swift in Sources */,
+				960F342C29CB3BBC000149A2 /* ZJDefaultCell.swift in Sources */,
+				9690147429CB3085008E88CF /* MemeberListModel.swift in Sources */,
 				96AB70A629C2088E00244F40 /* PresentBottomVC.swift in Sources */,
 				96AB70AC29C2088E00244F40 /* BlankMsgView.swift in Sources */,
 				96AB70E729C2088E00244F40 /* TapDetectingImageView.swift in Sources */,
@@ -1211,6 +1298,7 @@
 				96AB70CF29C2088E00244F40 /* Queue.swift in Sources */,
 				96AB70B029C2088E00244F40 /* ShareTool.swift in Sources */,
 				96A374DC29C3445500B4727C /* AppAccount.swift in Sources */,
+				960F342F29CB3BBD000149A2 /* ZJTableViewItem.swift in Sources */,
 				96AB70ED29C2088E00244F40 /* UploadPhotoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

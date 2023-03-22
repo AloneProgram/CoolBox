@@ -45,14 +45,24 @@ enum CreateType {
             ]
         case .addDepart:
             return [
-                [],
-                [],
+                [
+                    CommonInputModel(leftText: "部门名称", tfPlaceHolder: "请输入部门名称"),
+                ],
+                [
+                    CommonInputModel(leftText: "上级部门", canInput: false, tfPlaceHolder: "请选择部门"),
+                ],
             ]
         case .addMemeber:
             return [
-                [],
-                [],
-                []
+                [
+                    CommonInputModel(leftText: "姓名", tfPlaceHolder: "请输入姓名"),
+                ],
+                [
+                    CommonInputModel(leftText: "手机号", tfPlaceHolder: "请输入手机号"),
+                ],
+                [
+                    CommonInputModel(leftText: "部门", canInput: false, tfPlaceHolder: "请选择部门"),
+                ],
             ]
         }
     }
@@ -316,9 +326,13 @@ extension CreateVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         case .addDepart:
-            break
+            if indexPath.section == 1 {
+                push(SelectDepartVC())
+            }
         case .addMemeber:
-            break
+            if indexPath.section == 2 {
+                push(SelectDepartVC())
+            }
         }
     }
     
