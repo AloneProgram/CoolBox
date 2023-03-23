@@ -8,9 +8,12 @@
 import UIKit
 
 class DepartmentCellItem: ZJExpandTreeCellItem {
-    var title: String?
+    var title = ""
     var d_Id = "0"
+    var pid = ""
     var isSelectDepartment = false
+    
+    var clickSelectBtnHandler: ((String, String, String) -> Void)?
 }
 
 
@@ -55,6 +58,7 @@ class ML_DepartmentCell: UITableViewCell, ZJCellProtocol {
     
     @IBAction func selectAction(_ sender: Any) {
         
+        item.clickSelectBtnHandler?(item.d_Id, item.pid, item.title)
     }
     
 }

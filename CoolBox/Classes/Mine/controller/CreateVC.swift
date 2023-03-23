@@ -94,6 +94,10 @@ class CreateVC: EViewController {
     var industryType = ""
     var staffType = ""
     
+    var departName = ""
+    var departId = ""
+    var pId = ""
+    
     init(_ type: CreateType) {
         self.type = type
         super.init(nibName: nil, bundle: nil)
@@ -160,11 +164,11 @@ extension CreateVC {
     }
     
     func saveDepart() {
-        
+        saveDepartRequest()
     }
     
     func saveMember() {
-        
+        saveMemeberRequest()
     }
     
     func getInvoiceTitleList() {
@@ -191,6 +195,25 @@ extension CreateVC {
                 })
             }else {
                 EToast.showInfo("暂无抬头信息")
+            }
+        }
+    }
+}
+ 
+//MARK: Request
+extension CreateVC {
+    func saveMemeberRequest() {
+        MineApi.addMemeber(cid: Login.currentAccount().companyId, did: departId, mobile: list[1][0].tfText, name: list[0][0].tfText) { [weak self] success in
+            if success {
+                self?.popViewController()
+            }
+        }
+    }
+    
+    func saveDepartRequest() {
+        MineApi.addDepart(cId: Login.currentAccount().companyId, pid: pId, name: list[0][0].tfText) { [weak self] success in
+            if success {
+                self?.popViewController()
             }
         }
     }
@@ -327,11 +350,27 @@ extension CreateVC: UITableViewDelegate, UITableViewDataSource {
             }
         case .addDepart:
             if indexPath.section == 1 {
-                push(SelectDepartVC())
+                let vc = SelectDepartVC()
+                vc.selectDepartBlock = {[weak self] id, pid, name in
+                    self?.departId = id
+                    self?.pId = pid
+                    self?.departName = name
+                    self?.list[1][0].tfText = name
+                    tableView.reloadData()
+                }
+                push(vc)
             }
         case .addMemeber:
             if indexPath.section == 2 {
-                push(SelectDepartVC())
+                let vc = SelectDepartVC()
+                vc.selectDepartBlock = {[weak self] id, pid, name in
+                    self?.departId = id
+                    self?.pId = pid
+                    self?.departName = name
+                    self?.list[2][0].tfText = name
+                    tableView.reloadData()
+                }
+                push(vc)
             }
         }
     }

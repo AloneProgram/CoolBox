@@ -59,6 +59,17 @@
                         <constraint firstItem="reC-SS-xam" firstAttribute="leading" secondItem="og2-tk-aKI" secondAttribute="leading" constant="16" id="Zb0-yz-Vde"/>
                         <constraint firstItem="reC-SS-xam" firstAttribute="top" secondItem="og2-tk-aKI" secondAttribute="top" constant="8" id="fRZ-1t-Kxl"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.1137254902" green="0.12941176469999999" blue="0.16078431369999999" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="cus_ShadowOffset">
+                            <size key="value" width="0.0" height="-3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

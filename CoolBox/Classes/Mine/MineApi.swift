@@ -42,6 +42,12 @@ fileprivate enum ApiTarget: ETargetType {
     //成员列表
     case memberList(cId: String, mobile: String, name: String)
     
+    //添加成员
+    case addmemeber(cid: String, did: String, mobile: String, name: String)
+    
+    //添加部门
+    case addDepart(cId: String, pid: String, name: String)
+    
     var path: String {
         switch self {
         case .getUserInfo:       return "/api/user/userInfo"
@@ -55,6 +61,8 @@ fileprivate enum ApiTarget: ETargetType {
         case .createCompany:        return "/api/company/createCompany"
         case .departmentList:       return "/api/company/departmentList"
         case .memberList:       return "/api/company/memberList"
+        case .addDepart:        return "/api/company/createDepartment"
+        case .addmemeber:       return "/api/company/createMember"
         }
     }
     
@@ -95,6 +103,19 @@ fileprivate enum ApiTarget: ETargetType {
                 "name": name,
                 "page": 1,
                 "page_size": 10000
+            ]
+        case .addDepart(let cid, let pid, let name):
+            return [
+                "parent_id": pid,
+                "name": name,
+                "c_id": cid
+            ]
+        case .addmemeber(let cid, let did, let mobile, let name):
+            return [
+                "department_id": did,
+                "c_id": cid,
+                "name": name,
+                "mobile": mobile
             ]
         default: return nil
         }
@@ -224,4 +245,23 @@ struct MineApi {
         }
     }
    
+    static func addDepart(cId: String, pid: String, name: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.addDepart(cId: cId, pid: pid, name: name)
+        ENetworking.request(target, success: { (json) in
+            EToast.showSuccess("创建部门成功")
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    static func addMemeber(cid: String, did: String, mobile: String, name: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.addmemeber(cid: cid, did: did, mobile: mobile, name: name)
+        ENetworking.request(target, success: { (json) in
+            EToast.showSuccess("添加成功")
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
 }

@@ -57,7 +57,7 @@ class MemberListVC: EViewController {
         view.backgroundColor = EColor.viewBgColor
         tableView.backgroundColor = .clear
         
-        let headView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 10))
+        let headView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 36))
         let lab = UILabel(text: "组织架构", font: Font(14), nColor: UIColor(hexString: "#939AA3"))
         headView.addSubview(lab)
         lab.snp.makeConstraints { make in
@@ -65,7 +65,7 @@ class MemberListVC: EViewController {
             make.centerY.equalToSuperview()
         }
         section.headerView = headView
-        section.headerHeight = 10
+        section.headerHeight = 36
         tableView.separatorStyle = .none
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(ML_DepartmentCell.self, DepartmentCellItem.self)
@@ -101,7 +101,7 @@ class MemberListVC: EViewController {
         
         //第一级固定为企业
         let item0 = DepartmentCellItem()
-        item0.title = memberList.first?.departmentName
+        item0.title = memberList.first?.departmentName ?? ""
         item0.d_Id = memberList.first?.departmentId ?? ""
         item0.isExpand = true
         item0.cellHeight = 47
