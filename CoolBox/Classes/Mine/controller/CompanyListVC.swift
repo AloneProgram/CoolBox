@@ -87,21 +87,24 @@ class CompanyListVC: EViewController, PresentToCenter {
         }
     }
     
-    
     func clickJoinCompany() {
-        let alert = CompanyInviteAlert(title: "组织邀请码", content: "需通过邀请链接，获取组织邀请码", placeText: "") { code in
-            //TODO: 通过邀请码加入组织
-        }
+        let alert = CompanyInviteAlert(title: "组织邀请码", content: "需通过邀请链接，获取组织邀请码", placeText: "", confirm:  { [weak self] code in
+            self?.joinCompany(code)
+        })
         
         presentToCenter(alert)
+    }
+    
+    func joinCompany(_ code: String) {
+        MineApi.joinCompany(code: code) { [weak self]success in
+            if success {
+                self?.getCompanylist()
+            }
+        }
     }
 }
 
 extension CompanyListVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return companyList.count
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companyList.count
@@ -120,8 +123,8 @@ extension CompanyListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let c = companyList[indexPath.row]
-        MineApi.setDefaultCompany(cid: c.companyId) { _ in
-            tableView.reloadData()
+        MineApi.setDefaultCompany(cid: c.companyId) { [weak self]_ in
+            self?.getCompanylist()
         }
     }
     

@@ -48,6 +48,9 @@ fileprivate enum ApiTarget: ETargetType {
     //添加部门
     case addDepart(cId: String, pid: String, name: String)
     
+    //加入组织
+    case joinCompany(code: String)
+    
     var path: String {
         switch self {
         case .getUserInfo:       return "/api/user/userInfo"
@@ -63,6 +66,7 @@ fileprivate enum ApiTarget: ETargetType {
         case .memberList:       return "/api/company/memberList"
         case .addDepart:        return "/api/company/createDepartment"
         case .addmemeber:       return "/api/company/createMember"
+        case .joinCompany:      return "/api/user/joinCompany"
         }
     }
     
@@ -116,6 +120,11 @@ fileprivate enum ApiTarget: ETargetType {
                 "c_id": cid,
                 "name": name,
                 "mobile": mobile
+            ]
+        case .joinCompany(let code):
+            return [
+                "invitation": code,
+                "type": 2
             ]
         default: return nil
         }
@@ -259,6 +268,16 @@ struct MineApi {
         let target = ApiTarget.addmemeber(cid: cid, did: did, mobile: mobile, name: name)
         ENetworking.request(target, success: { (json) in
             EToast.showSuccess("添加成功")
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    static func joinCompany(code: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.joinCompany(code: code)
+        ENetworking.request(target, success: { (json) in
+            EToast.showSuccess("加入组织成功")
             result(true)
         }) { (err, json) in
             

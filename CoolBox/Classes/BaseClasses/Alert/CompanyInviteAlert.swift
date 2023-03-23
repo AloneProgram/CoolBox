@@ -31,10 +31,10 @@ class CompanyInviteAlert: PresentCenterVC {
     //是否是单个按钮
     private var isSingle = false
     
-    private var confirmClosure: ((String?) -> Void)?
+    private var confirmClosure: ((String) -> Void)?
     private var cancleClosure: (() -> Void)?
     
-    init(title: String = "提示", content: String, placeText: String? = "", cancleTitle: String = "取消", confirmTitle: String = "确定", single: Bool = false, cancle: (() -> Void)? = nil, confirm: ((String?) -> Void)? = nil) {
+    init(title: String = "提示", content: String, placeText: String? = "", cancleTitle: String = "取消", confirmTitle: String = "确定", single: Bool = false, cancle: (() -> Void)? = nil, confirm: ((String) -> Void)? = nil) {
         titleStr = title
         contentStr = content
         placeStr = placeText ?? ""
@@ -64,7 +64,11 @@ class CompanyInviteAlert: PresentCenterVC {
             cancleClosure?()
             dismiss(animated: true, completion: nil)
         }else if sender.tag == 20 {
-            confirmClosure?(textField.text)
+            guard let text = textField.text else {
+                EToast.showFailed("邀请码不可为空")
+                return
+            }
+            confirmClosure?(text)
             dismiss(animated: true, completion: nil)
         }
     }

@@ -45,6 +45,7 @@ class MineViewController: EViewController {
         super.viewWillAppear(animated)
         
         MineApi.getUserInfo { [weak self] _ in
+            self?.list[1][0] = CommonInfoModel(UIImage(named: "globe"), leftText: "当前组织", rightText: Login.currentAccount().companyName.length > 0 ? Login.currentAccount().companyName : "暂无组织", showRightArrow: true)
             self?.tableView.reloadData()
             self?.headerView.reloadData()
         }

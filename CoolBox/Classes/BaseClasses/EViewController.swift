@@ -92,6 +92,20 @@ class EViewController: UIViewController, ParamAdaptAction {
         }
     }
     
+    var bigLeftTitle: String = "" {
+        didSet {
+            let title = UILabel(text: bigLeftTitle, font: MediumFont(18), nColor: UIColor(hexString: "#1D2129"))
+
+            let spacer = UIView()
+            let constraint = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
+            constraint.isActive = true
+            constraint.priority = .defaultLow
+            let stack = UIStackView(arrangedSubviews: [title, spacer])
+            stack.axis = .horizontal
+            navigationItem.titleView = stack
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = EColor.viewBgColor
