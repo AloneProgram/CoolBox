@@ -100,11 +100,6 @@ class FPViewController: EViewController {
         }
     }
     
-    func setupView() {
-        
-    }
-    
-    
     func importAction(_ tag: Int) {
         switch tag {
         case 0: scanImport()
@@ -164,7 +159,9 @@ extension FPViewController: PagingViewControllerDataSource, PagingViewController
 extension FPViewController {
     
     func scanImport() {
-        
+        let vc = CamareImportVC(isScaneImport: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func wxImport(){
@@ -176,7 +173,9 @@ extension FPViewController {
     }
     
     func tabkeImport() {
-        
+        let vc = CamareImportVC(isScaneImport: false)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func emailImport() {

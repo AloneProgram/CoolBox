@@ -45,9 +45,6 @@
                                         <constraint firstAttribute="height" constant="40" id="CSa-wV-pyE"/>
                                         <constraint firstAttribute="width" constant="40" id="g5s-pA-w3w"/>
                                     </constraints>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="Z2h-at-mQD" appends="YES" id="ofY-GS-iUP"/>
-                                    </connections>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫码导入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFW-uj-Yck">
                                     <rect key="frame" x="2.6666666666666679" y="55" width="41" height="12"/>
@@ -63,6 +60,9 @@
                                 <constraint firstItem="PPu-3e-K5k" firstAttribute="centerX" secondItem="IW8-di-0kn" secondAttribute="centerX" id="joq-gh-k5q"/>
                                 <constraint firstItem="PPu-3e-K5k" firstAttribute="top" secondItem="IW8-di-0kn" secondAttribute="top" constant="10" id="s7f-fa-h1U"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Z2h-at-mQD" appends="YES" id="YNS-WD-YhP"/>
+                            </connections>
                         </view>
                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCV-nG-rcQ">
                             <rect key="frame" x="79.333333333333329" y="0.0" width="46" height="87"/>

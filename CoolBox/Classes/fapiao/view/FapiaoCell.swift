@@ -34,6 +34,9 @@ class FapiaoCell: UITableViewCell {
     
     @IBOutlet weak var tipsIcon: UIImageView!
     
+    @IBOutlet weak var tipsIconHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var tipsTopMargin: NSLayoutConstraint!
     
     var clickSelectedBlock: (() -> Void)?
     
@@ -107,5 +110,7 @@ class FapiaoCell: UITableViewCell {
         tipsLabel.isHidden = fapiao.invalidTitle.length == 0
         tipsIcon.isHidden = tipsLabel.isHidden
         
+        tipsIconHeight.constant = tipsIcon.isHidden ? 0 : 10
+        tipsTopMargin.constant = tipsIcon.isHidden ? 0 : 10
     }
 }

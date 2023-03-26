@@ -143,7 +143,9 @@ class AppTabBarController: BaseTabBarController {
     @objc func touchPostBtn() {
         ELog(message: "扫码导入")
         if let vc = viewControllers?[selecIdx].children.first {
-//            vc.push(SendVideoVC())
+            let tmp = CamareImportVC(isScaneImport: true)
+            tmp.modalPresentationStyle = .fullScreen
+            vc.present(tmp, animated: true)
         }
     }
     
