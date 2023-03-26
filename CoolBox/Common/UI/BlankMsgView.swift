@@ -58,7 +58,6 @@ extension UIView {
         
         let image = UIImageView()
         image.image = UIImage(named: imageStr)
-        image.contentMode = .center
         blankView.addSubview(image)
         
         image.snp.makeConstraints { (make) in

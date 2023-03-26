@@ -10,6 +10,21 @@ import UIKit
 
 class ItemView: UIButton {
     
+    // badge
+    public lazy var badgeLabel: UILabel = {
+        let lab = UILabel(text: "", font: BadgeFont(9), nColor: UIColor.white, hlColor: nil)
+        lab.clipsToBounds = true
+        lab.backgroundColor = UIColor(hexString: "#DF405A")
+        lab.textAlignment = .center
+        lab.numberOfLines = 1
+        lab.isHidden = true
+        addSubview(lab)
+        bringSubviewToFront(lab)
+        return lab
+    }()
+    
+    open var badgeValue: String?
+    
     lazy var imageViewLength: CGFloat = {
         return 20
     }()
@@ -70,6 +85,21 @@ class ItemView: UIButton {
         imgCenter.x = width / 2.0 - 1
         imgCenter.y = (imageView.height) / 2.0 + margin - 1
         imageView.center = imgCenter
+        
+        
+        if badgeLabel.isHidden == false {
+            let imageW = imageViewLength / 2.0
+            let imageH = imageViewLength / 2.0
+            let badgeW = badgeLabel.width
+            let badgeH = badgeLabel.height
+
+            /* badgeLabel的高度不变，宽度随内容变化 */
+            // x起始坐标-2, 用于适配320屏幕的"99+"显示
+            badgeLabel.frame = CGRect(x: (imgCenter.x) + imageW / 2 - 4,
+                                      y: (imgCenter.y) - imageH / 2 - badgeH / 2 - 2,
+                                      width: badgeW,
+                                      height: badgeH)
+        }
 
     
         // Center text

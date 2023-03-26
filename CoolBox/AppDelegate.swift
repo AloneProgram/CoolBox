@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         GlobalConfigManager.shared.requestCompanyInfoConfig()
+        GlobalConfigManager.shared.requestSystemoInfoConfig()
+        
+        sleep(1)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = GuidVC()

@@ -21,9 +21,9 @@ public class PaddingLabel: UILabel {
     
      var style: PaddingLabelStyle = .none {
         didSet {
-            font = SCFont(12)
-            textInsets = UIEdgeInsets(top: 1.5, left: 4, bottom: 1.5, right: 4)
-                        switch style {
+        font = SCFont(12)
+        textInsets = UIEdgeInsets(top: 1.5, left: 4, bottom: 1.5, right: 4)
+        switch style {
             case .blue:
                 backgroundColor = UIColor(hexString: "#E8F3FF")
                 textColor = UIColor(hexString: "#165DFF")

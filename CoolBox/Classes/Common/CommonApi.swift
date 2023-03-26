@@ -12,10 +12,14 @@ fileprivate enum ApiTarget: ETargetType {
     ///获取用户信息
     case getCompanyConfig
     
+    //获取系统配置
+    case getSystemConfig
+    
 
     var path: String {
         switch self {
         case .getCompanyConfig:       return "/api/company/config"
+        case .getSystemConfig:       return "/api/system/config"
         }
     }
     
@@ -45,6 +49,15 @@ struct CommonApi {
         let target = ApiTarget.getCompanyConfig
         ENetworking.request(target, success: { (json) in
             GlobalConfigManager.shared.companyInfoConfig = CompanyInfoConfig(json)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    static func getSystemConfig() {
+        let target = ApiTarget.getSystemConfig
+        ENetworking.request(target, success: { (json) in
+            GlobalConfigManager.shared.systemoInfoConfig = SystemConfigInfo(json)
         }) { (err, json) in
             
         }

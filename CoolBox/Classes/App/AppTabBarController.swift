@@ -10,7 +10,7 @@ import UIKit
 
 //采用自定义itemview 方便后期扩展后台配置修改tabbaer image、badge
 class AppTabBarController: BaseTabBarController {
-    var itemsArr: [ItemView] = []
+    var itemsArr: [TabBarItemView] = []
     
     //写死，可拓展为后台配置数据
     let titles = ["发票","报销","审批", "我的"]
@@ -44,6 +44,9 @@ class AppTabBarController: BaseTabBarController {
         
         delegate = self
         setupContentViews()
+        
+        MineApi.getUserInfo(result: {_ in })
+        getMySPList()
     }
     
     deinit {
@@ -86,11 +89,11 @@ class AppTabBarController: BaseTabBarController {
         selecIdx = 0
     }
     
-    func setupTabbarItem(_ tabItem: TabbarItem, index: Int) -> ItemView {
+    func setupTabbarItem(_ tabItem: TabbarItem, index: Int) -> TabBarItemView {
         let width: CGFloat = kScreenWidth / CGFloat(titles.count + 1)
         let height: CGFloat = iPhoneXs ? 49 : 55
         
-        let item = ItemView(title: tabItem.title,
+        let item = TabBarItemView(title: tabItem.title,
                                   nImgName: tabItem.norImageName,
                                   sImgName: tabItem.selImageName,
                                   normalTextColor: UIColor(hexString: "#4E5969"),
@@ -160,6 +163,12 @@ class AppTabBarController: BaseTabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         selecIdx = item.tag
+    }
+    
+    func getMySPList() {
+        SPApi.requestMySPDList(page: 1, status: 0) { list in 
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "shoppingBagCountChanged"), object: list.count)
+        }
     }
     
 }

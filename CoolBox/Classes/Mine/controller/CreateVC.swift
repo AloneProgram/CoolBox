@@ -247,6 +247,7 @@ extension CreateVC {
         let picker = McPicker(data: list)
         picker.fontSize = 16
         picker.toolbarBarTintColor = .white
+        picker.toolbarButtonsColor = UIColor(hexString: "#165DFF")
         let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 16)
         let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
         let fireButton = McPickerBarButtonItem.done(mcPicker: picker, title: "确定") // Set custom Text

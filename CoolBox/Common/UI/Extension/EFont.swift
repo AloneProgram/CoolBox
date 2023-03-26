@@ -43,3 +43,8 @@ func SCFont(_ size: CGFloat) -> UIFont {
 func SCMediumFont(_ size: CGFloat) -> UIFont {
     return UIFont(name: "PingFangSC-Medium", size: size) ?? MediumFont(size)
 }
+
+/// Badge字体
+func BadgeFont(_ size: CGFloat) -> UIFont {
+    return UIFont(name: "Futura", size: size) ?? Font(size)
+}

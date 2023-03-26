@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FilterEntraceView" customModule="CoolBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB8-d5-W5P">
+                    <rect key="frame" x="12" y="15" width="1" height="12"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="Rd9-sU-kNY"/>
+                        <constraint firstAttribute="height" constant="12" id="yqY-Ur-T2c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkC-z7-PfO">
+                    <rect key="frame" x="20" y="5" width="40" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="6jf-Pb-hi1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="筛选">
+                        <color key="titleColor" red="0.52549019607843139" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.97647058819999999" green="0.22352941179999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="filterAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="PlB-Yu-RFe"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_filterArrow" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-26-RuF">
+                    <rect key="frame" x="60" y="12.666666666666664" width="16" height="17"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xB8-d5-W5P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="0FO-sv-ExI"/>
+                <constraint firstItem="xB8-d5-W5P" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4if-cb-TQu"/>
+                <constraint firstAttribute="trailing" secondItem="SnM-26-RuF" secondAttribute="trailing" id="Odc-f0-AOJ"/>
+                <constraint firstItem="xkC-z7-PfO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bGm-1f-d30"/>
+                <constraint firstItem="SnM-26-RuF" firstAttribute="leading" secondItem="xkC-z7-PfO" secondAttribute="trailing" id="nLw-2m-KAV"/>
+                <constraint firstItem="SnM-26-RuF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vI0-A1-aCV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="filterBtn" destination="xkC-z7-PfO" id="zrt-65-sCF"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_filterArrow" width="16" height="17"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
