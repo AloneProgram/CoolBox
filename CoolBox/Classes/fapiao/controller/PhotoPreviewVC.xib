@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoPreviewVC" customModule="CoolBox" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomHeight" destination="br1-VU-JeH" id="WFb-Gu-dou"/>
+                <outlet property="bottomView" destination="Ul1-Ql-Frw" id="jay-za-zt5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-Ql-Frw">
+                    <rect key="frame" x="0.0" y="770" width="393" height="82"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-A7-ZD0">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHa-zQ-DQd">
+                                    <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="48"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icon_reTake"/>
+                                    <connections>
+                                        <action selector="retakeAction:" destination="-1" eventType="touchUpInside" id="ySa-6j-n74"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-Z7-4ab">
+                                    <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="48"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icon_turnLeft"/>
+                                    <connections>
+                                        <action selector="turnLeft:" destination="-1" eventType="touchUpInside" id="JuV-8g-fgC"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itG-Qm-AoV">
+                                    <rect key="frame" x="196.66666666666666" y="0.0" width="97.999999999999972" height="48"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icon_turnRight"/>
+                                    <connections>
+                                        <action selector="turnRight:" destination="-1" eventType="touchUpInside" id="2by-wX-3cN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-fK-C5a">
+                                    <rect key="frame" x="294.66666666666669" y="0.0" width="98.333333333333314" height="48"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icon_postText"/>
+                                    <connections>
+                                        <action selector="postAction:" destination="-1" eventType="touchUpInside" id="Tsz-E6-EXo"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Jj5-a8-sYE"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sDL-A7-ZD0" firstAttribute="top" secondItem="Ul1-Ql-Frw" secondAttribute="top" id="CdI-1y-mjW"/>
+                        <constraint firstItem="sDL-A7-ZD0" firstAttribute="leading" secondItem="Ul1-Ql-Frw" secondAttribute="leading" id="D0F-kb-wnu"/>
+                        <constraint firstAttribute="height" constant="82" id="br1-VU-JeH"/>
+                        <constraint firstAttribute="trailing" secondItem="sDL-A7-ZD0" secondAttribute="trailing" id="yEO-ES-bH6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="cus_ShadowOffset">
+                            <size key="value" width="0.0" height="-3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.94901960780000005" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ul1-Ql-Frw" secondAttribute="trailing" id="66z-LR-qzY"/>
+                <constraint firstAttribute="bottom" secondItem="Ul1-Ql-Frw" secondAttribute="bottom" id="HGZ-xH-4rx"/>
+                <constraint firstItem="Ul1-Ql-Frw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LPE-7i-WHt"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_postText" width="20" height="37.666667938232422"/>
+        <image name="icon_reTake" width="20" height="37.666667938232422"/>
+        <image name="icon_turnLeft" width="20" height="38"/>
+        <image name="icon_turnRight" width="20" height="38"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

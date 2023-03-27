@@ -62,7 +62,12 @@ class CamareImportVC: EViewController {
         middleBtn.setTitle("拍照导入", for: .normal)
         takePhotoBtn.isHidden = false
         
-        takePhotoView = TakePhotoView(frame: CGRect(x: 0, y: 46 + kNaviBarHeight, width: kScreenWidth, height: kScreenHeight - (46 + kNaviBarHeight) - 180 - kBottomSpace ))
+        
+        let handleResult: ((Image) -> Void) = {[weak self] img in
+            self?.toPhotoPreview(image: img)
+        }
+        
+        takePhotoView = TakePhotoView(result: handleResult, frame: CGRect(x: 0, y: 46 + kNaviBarHeight, width: kScreenWidth, height: kScreenHeight - (46 + kNaviBarHeight) - 180 - kBottomSpace ))
         camareView.addSubview(takePhotoView!)
         takePhotoView!.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -79,7 +84,11 @@ class CamareImportVC: EViewController {
         middleBtn.setTitle("扫码导入", for: .normal)
         takePhotoBtn.isHidden = true
         
-        scaneView = ScaneVIew(frame: CGRect(x: 0, y: 46 + kNaviBarHeight, width: kScreenWidth, height: kScreenHeight - (46 + kNaviBarHeight) - 180 - kBottomSpace))
+        let handleResult: ((String) -> Void) = { [weak self] result in
+            self?.handleResult(result)
+        }
+        
+        scaneView = ScaneVIew(result: handleResult,frame: CGRect(x: 0, y: 46 + kNaviBarHeight, width: kScreenWidth, height: kScreenHeight - (46 + kNaviBarHeight) - 180 - kBottomSpace))
         camareView.addSubview(scaneView!)
         scaneView!.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -115,12 +124,31 @@ class CamareImportVC: EViewController {
         dismiss(animated: true)
     }
     
+    
+    func handleResult(_ result: String) {
+        scanImportrequest(result)
+    }
+    
+    func scanImportrequest(_ qrCode: String){
+        FPApi.scanImport(qeCodeStr: qrCode) { [weak self]success in
+            if success {
+                NotificationCenter.default.post(name: Notification.Name("ImportFPSuccess"), object: nil)
+                self?.dismiss(animated: true)
+            }
+        }
+    }
+    
+    func toPhotoPreview(image: UIImage) {
+        dismiss(animated: true)
+        let _ = delay(0.5) {
+            AppCommon.getCurrentVC()?.push(PhotoPreviewVC(image))
+        }
+    }
+        
 }
 
 extension CamareImportVC: TZImagePickerControllerDelegate{
     func imagePickerController(_ picker: TZImagePickerController!, didSelect asset: PHAsset!, photo: UIImage!, isSelectOriginalPhoto: Bool) {
-        //TODO: 跳转发票图片预览
-        
-    
+        toPhotoPreview(image: photo)
     }
 }

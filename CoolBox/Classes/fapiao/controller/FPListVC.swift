@@ -55,6 +55,7 @@ class FPListVC: ETableViewController {
         
         if tag == 0 {
             loadFapiao(page: 1, block: refreshBlock)
+            NotificationCenter.default.addObserver(self, selector: #selector(reloadAction(_:)), name: Notification.Name("ImportFPSuccess"), object: nil)
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAction(_:)), name: Notification.Name("ReloadFapiaoListData"), object: nil)

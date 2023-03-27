@@ -11,9 +11,14 @@ fileprivate enum ApiTarget: ETargetType {
     
     case fapiaoList(page: Int, pageSize: Int, title: String, startDate: String, endDate: String, status: Int, sort: Int )
     
+    case scanImport(qrCodeStr: String)
+    case takePhotoImport(image: Data, imgUrl: String)
+    
     var path: String {
         switch self {
         case .fapiaoList:  return "/api/invoice/list"
+        case .scanImport:   return "/api/invoice/qrcodeScan"
+        case .takePhotoImport:      return "/api/invoice/cameraScan"
         }
     }
     
@@ -35,6 +40,15 @@ fileprivate enum ApiTarget: ETargetType {
                 "sort": sort,
                 "end_date": endDate
             ]
+        case .scanImport(let qrCodeStr):
+            return [
+                "qrcode_str" : qrCodeStr
+            ]
+        case .takePhotoImport(let data, let imgUrl):
+            return [
+                "img": data,
+                "img_url": imgUrl
+            ]
         default:
             return nil
         }
@@ -51,6 +65,28 @@ struct FPApi {
             result(list)
         }) { (err, json) in
             
+        }
+    }
+    
+    static func scanImport(qeCodeStr: String, result: @escaping (Bool)->Void) {
+        EHUD.show("识别中..")
+        let target = ApiTarget.scanImport(qrCodeStr: qeCodeStr)
+        ENetworking.request(target, success: { (json) in
+            EHUD.dismiss()
+            result(true)
+        }) { (err, json) in
+            EHUD.dismiss()
+            result(false)
+        }
+    }
+    
+    static func takePhotoImport(data: Data, imgUrl: String, result: @escaping (FaPiaoListModel)->Void) {
+        let target = ApiTarget.takePhotoImport(image: data, imgUrl: imgUrl)
+        ENetworking.request(target, success: { (json) in
+            EHUD.dismiss()
+            result(FaPiaoListModel(fromJson: json))
+        }) { (err, json) in
+            EHUD.dismiss()
         }
     }
 }
