@@ -94,7 +94,7 @@ extension TakePhotoView: AVCaptureVideoDataOutputSampleBufferDelegate {
             DispatchQueue.main.async {
                 self.session.stopRunning()
                 if let image = self.imageConvert(sampleBuffer: sampleBuffer),
-                    let img = UIImage.rotate(image: image, withAngle: 90) {
+                    let img = UIImage.rotate(image: image, withAngle: -90) {
                     
                     self.tpResult?(img)
                 }

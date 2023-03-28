@@ -36,9 +36,8 @@ class PhotoPreviewVC: EViewController, UIScrollViewDelegate {
         
         scrollview.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 48 - kBottomSpace - kNaviBarHeight)
         view.addSubview(scrollview)
-        view.sendSubviewToBack(scrollview)
-  
-
+        view.insertSubview(scrollview, belowSubview: bottomView)
+        
         scrollview.addSubview(imageView)
         imageView.frame = scrollview.frame
         imageView.contentMode = .scaleAspectFit
@@ -101,8 +100,8 @@ class PhotoPreviewVC: EViewController, UIScrollViewDelegate {
     
     
     func cameraScaneRequest(_ data: Data, imgurl: String) {
-        FPApi.takePhotoImport(data: data, imgUrl: imgurl) { list in
-            
+        FPApi.takePhotoImport(data: data, imgUrl: imgurl) { [weak self] list in
+            self?.removeCurrentAndPush(viewController: ImportFPVC(list))
         }
     }
     

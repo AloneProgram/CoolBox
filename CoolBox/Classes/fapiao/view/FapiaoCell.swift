@@ -11,6 +11,7 @@ class FapiaoCell: UITableViewCell {
     
     @IBOutlet weak var statusLabel: PaddingLabel!
     
+    @IBOutlet weak var titleLeftmargin: NSLayoutConstraint!
     @IBOutlet weak var statusLabelWid: NSLayoutConstraint!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -80,10 +81,17 @@ class FapiaoCell: UITableViewCell {
             statusLabel.text = "无需报销"
             statusLabel.style = .gray
         default:
+            statusLabel.text = ""
             break
         }
         let statusWid = statusLabel.text?.widthWithConstrainedHeight(height: 20, font: SCFont(12)) ?? 0
-        statusLabelWid.constant = statusWid + 8
+        if statusWid > 0 {
+            statusLabelWid.constant = statusWid + 8
+        }else {
+            statusLabelWid.constant = 0
+            titleLeftmargin.constant = 0
+        }
+        
 
         titleLabel.text = fapiao.title
         dateLabel.text = "消费时间:" + fapiao.productionDate
@@ -92,6 +100,10 @@ class FapiaoCell: UITableViewCell {
         selectBtn.isHidden = fapiao.invalidTitle.length > 0
         rightArrow.isHidden = !(fapiao.isDataComplete == "0" && fapiao.isSync == "1")
         if !rightArrow.isHidden {
+            selectBtn.isHidden = true
+        }
+        
+        if statusWid == 0 {
             selectBtn.isHidden = true
         }
         

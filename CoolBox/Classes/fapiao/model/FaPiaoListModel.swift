@@ -18,6 +18,22 @@ struct FaPiaoListModel {
     }
 }
 
+
+struct CameraImportFaPiaoList {
+    var list: [FaPiaoModel] = []
+    var invalidList: [FaPiaoModel] = []
+    
+    init(fromJson json: JSON!){
+        if json.isEmpty{
+            return
+        }
+        list = json["data"].arrayValue.map({FaPiaoModel(fromJson: $0)})
+        invalidList = json["invalid_data"].arrayValue.map({FaPiaoModel(fromJson: $0)})
+    }
+}
+
+
+
 struct FaPiaoModel {
 
     var buyerAddressAndPhone = ""
@@ -52,6 +68,8 @@ struct FaPiaoModel {
     var type = ""
     var userId = ""
     var invalidTitle = ""
+    //临时发票id
+    var invoiceId = ""
 
 
     /**
@@ -92,6 +110,7 @@ struct FaPiaoModel {
         title = json["title"].stringValue
         type = json["type"].stringValue
         userId = json["user_id"].stringValue
+        invoiceId = json["invoice_id"].stringValue
         
         if json["invalid_title"].stringValue.length > 0 {
             self.invalidTitle = json["invalid_title"].stringValue

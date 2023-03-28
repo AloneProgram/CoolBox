@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FPListVC: ETableViewController {
+class FPListVC: ETableViewController, PresentToCenter {
     //0 "未报销"  1 "报销中",  2 "已报销",  3 "无需报销"
     var tag = 0
     
@@ -48,7 +48,8 @@ class FPListVC: ETableViewController {
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.top.right.equalToSuperview()
+            make.bottom.equalTo(-kTabbarHeight)
         }
 
         addRefresh(scrollView: tableView)
@@ -131,6 +132,13 @@ class FPListVC: ETableViewController {
         tableView.mj_header?.beginRefreshing()
     }
     
+    func deleteFapiao(_ fapiao: FaPiaoModel) {
+        FPApi.deleteFP(idsStr: fapiao.id) {[weak self] success in
+            if success, let strongSelf = self {
+                strongSelf.loadData(strongSelf.refreshBlock)
+            }
+        }
+    }
 }
 
 extension FPListVC: UITableViewDelegate, UITableViewDataSource {
@@ -155,6 +163,14 @@ extension FPListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fapiao = list[indexPath.row]
+        
+        if fapiao.isSync == "2" {
+            //点击删除
+            let alert = CustomAlert(title: "系统提示", content: "请删除后重新导入", confirmTitle: "删除") { [weak self] in
+                self?.deleteFapiao(fapiao)
+            }
+            presentToCenter(alert)
+        }
 
     }
     

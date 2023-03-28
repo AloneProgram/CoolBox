@@ -17,8 +17,8 @@ class CustomAlert: PresentCenterVC {
     }    
     
     override var controllerSize: CGSize {
-        let height = 30 + titleHeight + 11 + contentHeight + 79
-        return CGSize(width: 285 , height: height)
+        let height = 13 + titleHeight + 12 + contentHeight + 57
+        return CGSize(width: 270 , height: height)
     }
     
     private var titleHeight: CGFloat = 21
@@ -81,18 +81,18 @@ private extension CustomAlert {
     func setupSubviews(){
         let titleLab = UILabel()
         titleLab.textAlignment = .center
-        titleLab.font = MediumFont(16)
+        titleLab.font = MediumFont(17)
         titleLab.text = titleStr
-        titleLab.textColor = UIColor(rgb: 51)
+        titleLab.textColor = UIColor(hexString: "#1D2129")
         view.addSubview(titleLab)
         titleLab.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(30)
+            make.top.equalTo(13)
             make.height.equalTo(titleHeight)
         }
         
         let contentLab = UILabel()
-        contentLab.textAlignment = .center
+        contentLab.textAlignment = .left
         contentLab.font = Font(14)
         contentLab.text = contentStr
         contentLab.numberOfLines = 0
@@ -100,8 +100,8 @@ private extension CustomAlert {
         view.addSubview(contentLab)
         contentLab.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.left.equalTo(25)
-            make.top.equalTo(titleLab.snp.bottom).offset(11)
+            make.left.greaterThanOrEqualTo(16)
+            make.top.equalTo(titleLab.snp.bottom).offset(12)
             make.height.equalTo(contentHeight)
         }
         
@@ -109,17 +109,17 @@ private extension CustomAlert {
         lineLab.backgroundColor = UIColor(hexString: "#000000", alpha: 0.1)
         view.addSubview(lineLab)
         lineLab.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
+            make.left.equalTo(0)
             make.centerX.equalToSuperview()
             make.height.equalTo(0.5)
-            make.top.equalTo(contentLab.snp.bottom).offset(29)
+            make.top.equalTo(contentLab.snp.bottom).offset(13)
         }
         
         if isSingle {
             let singleBtn = UIButton(type: .custom)
             singleBtn.setTitle(leftBtnTitleStr, for: .normal)
-            singleBtn.titleLabel?.font = Font(14)
-            singleBtn.setTitleColor(UIColor(hexString: "#FF6B00"), for: .normal)
+            singleBtn.titleLabel?.font = Font(18)
+            singleBtn.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
             singleBtn.tag = 10
             singleBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
             view.addSubview(singleBtn)
@@ -133,7 +133,7 @@ private extension CustomAlert {
 
         let cancleBtn = UIButton(type: .custom)
         cancleBtn.setTitle(leftBtnTitleStr, for: .normal)
-        cancleBtn.titleLabel?.font = Font(14)
+        cancleBtn.titleLabel?.font = Font(16)
         cancleBtn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
         cancleBtn.tag = 10
         cancleBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
@@ -149,14 +149,14 @@ private extension CustomAlert {
         verLine.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalTo(1)
-            make.height.equalTo(24)
-            make.top.equalTo(lineLab.snp.bottom).offset(13)
+            make.height.equalTo(16)
+            make.top.equalTo(lineLab.snp.bottom)
         }
 
         let confirmBtn = UIButton(type: .custom)
         confirmBtn.setTitle(rightBtnTitleStr, for: .normal)
-        confirmBtn.titleLabel?.font = Font(14)
-        confirmBtn.setTitleColor(UIColor(hexString: "#FF6B00"), for: .normal)
+        confirmBtn.titleLabel?.font = Font(16)
+        confirmBtn.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
         confirmBtn.tag = 20
         confirmBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         view.addSubview(confirmBtn)

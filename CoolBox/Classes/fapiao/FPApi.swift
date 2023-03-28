@@ -12,13 +12,19 @@ fileprivate enum ApiTarget: ETargetType {
     case fapiaoList(page: Int, pageSize: Int, title: String, startDate: String, endDate: String, status: Int, sort: Int )
     
     case scanImport(qrCodeStr: String)
-    case takePhotoImport(image: Data, imgUrl: String)
+    case takePhotoImport(image: String, imgUrl: String)
+    
+    case invoiceImport(ids: String)
+    
+    case deleteFapiao(ids: String)
     
     var path: String {
         switch self {
         case .fapiaoList:  return "/api/invoice/list"
         case .scanImport:   return "/api/invoice/qrcodeScan"
         case .takePhotoImport:      return "/api/invoice/cameraScan"
+        case .invoiceImport:        return "/api/invoice/import"
+        case .deleteFapiao:        return "/api/invoice/delInfo"
         }
     }
     
@@ -49,6 +55,14 @@ fileprivate enum ApiTarget: ETargetType {
                 "img": data,
                 "img_url": imgUrl
             ]
+        case .invoiceImport(let ids):
+            return [
+                "invoice_ids": ids
+            ]
+        case .deleteFapiao(let ids):
+            return [
+                "invoice_ids": ids
+            ]
         default:
             return nil
         }
@@ -75,18 +89,34 @@ struct FPApi {
             EHUD.dismiss()
             result(true)
         }) { (err, json) in
-            EHUD.dismiss()
             result(false)
         }
     }
     
-    static func takePhotoImport(data: Data, imgUrl: String, result: @escaping (FaPiaoListModel)->Void) {
-        let target = ApiTarget.takePhotoImport(image: data, imgUrl: imgUrl)
+    static func takePhotoImport(data: Data, imgUrl: String, result: @escaping (CameraImportFaPiaoList)->Void) {
+        let target = ApiTarget.takePhotoImport(image: data.base64EncodedString(), imgUrl: imgUrl)
         ENetworking.request(target, success: { (json) in
             EHUD.dismiss()
-            result(FaPiaoListModel(fromJson: json))
+            result(CameraImportFaPiaoList(fromJson: json))
         }) { (err, json) in
-            EHUD.dismiss()
+//            EToast.showFailed("照片识别失败")
+        }
+    }
+    
+    static func invoiceImport(idsStr: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.invoiceImport(ids: idsStr)
+        ENetworking.request(target, success: { (json) in
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    static func deleteFP(idsStr: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.deleteFapiao(ids: idsStr)
+        ENetworking.request(target, success: { (json) in
+            result(true)
+        }) { (err, json) in
         }
     }
 }

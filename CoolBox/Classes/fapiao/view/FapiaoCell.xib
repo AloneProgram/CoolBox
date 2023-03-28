@@ -167,6 +167,7 @@
                 <outlet property="tipsLabel" destination="ox0-HR-ca1" id="EkC-oS-Gs3"/>
                 <outlet property="tipsTopMargin" destination="pKo-87-39B" id="1ot-6j-Uc7"/>
                 <outlet property="titleLabel" destination="wyH-lR-LoM" id="zyq-35-MaK"/>
+                <outlet property="titleLeftmargin" destination="Rit-A8-TMH" id="lKU-Wf-uXo"/>
             </connections>
             <point key="canvasLocation" x="-2.2900763358778624" y="29.577464788732396"/>
         </tableViewCell>
