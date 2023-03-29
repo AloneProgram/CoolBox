@@ -72,6 +72,10 @@ struct FaPiaoModel {
     var invoiceId = ""
 
 
+    //自定义参数
+    var isSelected = false
+    var isSelectListPage = false
+    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

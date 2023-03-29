@@ -61,8 +61,8 @@ extension UIButton {
     convenience init(borderTitle: String,
                      bgColor: UIColor = .clear,
                      borderColor: UIColor = .white,
-                     font: UIFont = Font(12),
-                     radius: CGFloat = 14,
+                     font: UIFont = Font(14),
+                     radius: CGFloat = 2,
                      titleColor: UIColor = .white) {
         self.init(type: .custom)
         

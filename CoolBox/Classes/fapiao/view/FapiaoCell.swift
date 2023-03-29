@@ -103,6 +103,10 @@ class FapiaoCell: UITableViewCell {
             selectBtn.isHidden = true
         }
         
+        if fapiao.isSelectListPage {
+            rightArrow.isHidden = true
+        }
+        
         if statusWid == 0 {
             selectBtn.isHidden = true
         }
@@ -124,5 +128,7 @@ class FapiaoCell: UITableViewCell {
         
         tipsIconHeight.constant = tipsIcon.isHidden ? 0 : 10
         tipsTopMargin.constant = tipsIcon.isHidden ? 0 : 10
+        
+        selectBtn.isSelected = fapiao.isSelected
     }
 }

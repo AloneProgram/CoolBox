@@ -72,6 +72,9 @@
 		96673C0729D1E3E200AB7602 /* PhotoPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96673C0529D1E3E200AB7602 /* PhotoPreviewVC.xib */; };
 		96673C0A29D1F9B300AB7602 /* ImportFPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C0829D1F9B200AB7602 /* ImportFPVC.swift */; };
 		96673C0B29D1F9B300AB7602 /* ImportFPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96673C0929D1F9B200AB7602 /* ImportFPVC.xib */; };
+		96673C0E29D476BC00AB7602 /* FPSelectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */; };
+		96673C0F29D476BC00AB7602 /* FPSelectListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */; };
+		96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C1029D4786600AB7602 /* BottomActionView.swift */; };
 		9690147229CB2F40008E88CF /* DepartmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147129CB2F40008E88CF /* DepartmentListModel.swift */; };
 		9690147429CB3085008E88CF /* MemeberListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147329CB3085008E88CF /* MemeberListModel.swift */; };
 		9690147729CB3206008E88CF /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147529CB3206008E88CF /* MemberListVC.swift */; };
@@ -282,6 +285,9 @@
 		96673C0529D1E3E200AB7602 /* PhotoPreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoPreviewVC.xib; sourceTree = "<group>"; };
 		96673C0829D1F9B200AB7602 /* ImportFPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFPVC.swift; sourceTree = "<group>"; };
 		96673C0929D1F9B200AB7602 /* ImportFPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportFPVC.xib; sourceTree = "<group>"; };
+		96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSelectListVC.swift; sourceTree = "<group>"; };
+		96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPSelectListVC.xib; sourceTree = "<group>"; };
+		96673C1029D4786600AB7602 /* BottomActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionView.swift; sourceTree = "<group>"; };
 		9690147129CB2F40008E88CF /* DepartmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListModel.swift; sourceTree = "<group>"; };
 		9690147329CB3085008E88CF /* MemeberListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeberListModel.swift; sourceTree = "<group>"; };
 		9690147529CB3206008E88CF /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
@@ -1008,6 +1014,7 @@
 				965208D529CEF14300A5175F /* FilterCell.swift */,
 				965208D629CEF14300A5175F /* FilterCell.xib */,
 				96DA53A829D044AC00958209 /* TabBarItemView.swift */,
+				96673C1029D4786600AB7602 /* BottomActionView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1031,6 +1038,8 @@
 				96673C0529D1E3E200AB7602 /* PhotoPreviewVC.xib */,
 				96673C0829D1F9B200AB7602 /* ImportFPVC.swift */,
 				96673C0929D1F9B200AB7602 /* ImportFPVC.xib */,
+				96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */,
+				96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1268,6 +1277,7 @@
 				96AB70C729C2088E00244F40 /* blueArrow.png in Resources */,
 				96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */,
 				96AB70B229C2088E00244F40 /* Share.xcassets in Resources */,
+				96673C0F29D476BC00AB7602 /* FPSelectListVC.xib in Resources */,
 				965208D829CEF14300A5175F /* FilterCell.xib in Resources */,
 				96A3758029C56DF700B4727C /* MineHeadView.xib in Resources */,
 			);
@@ -1453,6 +1463,7 @@
 				9658210029C5721D0005C6AA /* CommonInfoModel.swift in Sources */,
 				96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */,
 				96AB70BA29C2088E00244F40 /* WebViewController.swift in Sources */,
+				96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */,
 				960F343429CB3C77000149A2 /* ML_DepartmentCell.swift in Sources */,
 				964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */,
 				96A3758429C5702F00B4727C /* CommonInfoCell.swift in Sources */,
@@ -1483,6 +1494,7 @@
 				96A374DC29C3445500B4727C /* AppAccount.swift in Sources */,
 				960F342F29CB3BBD000149A2 /* ZJTableViewItem.swift in Sources */,
 				96AB70ED29C2088E00244F40 /* UploadPhotoProtocol.swift in Sources */,
+				96673C0E29D476BC00AB7602 /* FPSelectListVC.swift in Sources */,
 				965208D029CEE98100A5175F /* GYSideTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

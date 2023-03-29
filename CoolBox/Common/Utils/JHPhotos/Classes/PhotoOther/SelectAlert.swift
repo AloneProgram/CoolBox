@@ -27,11 +27,13 @@ struct SelectAlertAction {
     var title: String
     var action: AlertActionClosure?
     var type: AlertActionType
+    var textColor: UIColor
     
-    init(title: String, type: AlertActionType = .default, action: AlertActionClosure? = nil) {
+    init(title: String, type: AlertActionType = .default, titleColor: UIColor = UIColor(hexString: "#1D2129"), action: AlertActionClosure? = nil) {
         self.title = title
         self.type = type
         self.action = action
+        self.textColor = titleColor
     }
 }
 
@@ -46,7 +48,7 @@ class SelectAlert: UIView {
     fileprivate let selectActionHeight: CGFloat = 54
     
     fileprivate let lineColor = UIColor(hexString: "#F2F3F5")
-    fileprivate let textColor = UIColor(hexString: "#1D2129")
+//    fileprivate var textColor = UIColor(hexString: "#1D2129")
     
     fileprivate lazy var selectView: UIView = {
         let view = UIView(frame: frame)
@@ -145,7 +147,7 @@ fileprivate extension SelectAlert {
         }
     }
     
-    func selectViewItem(_ frame: CGRect, showLine: Bool) -> UIButton {
+    func selectViewItem(_ frame: CGRect, showLine: Bool, textColor: UIColor) -> UIButton {
         let view = UIView(frame: frame)
         view.backgroundColor = UIColor.white
         
@@ -183,7 +185,7 @@ fileprivate extension SelectAlert {
                 y += viewSpace
             }
             let itemFrame = CGRect(x: 0, y: y, width: jp_screenWidth, height: height)
-            let button = self.selectViewItem(itemFrame, showLine: i != count - 1)
+            let button = self.selectViewItem(itemFrame, showLine: i != count - 1, textColor: item.textColor)
             button.tag = i
             button.setTitle(item.title, for: .normal)
             button.addTarget(self, action: #selector(buttonClickedAction(_:)), for: .touchUpInside)

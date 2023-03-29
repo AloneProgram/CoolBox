@@ -139,6 +139,13 @@ class FPListVC: ETableViewController, PresentToCenter {
             }
         }
     }
+    
+    func toSelectFP(_ row: Int) {
+        let fp = list[row]
+        let vc = FPSelectListVC(fp.id)
+        vc.modalPresentationStyle = .fullScreen
+        AppCommon.getCurrentVC()?.present(vc, animated: true)
+    }
 }
 
 extension FPListVC: UITableViewDelegate, UITableViewDataSource {
@@ -150,8 +157,8 @@ extension FPListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FapiaoCell = tableView.dequeueReusableCell(withIdentifier: "FapiaoCell", for: indexPath) as! FapiaoCell
         cell.selectionStyle = .none
-        cell.clickSelectedBlock = {
-            
+        cell.clickSelectedBlock = { [weak self] in
+            self?.toSelectFP(indexPath.row)
         }
         cell.bindFapiao(list[indexPath.row])
         return cell

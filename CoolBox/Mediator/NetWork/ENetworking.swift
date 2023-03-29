@@ -68,8 +68,8 @@ struct ENetworking {
                     success(json["data"])
                 }
                 else if code == .needLogin {
-                    EToast.showFailed(json["message"].stringValue)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        EToast.showFailed(json["message"].stringValue)
                         NotificationCenter.default.post(name: AppNeedLoginNotificationKey, object: json)
                     }
                 }
