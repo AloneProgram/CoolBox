@@ -28,6 +28,7 @@
 		961D177E29C763E500853FCB /* CommonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D177D29C763E500853FCB /* CommonApi.swift */; };
 		961D178129C7649E00853FCB /* GlobalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178029C7649E00853FCB /* GlobalConfigManager.swift */; };
 		961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178229C764DC00853FCB /* CompanyInfoConfig.swift */; };
+		96262B7A29D8519400A2B974 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96262B7929D8519400A2B974 /* SystemConfiguration.framework */; };
 		964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E718B29C5C48200118D43 /* OSSConfigModel.swift */; };
 		964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */; };
 		964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */; };
@@ -241,6 +242,10 @@
 		961D177D29C763E500853FCB /* CommonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonApi.swift; sourceTree = "<group>"; };
 		961D178029C7649E00853FCB /* GlobalConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigManager.swift; sourceTree = "<group>"; };
 		961D178229C764DC00853FCB /* CompanyInfoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoConfig.swift; sourceTree = "<group>"; };
+		962190A229D837FE00069FEA /* CoolBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoolBox.entitlements; sourceTree = "<group>"; };
+		962190A329D840B100069FEA /* AFServiceSDK.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = AFServiceSDK.zip; path = ../Downloads/AFServiceSDK.zip; sourceTree = "<group>"; };
+		962190A529D840CA00069FEA /* AFServiceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFServiceSDK.framework; path = ../Downloads/AFServiceSDK/AFServiceSDK.framework; sourceTree = "<group>"; };
+		96262B7929D8519400A2B974 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		964E718B29C5C48200118D43 /* OSSConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSConfigModel.swift; sourceTree = "<group>"; };
 		964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInputAlert.swift; sourceTree = "<group>"; };
 		964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInpuAlertView.swift; sourceTree = "<group>"; };
@@ -442,6 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96262B7A29D8519400A2B974 /* SystemConfiguration.framework in Frameworks */,
 				C47A0BE04FB0A4B6747BE220 /* Pods_CoolBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +648,7 @@
 		96AB6FC329C1FBB700244F40 /* CoolBox */ = {
 			isa = PBXGroup;
 			children = (
+				962190A229D837FE00069FEA /* CoolBox.entitlements */,
 				96AB6FC429C1FBB700244F40 /* AppDelegate.swift */,
 				96AB703029C2088E00244F40 /* Common */,
 				96AB702329C2087A00244F40 /* Mediator */,
@@ -1169,6 +1176,9 @@
 		C0047AEA9771B6788878EB55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96262B7929D8519400A2B974 /* SystemConfiguration.framework */,
+				962190A529D840CA00069FEA /* AFServiceSDK.framework */,
+				962190A329D840B100069FEA /* AFServiceSDK.zip */,
 				9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */,
 			);
 			name = Frameworks;
@@ -1186,6 +1196,7 @@
 				96AB6FBE29C1FBB700244F40 /* Frameworks */,
 				96AB6FBF29C1FBB700244F40 /* Resources */,
 				8CD7256491A241236A341644 /* [CP] Embed Pods Frameworks */,
+				64A5278E64A95947816A139E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1286,6 +1297,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		64A5278E64A95947816A139E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoolBox/Pods-CoolBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8CD7256491A241236A341644 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1623,11 +1651,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CoolBox/CoolBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoolBox",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "酷报销";
 				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1641,8 +1675,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
+				MARKETING_VERSION = 2.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1662,11 +1696,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CoolBox/CoolBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USW5Q2PS6Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoolBox",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoolBox/SupportFile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "酷报销";
 				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1680,8 +1720,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx1;
+				MARKETING_VERSION = 2.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kubaoxiao.coolbx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

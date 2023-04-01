@@ -156,7 +156,19 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
     }
     
     func unbaleBX() {
+        var ids = ""
+        list.filter({$0.isDataComplete == "1"}).forEach { fp in
+            if fp.isSelected {
+                ids += "\(fp.id),"
+            }
+        }
+        if ids.hasSuffix(",") {
+            ids = ids.subString(start: 0, length: ids.length - 1)
+        }
         
+        FPApi.setFPStatus(idsStr: ids) { [weak self]_ in
+            self?.loadFapiao(nil)
+        }
     }
     
     func createBX() {

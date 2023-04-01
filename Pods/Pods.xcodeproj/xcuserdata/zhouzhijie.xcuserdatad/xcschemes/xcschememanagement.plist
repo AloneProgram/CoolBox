@@ -11,6 +11,13 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AlipaySDK-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>23</integer>
+		</dict>
 		<key>AttributedString.xcscheme</key>
 		<dict>
 			<key>isShown</key>

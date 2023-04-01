@@ -11,24 +11,24 @@ import Foundation
 struct AppInfo {
     static let appName = "酷报销"
     static let id = 0
-    static let scheme = "huandian"
+    static let scheme = ""
     static let host = ""
 
-    static let companyName = "深圳易马达科技有限公司"
-    static let companyEnName = "Shenzhen Immotor Technology Co., Ltd."
+    static let companyName = ""
+    static let companyEnName = ""
 
     
     /// 微信
     struct WeChat {
-        static let key = "wxff283937157c82df"
+        static let key = "wxd0ab460cc82817d4"
         static let secret = ""
         /// 不可修改
         static let bundleId = "com.tencent.xin"
-        static let universalLink = "https://www.huandian.xin/"
+        static let universalLink = "https://app.kubaoxiao.com/app/"
     }
     
     struct AliPay {
-        static let key = "ImmotorHuanDian"
+        static let scheme = "2021003162694292"
     }
     
     // scheme 白名单

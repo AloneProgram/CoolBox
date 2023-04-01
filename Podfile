@@ -54,6 +54,7 @@ target 'CoolBox' do
   pod 'TZImagePickerController'
   #微信开放平台SDK
   pod 'WechatOpenSDK'
+  pod 'AlipaySDK-iOS'
   pod 'MMKV'
   pod 'Qiniu'
     

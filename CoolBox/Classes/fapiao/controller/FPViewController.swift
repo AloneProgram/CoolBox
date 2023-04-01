@@ -8,6 +8,7 @@
 import UIKit
 import Parchment
 
+
 struct PageTab {
     var title = ""
     var isSelected = false
@@ -98,12 +99,16 @@ class FPViewController: EViewController {
             make.top.right.equalTo(pagingViewController.view)
             make.size.equalTo(CGSize(width: 79, height: 42))
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(aliPayImportRequest(_:)), name: Notification.Name("AliImportFaPiao"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(wxImportRequest(_:)), name: Notification.Name("WXImportFaPiao"), object: nil)
     }
     
     func importAction(_ tag: Int) {
         switch tag {
         case 0: scanImport()
-        case 1: wxImport()
+        case 1: requestWXApiConfig()
         case 2: aliImprot()
         case 3: tabkeImport()
         case 4: emailImport()
@@ -157,18 +162,43 @@ extension FPViewController: PagingViewControllerDataSource, PagingViewController
 
 
 extension FPViewController {
-    
+        
     func scanImport() {
         let vc = CamareImportVC(isScaneImport: true)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
-    func wxImport(){
+    func wxImport(ticket: String){
         
+        guard WXApi.isWXAppInstalled() else {
+            EToast.showFailed("您未安装微信")
+            return
+        }
+        
+        let cardReq = WXChooseInvoiceReq()
+        cardReq.appID = AppInfo.WeChat.key
+        cardReq.timeStamp = UInt32(Date().timeIntervalSince1970);
+        let timeStamp = "\(cardReq.timeStamp)"
+        cardReq.nonceStr = "sfim_invoice"
+        cardReq.cardSign = getCardSign(nonceStr: cardReq.nonceStr, timStr: timeStamp, ticket: ticket)
+        
+        WXApi.send(cardReq) { _ in
+            
+        }
     }
     
     func aliImprot() {
+        let params: [String: Any] = [
+            kAFServiceOptionBizParams: ["url": "/www/invoiceSelect.htm?scene=INVOICE_EXPENSE&einvMerchantId=91310114MA1GWBRD63&serverRedirectUrl=https://api.kubaoxiao.com/callback/alipay/serve"],
+            kAFServiceOptionCallbackScheme: "com.kubaoxiao.coolbx"
+        ]
+                        
+        AFServiceCenter.call(AFService.eInvoice, withParams: params) { response in
+            if response?.responseCode == .success, let token = response?.result["token"] {
+                NotificationCenter.default.post(name: Notification.Name("AliImportFaPiao"), object: token)
+            }
+        }
         
     }
     
@@ -180,6 +210,68 @@ extension FPViewController {
     
     func emailImport() {
         
+    }
+    
+    func requestWXApiConfig() {
+        FPApi.getWxTiket { [weak self] ticket in
+            self?.wxImport(ticket: ticket)
+        }
+    }
+    
+    
+    @objc func wxImportRequest(_ noti: Notification) {
+        guard  let cardArr = noti.object as? [Any] else { return}
+        var dicArray: [[String: Any]] = []
+        cardArr.forEach { obj in
+            if let o = obj as? WXInvoiceItem {
+                let dic: [String: Any] = [
+                    "card_id": o.cardId,
+                    "encrypt_code": o.encryptCode,
+                    "app_id": o.appID,
+                ]
+                dicArray.append(dic)
+            }
+        }
+        guard let jsonStr = JSON(dicArray).rawString() else { return}
+        EHUD.show("正在导入..")
+        FPApi.wxImportFP(arrStr: jsonStr) { success in
+            if success {
+                EToast.showSuccess("发票导入成功")
+                NotificationCenter.default.post(name: Notification.Name("ImportFPSuccess"), object: nil)
+            }
+        }
+        
+    }
+    
+    @objc func aliPayImportRequest(_ noti: Notification) {
+        guard  let token = noti.object as? String else { return}
+        EHUD.show("正在导入..")
+        FPApi.aliImportFP(token: token) { success in
+            EHUD.dismiss()
+            if success {
+                EToast.showSuccess("发票导入成功")
+                NotificationCenter.default.post(name: Notification.Name("ImportFPSuccess"), object: nil)
+            }
+        }
+    }
+    
+    func getCardSign(nonceStr: String, timStr: String, ticket: String) -> String {
+        var cardSignDic: [String: Any] = [:]
+        cardSignDic["nonceStr"] = nonceStr
+        cardSignDic["timestamp"] = timStr
+        cardSignDic["api_ticket"] = ticket
+        cardSignDic["cardType"] = "INVOICE"
+        cardSignDic["appid"] = AppInfo.WeChat.key
+        
+        var contentString = ""
+        let values = cardSignDic.values
+                
+        values.forEach { v in
+            if let str = v as? String {
+                contentString += str
+            }
+        }
+        return contentString.sha1()
     }
 }
 
@@ -193,4 +285,22 @@ class CusPagingIndicatorView: PagingIndicatorView {
         center = layoutAttributes.center
       }
     }
+}
+
+
+extension String {
+
+    ///sha1 加密
+    func sha1() -> String {
+      //UnsafeRawPointer
+      let data = self.data(using: String.Encoding.utf8)!
+      var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
+      let newData = NSData.init(data: data)
+      CC_SHA1(newData.bytes, CC_LONG(data.count), &digest)
+      let output = NSMutableString(capacity: Int(CC_SHA1_DIGEST_LENGTH))
+      for byte in digest {
+          output.appendFormat("%02x", byte)
+      }
+      return output as String
+  }
 }

@@ -18,6 +18,14 @@ fileprivate enum ApiTarget: ETargetType {
     
     case deleteFapiao(ids: String)
     
+    case setFPStatus(ids: String, status: Int)
+    
+    case aliImport(token: String)
+    
+    case wxImport(cardArrStr: String)
+    
+    case getWxTickt
+    
     var path: String {
         switch self {
         case .fapiaoList:  return "/api/invoice/list"
@@ -25,6 +33,10 @@ fileprivate enum ApiTarget: ETargetType {
         case .takePhotoImport:      return "/api/invoice/cameraScan"
         case .invoiceImport:        return "/api/invoice/import"
         case .deleteFapiao:        return "/api/invoice/delInfo"
+        case .setFPStatus:              return "/api/invoice/setStatus"
+        case .aliImport:            return "/api/invoice/alipayImport"
+        case .getWxTickt:              return "/api/system/getWxTicketConfig"
+        case .wxImport:         return "/api/invoice/wechatImport"
         }
     }
     
@@ -62,6 +74,17 @@ fileprivate enum ApiTarget: ETargetType {
         case .deleteFapiao(let ids):
             return [
                 "invoice_ids": ids
+            ]
+        case .setFPStatus(let ids, let status):
+            return [
+                "status": status,
+                "invoice_ids": ids
+            ]
+        case .aliImport(let token):
+            return ["invoice_token": token]
+        case .wxImport(let cardArrStr):
+            return [
+                "card_data": cardArrStr
             ]
         default:
             return nil
@@ -119,4 +142,42 @@ struct FPApi {
         }) { (err, json) in
         }
     }
+    
+    static func setFPStatus(idsStr: String, status: Int = 5, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.setFPStatus(ids: idsStr, status: status)
+        ENetworking.request(target, success: { (json) in
+            EToast.showSuccess("发票状态修改成功")
+            result(true)
+        }) { (err, json) in
+        }
+    }
+    
+    static func aliImportFP(token: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.aliImport(token: token)
+        ENetworking.request(target, success: { (json) in
+            EHUD.dismiss()
+            result(true)
+        }) { (err, json) in
+        }
+    }
+    
+    static func getWxTiket(result: @escaping (String)->Void) {
+        let target = ApiTarget.getWxTickt
+        ENetworking.request(target, success: { (json) in
+            result(json.stringValue)
+        }) { (err, json) in
+            EHUD.dismiss()
+        }
+    }
+    
+    static func wxImportFP(arrStr: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.wxImport(cardArrStr: arrStr)
+        ENetworking.request(target, success: { (json) in
+            EHUD.dismiss()
+            result(true)
+        }) { (err, json) in
+            EHUD.dismiss()
+        }
+    }
+    
 }

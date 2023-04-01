@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.4)
+  - AlipaySDK-iOS (15.8.11)
   - AttributedString (3.3.5)
   - CYLTableViewPlaceHolder (1.0.9)
   - HappyDNS (1.0.2)
@@ -34,6 +35,7 @@ PODS:
   - WechatOpenSDK (2.0.2)
 
 DEPENDENCIES:
+  - AlipaySDK-iOS
   - AttributedString
   - CYLTableViewPlaceHolder
   - HBDNavigationBar (~> 1.9.3)
@@ -57,6 +59,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlipaySDK-iOS
     - AttributedString
     - CYLTableViewPlaceHolder
     - HappyDNS
@@ -89,6 +92,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  AlipaySDK-iOS: a07b6eafa847a5b29acb6c150ea16d9792d5d167
   AttributedString: 6d2d9d65310119556c3b5c6e4ea8d1ca339b703c
   CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
   HappyDNS: 75eed16b27c6c3abccea34ac349ab7b7e954b25b
@@ -111,6 +115,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
   WechatOpenSDK: e79349b37d44c015210f39fd6d2379f0ec60efe2
 
-PODFILE CHECKSUM: b74b8b21e05cc8a57509a22139b119e4124e9688
+PODFILE CHECKSUM: 8ccc67e6e2088a769b87b939d585672ac1304216
 
 COCOAPODS: 1.12.0
