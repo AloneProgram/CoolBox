@@ -10,6 +10,7 @@ import UIKit
 enum BottomActionType {
     case fp_normal
     case fp_delete
+    case fp_unNeed  //无需报销
 }
 
 class BottomActionView: UIView {
@@ -39,7 +40,12 @@ class BottomActionView: UIView {
             viewArray = [
                 actionBtn(color: UIColor(hexString: "#F53F3F"), title: "删除发票", titleColor: UIColor(hexString: "#F53F3F"), selector: #selector(deletFP)),
                 actionBtn(color: UIColor(hexString: "#165DFF"), title: "无需报销", titleColor: UIColor(hexString: "#165DFF"), selector: #selector(unbaleBX)),
-                actionBtn(color: UIColor(hexString: "#165DFF"), title: "创建报销单", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(deletFP))
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "创建报销单", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(createBX))
+            ]
+        case .fp_unNeed:
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#F53F3F"), title: "删除发票", titleColor: UIColor(hexString: "#F53F3F"), selector: #selector(deletFP)),
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "创建报销单", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(createBX))
             ]
         case .fp_delete:
             viewArray = [

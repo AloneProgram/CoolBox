@@ -74,10 +74,10 @@ class FapiaoCell: UITableViewCell {
         case "1":
             statusLabel.text = "报销中"
             statusLabel.style = .gray
-        case "2":
+        case "3":
             statusLabel.text = "已报销"
             statusLabel.style = .blue
-        case "3":
+        case "5":
             statusLabel.text = "无需报销"
             statusLabel.style = .gray
         default:
@@ -108,6 +108,10 @@ class FapiaoCell: UITableViewCell {
         }
         
         if statusWid == 0 {
+            selectBtn.isHidden = true
+        }
+        
+        if fapiao.status == "1" || fapiao.status == "3" {
             selectBtn.isHidden = true
         }
         

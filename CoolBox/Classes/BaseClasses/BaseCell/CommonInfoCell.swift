@@ -70,7 +70,18 @@ class CommonInfoCell: UITableViewCell {
         }else {
             rightTltle.text = "点击切换"
         }
+    }
+    
+    func bindTemplate(_ template: Template) {
+        leftView.isHidden = true
+        leftViewWid.constant = 0
         
+        rightView.isHidden = true
+        rightVIewWid.constant = 0
+        rightImageView.isHidden = true
+        
+        leftTitle.text = template.name
+        rightTltle.text = template.value
         
     }
     

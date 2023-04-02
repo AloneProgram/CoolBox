@@ -21,7 +21,7 @@ struct PageTab {
 
 
 
-class FPViewController: EViewController {
+class FPViewController: EViewController, PresentToCenter {
     
     private var headerView = ImportEntranceView.instance()
     
@@ -60,6 +60,11 @@ class FPViewController: EViewController {
     }()
     
     var filterModels: [[FIlterModel]] = [ ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name("BackToReloadFapiaoListData"), object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,7 +214,11 @@ extension FPViewController {
     }
     
     func emailImport() {
-        
+        let importHandler:(() -> Void) = { [weak self] in
+            self?.emailImportRequest()
+        }
+        let alert = EmailImportAlert( confirm: importHandler)
+        presentToCenter(alert)
     }
     
     func requestWXApiConfig() {
@@ -272,6 +281,12 @@ extension FPViewController {
             }
         }
         return contentString.sha1()
+    }
+    
+    func emailImportRequest() {
+        FPApi.emialImport(result: { [weak self] list in
+            self?.push(ImportFPVC(list))
+        })
     }
 }
 

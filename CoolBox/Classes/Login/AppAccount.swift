@@ -119,7 +119,7 @@ class Account {
         type = json["type"].stringValue
         companyId = json["company_id"].stringValue
         companyName = json["company_name"].stringValue
-        isCompanyAdmin = json["is_company_admin"].intValue == 3
+        isCompanyAdmin = json["is_company_admin"].intValue == 1
 
     }
     

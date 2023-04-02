@@ -26,6 +26,14 @@ fileprivate enum ApiTarget: ETargetType {
     
     case getWxTickt
     
+    case emmailImport
+    
+    case fpInfo(id: String)
+    
+    case setFPFile(fileUrl: String, id: String)
+    
+    case saveFapiao(params: [String: Any])
+    
     var path: String {
         switch self {
         case .fapiaoList:  return "/api/invoice/list"
@@ -37,6 +45,10 @@ fileprivate enum ApiTarget: ETargetType {
         case .aliImport:            return "/api/invoice/alipayImport"
         case .getWxTickt:              return "/api/system/getWxTicketConfig"
         case .wxImport:         return "/api/invoice/wechatImport"
+        case .emmailImport:     return "/api/invoice/mailImport"
+        case .fpInfo:       return "/api/invoice/info"
+        case .setFPFile:      return "/api/invoice/setFileUrl"
+        case .saveFapiao:       return "/api/invoice/setInfo"
         }
     }
     
@@ -86,6 +98,17 @@ fileprivate enum ApiTarget: ETargetType {
             return [
                 "card_data": cardArrStr
             ]
+        case .fpInfo(let id):
+            return [
+                "invoice_id" : id
+            ]
+        case .setFPFile(let fileUrl, let id):
+            return [
+                "invoice_id": id,
+                "file_url": fileUrl
+            ]
+        case .saveFapiao(let params):
+            return params
         default:
             return nil
         }
@@ -180,4 +203,37 @@ struct FPApi {
         }
     }
     
+    static func emialImport(result: @escaping (CameraImportFaPiaoList)->Void) {
+        let target = ApiTarget.emmailImport
+        ENetworking.request(target, success: { (json) in
+            result(CameraImportFaPiaoList(fromJson: json))
+        }) { (err, json) in
+        }
+    }
+    
+    static func fapioaInfo(id: String, result: @escaping (FapiaoDetailModel)->Void) {
+        let target = ApiTarget.fpInfo(id: id)
+        ENetworking.request(target, success: { (json) in
+            result(FapiaoDetailModel(fromJson: json))
+        }) { (err, json) in
+        }
+    }
+    
+    static func setFPFile(id: String, fileUrl: String, result: @escaping (Bool)->Void) {
+        let target = ApiTarget.setFPFile(fileUrl: fileUrl, id: id)
+        ENetworking.request(target, success: { (json) in
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
+    
+    static func saveInfo(params: [String: Any], result: @escaping (Bool)->Void) {
+        let target = ApiTarget.saveFapiao(params: params)
+        ENetworking.request(target, success: { (json) in
+            result(true)
+        }) { (err, json) in
+            
+        }
+    }
 }

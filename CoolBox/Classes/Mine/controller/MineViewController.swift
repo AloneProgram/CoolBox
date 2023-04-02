@@ -82,9 +82,7 @@ class MineViewController: EViewController {
 
 //Action
 extension MineViewController {
-    func pushToScanLogin() {
-        //TODO: 跳转扫码登录
-        
+    func pushToScanLogin() {        
         push(QRScanViewController())
     }
 }

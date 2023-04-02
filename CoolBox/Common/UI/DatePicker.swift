@@ -77,6 +77,7 @@ class DatePicker: PresentBottomVC {
         } else {
             // Fallback on earlier versions
         }
+        pickerView.locale = Locale(identifier: "zh_CN")
         pickerView.datePickerMode = pickerModel
         pickerView.maximumDate = Date()//设置最大值为现在
         view.addSubview(pickerView)

@@ -29,6 +29,9 @@
 		961D178129C7649E00853FCB /* GlobalConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178029C7649E00853FCB /* GlobalConfigManager.swift */; };
 		961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D178229C764DC00853FCB /* CompanyInfoConfig.swift */; };
 		96262B7A29D8519400A2B974 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96262B7929D8519400A2B974 /* SystemConfiguration.framework */; };
+		96262B7C29D88C1F00A2B974 /* EmailImportAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96262B7B29D88C1F00A2B974 /* EmailImportAlert.swift */; };
+		96262B7F29D9608700A2B974 /* FPDetailInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96262B7D29D9608700A2B974 /* FPDetailInfoVC.swift */; };
+		96262B8029D9608700A2B974 /* FPDetailInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96262B7E29D9608700A2B974 /* FPDetailInfoVC.xib */; };
 		964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E718B29C5C48200118D43 /* OSSConfigModel.swift */; };
 		964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */; };
 		964E71D229C5F44400118D43 /* TwoInpuAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */; };
@@ -76,6 +79,8 @@
 		96673C0E29D476BC00AB7602 /* FPSelectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */; };
 		96673C0F29D476BC00AB7602 /* FPSelectListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */; };
 		96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C1029D4786600AB7602 /* BottomActionView.swift */; };
+		9670574629D99112004FB0B3 /* FPEditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670574429D99112004FB0B3 /* FPEditInfoVC.swift */; };
+		9670574729D99112004FB0B3 /* FPEditInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9670574529D99112004FB0B3 /* FPEditInfoVC.xib */; };
 		9690147229CB2F40008E88CF /* DepartmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147129CB2F40008E88CF /* DepartmentListModel.swift */; };
 		9690147429CB3085008E88CF /* MemeberListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147329CB3085008E88CF /* MemeberListModel.swift */; };
 		9690147729CB3206008E88CF /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147529CB3206008E88CF /* MemberListVC.swift */; };
@@ -217,6 +222,8 @@
 		96DA53AF29D0807E00958209 /* CamareImportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA53AD29D0807E00958209 /* CamareImportVC.xib */; };
 		96E11F5B29CC9F8E00E29681 /* ImportEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E11F5A29CC9F8E00E29681 /* ImportEntranceView.swift */; };
 		96E11F5D29CC9F9B00E29681 /* ImportEntranceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */; };
+		96FBC92129D9C161002889C6 /* BXEditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */; };
+		96FBC92229D9C161002889C6 /* BXEditInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */; };
 		C47A0BE04FB0A4B6747BE220 /* Pods_CoolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -246,6 +253,9 @@
 		962190A329D840B100069FEA /* AFServiceSDK.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = AFServiceSDK.zip; path = ../Downloads/AFServiceSDK.zip; sourceTree = "<group>"; };
 		962190A529D840CA00069FEA /* AFServiceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFServiceSDK.framework; path = ../Downloads/AFServiceSDK/AFServiceSDK.framework; sourceTree = "<group>"; };
 		96262B7929D8519400A2B974 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		96262B7B29D88C1F00A2B974 /* EmailImportAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailImportAlert.swift; sourceTree = "<group>"; };
+		96262B7D29D9608700A2B974 /* FPDetailInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPDetailInfoVC.swift; sourceTree = "<group>"; };
+		96262B7E29D9608700A2B974 /* FPDetailInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPDetailInfoVC.xib; sourceTree = "<group>"; };
 		964E718B29C5C48200118D43 /* OSSConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSConfigModel.swift; sourceTree = "<group>"; };
 		964E71CF29C5F3B800118D43 /* TwoInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInputAlert.swift; sourceTree = "<group>"; };
 		964E71D129C5F44400118D43 /* TwoInpuAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoInpuAlertView.swift; sourceTree = "<group>"; };
@@ -293,6 +303,8 @@
 		96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSelectListVC.swift; sourceTree = "<group>"; };
 		96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPSelectListVC.xib; sourceTree = "<group>"; };
 		96673C1029D4786600AB7602 /* BottomActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionView.swift; sourceTree = "<group>"; };
+		9670574429D99112004FB0B3 /* FPEditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPEditInfoVC.swift; sourceTree = "<group>"; };
+		9670574529D99112004FB0B3 /* FPEditInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPEditInfoVC.xib; sourceTree = "<group>"; };
 		9690147129CB2F40008E88CF /* DepartmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListModel.swift; sourceTree = "<group>"; };
 		9690147329CB3085008E88CF /* MemeberListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeberListModel.swift; sourceTree = "<group>"; };
 		9690147529CB3206008E88CF /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
@@ -437,6 +449,8 @@
 		96DA53AD29D0807E00958209 /* CamareImportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CamareImportVC.xib; sourceTree = "<group>"; };
 		96E11F5A29CC9F8E00E29681 /* ImportEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportEntranceView.swift; sourceTree = "<group>"; };
 		96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportEntranceView.xib; sourceTree = "<group>"; };
+		96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXEditInfoVC.swift; sourceTree = "<group>"; };
+		96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXEditInfoVC.xib; sourceTree = "<group>"; };
 		9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.release.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.release.xcconfig"; sourceTree = "<group>"; };
 		EB97887534DA9A67D4688675 /* Pods-CoolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.debug.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -781,6 +795,7 @@
 				96AB704529C2088E00244F40 /* ETextView.swift */,
 				96AB704629C2088E00244F40 /* PresentCenterVC.swift */,
 				96AB704729C2088E00244F40 /* CustomAlert.swift */,
+				96262B7B29D88C1F00A2B974 /* EmailImportAlert.swift */,
 				96AB704829C2088E00244F40 /* Share */,
 				96DA538A29D0033E00958209 /* DatePicker.swift */,
 			);
@@ -1047,6 +1062,10 @@
 				96673C0929D1F9B200AB7602 /* ImportFPVC.xib */,
 				96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */,
 				96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */,
+				96262B7D29D9608700A2B974 /* FPDetailInfoVC.swift */,
+				96262B7E29D9608700A2B974 /* FPDetailInfoVC.xib */,
+				9670574429D99112004FB0B3 /* FPEditInfoVC.swift */,
+				9670574529D99112004FB0B3 /* FPEditInfoVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1079,6 +1098,8 @@
 			children = (
 				96AB711129C210D100244F40 /* BXViewController.swift */,
 				96DA538C29D018A900958209 /* BXListVC.swift */,
+				96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */,
+				96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1252,6 +1273,7 @@
 				96DA53A129D0361B00958209 /* SPUnchckedCell.xib in Resources */,
 				96AB70C229C2088E00244F40 /* blueArrow@2x.png in Resources */,
 				96673C0B29D1F9B300AB7602 /* ImportFPVC.xib in Resources */,
+				96FBC92229D9C161002889C6 /* BXEditInfoVC.xib in Resources */,
 				96AB70C629C2088E00244F40 /* blackArrow@2x.png in Resources */,
 				96DA539129D019DE00958209 /* BaoxiaoCell.xib in Resources */,
 				964E71E529C6ED5200118D43 /* BaseHeightBottomView.xib in Resources */,
@@ -1275,6 +1297,7 @@
 				96AB70F029C2088E00244F40 /* PhotoAlbum.storyboard in Resources */,
 				96DA53A729D03A0700958209 /* SPInfoCell.xib in Resources */,
 				96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */,
+				96262B8029D9608700A2B974 /* FPDetailInfoVC.xib in Resources */,
 				965208A129CE94CB00A5175F /* FilterEntraceView.xib in Resources */,
 				965208D429CEEABF00A5175F /* FilterVC.xib in Resources */,
 				96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */,
@@ -1290,6 +1313,7 @@
 				96AB70B229C2088E00244F40 /* Share.xcassets in Resources */,
 				96673C0F29D476BC00AB7602 /* FPSelectListVC.xib in Resources */,
 				965208D829CEF14300A5175F /* FilterCell.xib in Resources */,
+				9670574729D99112004FB0B3 /* FPEditInfoVC.xib in Resources */,
 				96A3758029C56DF700B4727C /* MineHeadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1371,6 +1395,7 @@
 				960F342E29CB3BBD000149A2 /* ZJProtocol.swift in Sources */,
 				9690FC8129C8983F008E88CF /* McPickerPopoverViewController.swift in Sources */,
 				965208AB29CEB96900A5175F /* FPApi.swift in Sources */,
+				96262B7F29D9608700A2B974 /* FPDetailInfoVC.swift in Sources */,
 				96AB70CE29C2088E00244F40 /* NavTransition.swift in Sources */,
 				96AB711229C210D100244F40 /* BXViewController.swift in Sources */,
 				96AB70E329C2088E00244F40 /* CircularProgressLayer.swift in Sources */,
@@ -1465,9 +1490,11 @@
 				96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */,
 				96AB70B829C2088E00244F40 /* EWebViewController.swift in Sources */,
 				96AB70AF29C2088E00244F40 /* CustomAlert.swift in Sources */,
+				96FBC92129D9C161002889C6 /* BXEditInfoVC.swift in Sources */,
 				9658210529C5A1420005C6AA /* CompanyListModel.swift in Sources */,
 				961D173729C738C300853FCB /* CreateVC.swift in Sources */,
 				960F343129CB3BBD000149A2 /* ZJExpandTreeCellItem.swift in Sources */,
+				96262B7C29D88C1F00A2B974 /* EmailImportAlert.swift in Sources */,
 				96A3757F29C56DF700B4727C /* MineHeadView.swift in Sources */,
 				96DA53A629D03A0700958209 /* SPInfoCell.swift in Sources */,
 				965208CB29CEE98100A5175F /* GYSideConfig.swift in Sources */,
@@ -1500,6 +1527,7 @@
 				96DA538D29D018A900958209 /* BXListVC.swift in Sources */,
 				96AB70DE29C2088E00244F40 /* CropOverlayView.swift in Sources */,
 				9690FC8029C8983F008E88CF /* McTextField.swift in Sources */,
+				9670574629D99112004FB0B3 /* FPEditInfoVC.swift in Sources */,
 				96DA53AE29D0807E00958209 /* CamareImportVC.swift in Sources */,
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
 				964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */,

@@ -60,6 +60,9 @@ class FPListVC: ETableViewController, PresentToCenter {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAction(_:)), name: Notification.Name("ReloadFapiaoListData"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadList), name: Notification.Name("BackToReloadFapiaoListData"), object: nil)
+        
     }
     
     override func makePlaceHolderView() -> UIView! {
@@ -132,6 +135,12 @@ class FPListVC: ETableViewController, PresentToCenter {
         tableView.mj_header?.beginRefreshing()
     }
     
+    
+    @objc func reloadList() {
+        loadData(self.refreshBlock)
+    }
+    
+    
     func deleteFapiao(_ fapiao: FaPiaoModel) {
         FPApi.deleteFP(idsStr: fapiao.id) {[weak self] success in
             if success, let strongSelf = self {
@@ -141,8 +150,15 @@ class FPListVC: ETableViewController, PresentToCenter {
     }
     
     func toSelectFP(_ row: Int) {
+        var status = 0
+        switch tag {
+        case 0, 1: status = tag
+        case 2: status = 3
+        case 3: status = 5
+        default: break
+        }
         let fp = list[row]
-        let vc = FPSelectListVC(fp.id)
+        let vc = FPSelectListVC(fp.id, status: status)
         vc.modalPresentationStyle = .fullScreen
         AppCommon.getCurrentVC()?.present(vc, animated: true)
     }
@@ -173,10 +189,14 @@ extension FPListVC: UITableViewDelegate, UITableViewDataSource {
         
         if fapiao.isSync == "2" {
             //点击删除
-            let alert = CustomAlert(title: "系统提示", content: "请删除后重新导入", confirmTitle: "删除") { [weak self] in
+            let alert = CustomAlert(title: "系统提示", content: "请删除后重新导入", confirmTitle: "删除", confirm:  { [weak self] in
                 self?.deleteFapiao(fapiao)
-            }
+            })
             presentToCenter(alert)
+        }else if fapiao.isDataComplete == "1" {
+            AppCommon.getCurrentVC()?.push(FPDetailInfoVC(fapiao.id))
+        }else if fapiao.isDataComplete == "0" {
+            AppCommon.getCurrentVC()?.push(FPEditInfoVC(fapiao.id))
         }
 
     }

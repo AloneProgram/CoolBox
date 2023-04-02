@@ -9,7 +9,7 @@ import UIKit
 import Parchment
 
 class SPViewController: EViewController {
-
+    
     var filtetEntraceView = FilterEntraceView.instance()
     
     var list: [SPPagingItem] = [
@@ -23,7 +23,7 @@ class SPViewController: EViewController {
     var thirdVC = SPListVC(2)
     
     var listVC: [SPListVC] = []
-        
+    
     lazy private var pagingViewController: PagingViewController = {
         let pagingVC = PagingViewController()
         pagingVC.register(SPPagingCell.self, for: SPPagingItem.self)
@@ -53,10 +53,44 @@ class SPViewController: EViewController {
     
     var filterModels: [[FIlterModel]] = [ ]
     
+    private var spBtn: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("设置审批流", for: .normal)
+        button.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
+        button.titleLabel?.font = SCFont(16)
+        button.addTarget(self, action: #selector(setSehnpiProcess), for: .touchUpInside)
+        return button
+    }()
+    
+    private var leftTitlteLabel: UILabel = {
+        let title = UILabel(text: "审批列表", font: MediumFont(18), nColor: UIColor(hexString: "#1D2129"))
+
+        return title
+    }()
+    
+    private var spacer: UIView = {
+        let spacer = UIView()
+        let constraint = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
+        constraint.isActive = true
+        constraint.priority = .defaultLow
+        return spacer
+    }()
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getMySPList()
         getMySendSPList()
+        
+        if Login.currentAccount().isCompanyAdmin {
+            let stack = UIStackView(arrangedSubviews: [leftTitlteLabel, spacer, spBtn])
+            stack.axis = .horizontal
+            navigationItem.titleView = stack
+        }else {
+            let stack = UIStackView(arrangedSubviews: [leftTitlteLabel, spacer])
+            stack.axis = .horizontal
+            navigationItem.titleView = stack
+        }
     }
     
     override func viewDidLoad() {
@@ -64,21 +98,6 @@ class SPViewController: EViewController {
         view.backgroundColor = EColor.viewBgColor
       
         listVC = [fistVC, secVC, thirdVC]
-        
-        let button = UIButton(type: .custom)
-        button.setTitle("设置审批流", for: .normal)
-        button.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
-        button.titleLabel?.font = SCFont(16)
-        button.addTarget(self, action: #selector(setSehnpiProcess), for: .touchUpInside)
-        
-        let title = UILabel(text: "审批列表", font: MediumFont(18), nColor: UIColor(hexString: "#1D2129"))
-        let spacer = UIView()
-        let constraint = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
-        constraint.isActive = true
-        constraint.priority = .defaultLow
-        let stack = UIStackView(arrangedSubviews: [title, spacer, button])
-        stack.axis = .horizontal
-        navigationItem.titleView = stack
         
    
         view.addSubview(pagingViewController.view)

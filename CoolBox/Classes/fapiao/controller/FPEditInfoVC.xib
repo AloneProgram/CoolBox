@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FPEditInfoVC" customModule="CoolBox" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="gT0-iQ-vw2" id="M1Y-de-HYb"/>
+                <outlet property="bttomViewHeight" destination="3nL-OJ-J5T" id="pWZ-1h-tEg"/>
+                <outlet property="fapiaoImageView" destination="uqW-fc-CVq" id="14E-Ig-Gqb"/>
+                <outlet property="impotBtn" destination="JEK-RT-OPs" id="DIi-TL-TEa"/>
+                <outlet property="tableView" destination="98b-hs-4gD" id="am6-gb-Spl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="98b-hs-4gD">
+                    <rect key="frame" x="0.0" y="253.66666666666669" width="393" height="526.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-iQ-vw2">
+                    <rect key="frame" x="0.0" y="780" width="393" height="72"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-wH-Tys">
+                            <rect key="frame" x="16" y="8" width="361" height="32"/>
+                            <color key="backgroundColor" red="0.086274509799999996" green="0.36470588240000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="VaX-nU-4Mj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="保存"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="etf-WP-OVV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="FmF-wH-Tys" firstAttribute="top" secondItem="gT0-iQ-vw2" secondAttribute="top" constant="8" id="3Vb-GO-jwG"/>
+                        <constraint firstAttribute="height" constant="72" id="3nL-OJ-J5T"/>
+                        <constraint firstAttribute="trailing" secondItem="FmF-wH-Tys" secondAttribute="trailing" constant="16" id="rJV-E9-Gwx"/>
+                        <constraint firstItem="FmF-wH-Tys" firstAttribute="leading" secondItem="gT0-iQ-vw2" secondAttribute="leading" constant="16" id="rsB-sz-Ip0"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="cus_ShadowOffset">
+                            <size key="value" width="0.0" height="-3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.52549019610000003" green="0.56470588239999997" blue="0.61176470589999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYL-Dd-BaF">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="253.66666666666666"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="import_fapiaoBg" translatesAutoresizingMaskIntoConstraints="NO" id="uqW-fc-CVq">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="253.66666666666666"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="2pL-zf-wi6" appends="YES" id="Lcj-rC-c9K"/>
+                            </connections>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEK-RT-OPs">
+                            <rect key="frame" x="146.66666666666666" y="76.666666666666671" width="100" height="100.00000000000001"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="D64-ny-8Ea"/>
+                                <constraint firstAttribute="width" constant="100" id="fEX-Bc-udl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <inset key="titleEdgeInsets" minX="-25" minY="25" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="37" minY="-31" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="上传发票" image="ic_cameraBg">
+                                <color key="titleColor" red="0.086274509799999996" green="0.36470588240000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="disabled" image="ic_cameraBg"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="JEK-RT-OPs" firstAttribute="centerY" secondItem="uqW-fc-CVq" secondAttribute="centerY" id="KdG-Tb-cQz"/>
+                        <constraint firstItem="uqW-fc-CVq" firstAttribute="top" secondItem="aYL-Dd-BaF" secondAttribute="top" id="Mt0-de-cBU"/>
+                        <constraint firstAttribute="bottom" secondItem="uqW-fc-CVq" secondAttribute="bottom" id="RqM-sg-NxP"/>
+                        <constraint firstAttribute="trailing" secondItem="uqW-fc-CVq" secondAttribute="trailing" id="UKJ-qB-twU"/>
+                        <constraint firstItem="JEK-RT-OPs" firstAttribute="centerX" secondItem="uqW-fc-CVq" secondAttribute="centerX" id="pHY-D5-Lxk"/>
+                        <constraint firstAttribute="width" secondItem="aYL-Dd-BaF" secondAttribute="height" multiplier="375:242" id="qZG-2G-0CG"/>
+                        <constraint firstItem="uqW-fc-CVq" firstAttribute="leading" secondItem="aYL-Dd-BaF" secondAttribute="leading" id="zhx-Bc-WDd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="aYL-Dd-BaF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Rl-rw-inn"/>
+                <constraint firstItem="98b-hs-4gD" firstAttribute="top" secondItem="aYL-Dd-BaF" secondAttribute="bottom" id="7Pj-1p-SbF"/>
+                <constraint firstItem="98b-hs-4gD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8ik-e8-eo7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aYL-Dd-BaF" secondAttribute="trailing" id="GSN-yp-JTs"/>
+                <constraint firstItem="gT0-iQ-vw2" firstAttribute="top" secondItem="98b-hs-4gD" secondAttribute="bottom" id="Gnk-tH-DC3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="98b-hs-4gD" secondAttribute="trailing" id="HID-7Q-xZq"/>
+                <constraint firstItem="aYL-Dd-BaF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N00-DK-hXH"/>
+                <constraint firstItem="98b-hs-4gD" firstAttribute="top" secondItem="aYL-Dd-BaF" secondAttribute="bottom" id="R2k-2n-u7l"/>
+                <constraint firstItem="gT0-iQ-vw2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bW3-yV-DHQ"/>
+                <constraint firstAttribute="bottom" secondItem="gT0-iQ-vw2" secondAttribute="bottom" id="baw-Ix-eXf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gT0-iQ-vw2" secondAttribute="trailing" id="rvh-Bt-mhS"/>
+                <constraint firstItem="aYL-Dd-BaF" firstAttribute="width" secondItem="aYL-Dd-BaF" secondAttribute="height" multiplier="375:242" id="z5S-Um-BaJ"/>
+            </constraints>
+            <point key="canvasLocation" x="69" y="21"/>
+        </view>
+        <tapGestureRecognizer id="2pL-zf-wi6">
+            <connections>
+                <action selector="tapFileAction:" destination="-1" id="dqy-eD-eKR"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ic_cameraBg" width="22" height="20"/>
+        <image name="import_fapiaoBg" width="375" height="242.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

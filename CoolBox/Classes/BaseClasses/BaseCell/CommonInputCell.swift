@@ -73,6 +73,25 @@ class CommonInputCell: UITableViewCell, UITextFieldDelegate {
         textfield.isUserInteractionEnabled = inputModel.canInput
     }
     
+    
+    func bindTemplet(t: Template) {
+        textfield.resignFirstResponder()
+        hasBtn = false
+        redPointLabel.isHidden  = t.required != "1"
+        leftTitleLabel.text = t.name
+        textfield.placeholder = "请输入\(t.name)"
+        textfield.text = t.value
+        
+        actionBtn.isHidden = true
+
+        toBtnMargin.constant = 0
+        btnWid.constant = 0
+        lineLabe.isHidden = true
+        
+        textfield.isUserInteractionEnabled = t.type == "text"
+    }
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
         if let text = textField.text {

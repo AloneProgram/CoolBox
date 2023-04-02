@@ -26,9 +26,11 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
     var pageIndex = 1
     
     var selectId = ""
+    var status = 0
     
-    init(_ selectId: String) {
+    init(_ selectId: String, status: Int) {
         self.selectId = selectId
+        self.status = status
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,7 +59,7 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
         
         loadFapiao(nil)
         
-        let btmView = BottomActionView(type: .fp_normal, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
+        let btmView = BottomActionView(type: status == 0 ? .fp_normal : .fp_unNeed, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
         btmView.actionBlock = { [weak self] tag in
             switch tag {
             case 0:
@@ -101,7 +103,7 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
 
     
     func loadFapiao(_ block: RefreshResult?) {
-        FPApi.requestFapiaoList(page: 1, pageSize: 100, status: 0) {[weak self] list in
+        FPApi.requestFapiaoList(page: 1, pageSize: 100, status: status) {[weak self] list in
             block?(true)
             self?.list = list.list
             self?.list.enumerated().forEach({ idx, model in
@@ -172,7 +174,36 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
     }
     
     func createBX() {
+        var ids = ""
+        list.filter({$0.isDataComplete == "1"}).forEach { fp in
+            if fp.isSelected {
+                ids += "\(fp.id),"
+            }
+        }
+        if ids.hasSuffix(",") {
+            ids = ids.subString(start: 0, length: ids.length - 1)
+        }
         
+        let alert = SelectAlert(alertTitle: "选择报销类型")
+        let cancel = SelectAlertAction(title: "取消", type: .cancel)
+
+        let travleBX = SelectAlertAction(title: "差旅费报销") { [weak self] in
+            self?.dismiss(animated: false)
+            let _ = delay(0.1) {
+                AppCommon.getCurrentVC()?.push(BXEditInfoVC("1", ids: ids))
+            }
+        }
+        let feeBX = SelectAlertAction(title: "费用报销") { [weak self] in
+            self?.dismiss(animated: false)
+            let _ = delay(0.1) {
+                AppCommon.getCurrentVC()?.push(BXEditInfoVC("2", ids: ids))
+            }
+        }
+        
+        alert.addAction(travleBX)
+        alert.addAction(feeBX)
+        alert.addAction(cancel)
+        alert.show()
         
     }
     

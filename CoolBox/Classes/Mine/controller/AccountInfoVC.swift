@@ -277,7 +277,7 @@ extension AccountInfoVC: TZImagePickerControllerDelegate{
 
 extension AccountInfoVC : RImageCropperDelegate {
     func imageCropper(cropperViewController: RImageCropperViewController, didFinished editImg: UIImage) {
-        EHUD.show()
+        EHUD.show("正在上传")
         uploadImage(editImg)
         cropperViewController.navigationController?.popViewController(animated: false)
     }
