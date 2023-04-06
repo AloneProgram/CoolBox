@@ -21,6 +21,9 @@ class CommonInputCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var btnWid: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomLineHeight: NSLayoutConstraint!
+    
+    
     var lineLabe = UILabel()
     
     var clickBtnBlock: (() -> Void)?
@@ -30,14 +33,17 @@ class CommonInputCell: UITableViewCell, UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        bottomLineHeight.constant = 0.5
         
         textfield.delegate = self
         
-        lineLabe.backgroundColor = EColor.lineColor
+        lineLabe.backgroundColor = UIColor(hexString: "#e6e7e8")
         contentView.addSubview(lineLabe)
         lineLabe.snp.makeConstraints { make in
-            make.right.bottom.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalTo(leftTitleLabel.snp.bottom).offset(13)
             make.left.equalTo(16)
             make.height.equalTo(0.5)
         }
@@ -55,6 +61,8 @@ class CommonInputCell: UITableViewCell, UITextFieldDelegate {
     
     func bindInputModel(_ inputModel: CommonInputModel) {
         textfield.resignFirstResponder()
+        
+        bottomLineHeight.constant = inputModel.bottomLineHeight
         
         hasBtn = inputModel.showBtn
         redPointLabel.isHidden = !inputModel.showRedPoint

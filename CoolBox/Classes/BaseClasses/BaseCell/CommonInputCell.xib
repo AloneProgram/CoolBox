@@ -10,33 +10,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CommonInputCell" customModule="CoolBox" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="CommonInputCell" customModule="CoolBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhz-HO-PnX">
-                        <rect key="frame" x="5.9999999999999991" y="17" width="11.666666666666664" height="20"/>
+                        <rect key="frame" x="5.9999999999999991" y="12" width="11.666666666666664" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.97647058823529409" green="0.22352941176470587" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYO-wp-ZKS">
-                        <rect key="frame" x="17.666666666666671" y="17" width="40" height="20"/>
+                        <rect key="frame" x="17.666666666666671" y="12" width="40" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="JPN-92-Kxi"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.1137254902" green="0.12941176469999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-F5-54I">
-                        <rect key="frame" x="85.666666666666671" y="17.666666666666664" width="153.33333333333331" height="18.666666666666664"/>
+                        <rect key="frame" x="85.666666666666671" y="14.666666666666666" width="153.33333333333331" height="18.666666666666671"/>
                         <color key="textColor" red="0.30588235294117649" green="0.34901960784313724" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkW-j7-e45">
-                        <rect key="frame" x="279" y="12.666666666666664" width="72" height="29"/>
+                        <rect key="frame" x="279" y="9.6666666666666643" width="72" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="72" id="58D-Ca-Fd8"/>
                         </constraints>
@@ -49,29 +52,45 @@
                             <action selector="btnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n1Y-5E-jOG"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arC-gO-lRe">
+                        <rect key="frame" x="0.0" y="48" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="NLy-u6-ucb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="KYO-wp-ZKS" firstAttribute="centerY" secondItem="Nhz-HO-PnX" secondAttribute="centerY" id="3zQ-mc-wVW"/>
                     <constraint firstItem="Nhz-HO-PnX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="8Um-AX-U0O"/>
-                    <constraint firstItem="Nhz-HO-PnX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DGb-M7-DjK"/>
-                    <constraint firstItem="KYO-wp-ZKS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Dzn-hO-UcZ"/>
+                    <constraint firstItem="arC-gO-lRe" firstAttribute="top" secondItem="KYO-wp-ZKS" secondAttribute="bottom" constant="12" id="8dt-oe-c9h"/>
                     <constraint firstItem="KYO-wp-ZKS" firstAttribute="leading" secondItem="Nhz-HO-PnX" secondAttribute="trailing" id="EVN-Zw-1O9"/>
+                    <constraint firstAttribute="bottom" secondItem="arC-gO-lRe" secondAttribute="bottom" id="FBG-56-SAX"/>
                     <constraint firstAttribute="trailing" secondItem="mkW-j7-e45" secondAttribute="trailing" constant="24" id="K9x-mI-CYe"/>
                     <constraint firstItem="mkW-j7-e45" firstAttribute="leading" secondItem="HPg-F5-54I" secondAttribute="trailing" constant="40" id="R8t-2r-BwD"/>
+                    <constraint firstAttribute="trailing" secondItem="arC-gO-lRe" secondAttribute="trailing" id="WuH-2b-SgE"/>
                     <constraint firstItem="HPg-F5-54I" firstAttribute="leading" secondItem="KYO-wp-ZKS" secondAttribute="trailing" constant="28" id="ZQP-Ec-MGl"/>
-                    <constraint firstItem="HPg-F5-54I" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zhk-XY-rTc"/>
-                    <constraint firstItem="mkW-j7-e45" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sLu-cQ-UxQ"/>
+                    <constraint firstItem="arC-gO-lRe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZXu-rZ-PfS"/>
+                    <constraint firstItem="HPg-F5-54I" firstAttribute="centerY" secondItem="Nhz-HO-PnX" secondAttribute="centerY" id="hkm-YO-85H"/>
+                    <constraint firstItem="KYO-wp-ZKS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nZZ-eI-vP7"/>
+                    <constraint firstItem="mkW-j7-e45" firstAttribute="centerY" secondItem="Nhz-HO-PnX" secondAttribute="centerY" id="tth-Qp-N2F"/>
+                    <constraint firstItem="Nhz-HO-PnX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="xSD-0z-zFi"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="actionBtn" destination="mkW-j7-e45" id="bzW-1j-YrB"/>
+                <outlet property="bottomLineHeight" destination="NLy-u6-ucb" id="L1H-fG-HkQ"/>
                 <outlet property="btnWid" destination="58D-Ca-Fd8" id="w40-jA-hMo"/>
                 <outlet property="leftTitleLabel" destination="KYO-wp-ZKS" id="z0V-qn-eM1"/>
                 <outlet property="redPointLabel" destination="Nhz-HO-PnX" id="qcx-cl-LMn"/>
                 <outlet property="textfield" destination="HPg-F5-54I" id="IYy-cM-5UX"/>
                 <outlet property="toBtnMargin" destination="R8t-2r-BwD" id="5Vc-vC-wfn"/>
             </connections>
-            <point key="canvasLocation" x="139" y="21"/>
+            <point key="canvasLocation" x="138.1679389312977" y="19.014084507042256"/>
         </tableViewCell>
     </objects>
 </document>

@@ -224,6 +224,9 @@
 		96E11F5D29CC9F9B00E29681 /* ImportEntranceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */; };
 		96FBC92129D9C161002889C6 /* BXEditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */; };
 		96FBC92229D9C161002889C6 /* BXEditInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */; };
+		96FEB0E729DF0B0100076D44 /* BXInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB0E629DF0B0100076D44 /* BXInfoModel.swift */; };
+		96FEB0EA29DF185A00076D44 /* BXFapiaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB0E829DF185A00076D44 /* BXFapiaoCell.swift */; };
+		96FEB0EB29DF185A00076D44 /* BXFapiaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FEB0E929DF185A00076D44 /* BXFapiaoCell.xib */; };
 		C47A0BE04FB0A4B6747BE220 /* Pods_CoolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -451,6 +454,9 @@
 		96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportEntranceView.xib; sourceTree = "<group>"; };
 		96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXEditInfoVC.swift; sourceTree = "<group>"; };
 		96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXEditInfoVC.xib; sourceTree = "<group>"; };
+		96FEB0E629DF0B0100076D44 /* BXInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXInfoModel.swift; sourceTree = "<group>"; };
+		96FEB0E829DF185A00076D44 /* BXFapiaoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXFapiaoCell.swift; sourceTree = "<group>"; };
+		96FEB0E929DF185A00076D44 /* BXFapiaoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXFapiaoCell.xib; sourceTree = "<group>"; };
 		9955F5366E0BC4B1F67C6E3B /* Pods_CoolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A343478E504F925521CC12FC /* Pods-CoolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.release.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.release.xcconfig"; sourceTree = "<group>"; };
 		EB97887534DA9A67D4688675 /* Pods-CoolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBox.debug.xcconfig"; path = "Target Support Files/Pods-CoolBox/Pods-CoolBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1108,6 +1114,7 @@
 			isa = PBXGroup;
 			children = (
 				96DA539429D01C8A00958209 /* BaoXiaoListModel.swift */,
+				96FEB0E629DF0B0100076D44 /* BXInfoModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1117,6 +1124,8 @@
 			children = (
 				96DA538E29D019DD00958209 /* BaoxiaoCell.swift */,
 				96DA538F29D019DD00958209 /* BaoxiaoCell.xib */,
+				96FEB0E829DF185A00076D44 /* BXFapiaoCell.swift */,
+				96FEB0E929DF185A00076D44 /* BXFapiaoCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1286,6 +1295,7 @@
 				96E11F5D29CC9F9B00E29681 /* ImportEntranceView.xib in Resources */,
 				96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */,
 				96AB70C529C2088E00244F40 /* whiteArrow.png in Resources */,
+				96FEB0EB29DF185A00076D44 /* BXFapiaoCell.xib in Resources */,
 				96AB710229C208FA00244F40 /* App.xcassets in Resources */,
 				96DA53AF29D0807E00958209 /* CamareImportVC.xib in Resources */,
 				961D173829C738C300853FCB /* CreateVC.xib in Resources */,
@@ -1479,10 +1489,12 @@
 				96DA53A029D0361B00958209 /* SPUnchckedCell.swift in Sources */,
 				96E11F5B29CC9F8E00E29681 /* ImportEntranceView.swift in Sources */,
 				9658210729C5A5BE0005C6AA /* AccountInfoVC.swift in Sources */,
+				96FEB0EA29DF185A00076D44 /* BXFapiaoCell.swift in Sources */,
 				96AB710129C208FA00244F40 /* GuidVC.swift in Sources */,
 				96AB70B729C2088E00244F40 /* ViewControllerAdapt.swift in Sources */,
 				96AB70B629C2088E00244F40 /* UIViewController+Refresh.swift in Sources */,
 				96AB70FF29C208FA00244F40 /* BaseCollectionSegmentVC.swift in Sources */,
+				96FEB0E729DF0B0100076D44 /* BXInfoModel.swift in Sources */,
 				96AB70DA29C2088E00244F40 /* PhotoAlbumViewController.swift in Sources */,
 				9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */,
 				96AB70D329C2088E00244F40 /* RImageCropperViewController.swift in Sources */,

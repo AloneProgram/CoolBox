@@ -11,9 +11,18 @@ fileprivate enum ApiTarget: ETargetType {
     
     case baoxiaoList(page: Int, pageSize: Int, startDate: String, endDate: String, status: Int, sort: Int )
     
+    case createPreExpense(invoiceIds: String, type: String)
+    
+    case preExpenseInfo(eId: String)
+    
+    case expenseInfo(eid: String)
+    
     var path: String {
         switch self {
         case .baoxiaoList:  return "/api/expense/list"
+        case .createPreExpense:     return "/api/preExpense/create"
+        case .preExpenseInfo:   return "/api/preExpense/info"
+        case .expenseInfo:      return "/api/expense/info"
         }
     }
     
@@ -34,6 +43,19 @@ fileprivate enum ApiTarget: ETargetType {
                 "sort": sort,
                 "end_date": endDate
             ]
+        case .createPreExpense(let invoiceIds, let type):
+            return [
+                "invoice_ids": invoiceIds,
+                "type": type
+            ]
+        case .preExpenseInfo(let eId):
+            return [
+                "expense_id": eId
+            ]
+        case .expenseInfo(let eId):
+            return [
+                "expense_id": eId
+            ]
         default:
             return nil
         }
@@ -50,6 +72,30 @@ struct BXApi {
             result(list)
         }) { (err, json) in
             
+        }
+    }
+    
+    static func createPreExpenseRequest(invoiceIds: String, type: String, result: @escaping (String)->Void) {
+        let target = ApiTarget.createPreExpense(invoiceIds: invoiceIds, type: type)
+        ENetworking.request(target, success: { (json) in
+            result(json["expense_id"].stringValue)
+        }) { (err, json) in
+        }
+    }
+    
+    static func getPreExpenseInfo(eid: String, result: @escaping (BXInfoModel)->Void) {
+        let target = ApiTarget.preExpenseInfo(eId: eid)
+        ENetworking.request(target, success: { (json) in
+            result(BXInfoModel(fromJson: json))
+        }) { (err, json) in
+        }
+    }
+    
+    static func getExpenseInfo(eid: String, result: @escaping (BXInfoModel)->Void) {
+        let target = ApiTarget.expenseInfo(eId: eid)
+        ENetworking.request(target, success: { (json) in
+            result(BXInfoModel(fromJson: json))
+        }) { (err, json) in
         }
     }
 }
