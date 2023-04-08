@@ -19,6 +19,10 @@
 		960F343929CB3C87000149A2 /* ML_MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F343729CB3C87000149A2 /* ML_MemberCell.xib */; };
 		960F343C29CB61AC000149A2 /* SelectDepartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F343A29CB61AC000149A2 /* SelectDepartVC.swift */; };
 		960F343D29CB61AC000149A2 /* SelectDepartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F343B29CB61AC000149A2 /* SelectDepartVC.xib */; };
+		960F55FD29E11F030061C51F /* BXDetailInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F55FB29E11F030061C51F /* BXDetailInfoVC.swift */; };
+		960F55FE29E11F030061C51F /* BXDetailInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F55FC29E11F030061C51F /* BXDetailInfoVC.xib */; };
+		960F560129E161A90061C51F /* TravelOtherFeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F55FF29E161A90061C51F /* TravelOtherFeeCell.swift */; };
+		960F560229E161A90061C51F /* TravelOtherFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F560029E161A90061C51F /* TravelOtherFeeCell.xib */; };
 		961D173029C7066800853FCB /* CompanyInviteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D172F29C7066800853FCB /* CompanyInviteAlert.swift */; };
 		961D173329C70B8000853FCB /* CommonInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D173129C70B8000853FCB /* CommonInputCell.swift */; };
 		961D173429C70B8000853FCB /* CommonInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D173229C70B8000853FCB /* CommonInputCell.xib */; };
@@ -89,6 +93,10 @@
 		9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */; };
 		9690FC8029C8983F008E88CF /* McTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7929C8983F008E88CF /* McTextField.swift */; };
 		9690FC8129C8983F008E88CF /* McPickerPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690FC7A29C8983F008E88CF /* McPickerPopoverViewController.swift */; };
+		969424C729E195DA0028F800 /* SubsidyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424C629E195DA0028F800 /* SubsidyConfig.swift */; };
+		969424CA29E19DE50028F800 /* CreteTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424C829E19DE50028F800 /* CreteTravelVC.swift */; };
+		969424CB29E19DE50028F800 /* CreteTravelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969424C929E19DE50028F800 /* CreteTravelVC.xib */; };
+		969424CD29E1DC6F0028F800 /* BXCompleteInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424CC29E1DC6F0028F800 /* BXCompleteInfoVC.swift */; };
 		96A374DC29C3445500B4727C /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DB29C3445500B4727C /* AppAccount.swift */; };
 		96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DD29C34C1D00B4727C /* LoginVC.swift */; };
 		96A374E029C34C2700B4727C /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374DF29C34C2700B4727C /* LoginVC.xib */; };
@@ -202,6 +210,8 @@
 		96AB711229C210D100244F40 /* BXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB711129C210D100244F40 /* BXViewController.swift */; };
 		96AB711429C210DF00244F40 /* SPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB711329C210DF00244F40 /* SPViewController.swift */; };
 		96AB711629C210EB00244F40 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB711529C210EB00244F40 /* MineViewController.swift */; };
+		96C1240529E1741F000B7716 /* ChangeSubsidyStandardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1240329E1741F000B7716 /* ChangeSubsidyStandardVC.swift */; };
+		96C1240629E1741F000B7716 /* ChangeSubsidyStandardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C1240429E1741F000B7716 /* ChangeSubsidyStandardVC.xib */; };
 		96DA538B29D0033E00958209 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA538A29D0033E00958209 /* DatePicker.swift */; };
 		96DA538D29D018A900958209 /* BXListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA538C29D018A900958209 /* BXListVC.swift */; };
 		96DA539029D019DE00958209 /* BaoxiaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA538E29D019DD00958209 /* BaoxiaoCell.swift */; };
@@ -243,6 +253,10 @@
 		960F343729CB3C87000149A2 /* ML_MemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ML_MemberCell.xib; sourceTree = "<group>"; };
 		960F343A29CB61AC000149A2 /* SelectDepartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartVC.swift; sourceTree = "<group>"; };
 		960F343B29CB61AC000149A2 /* SelectDepartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDepartVC.xib; sourceTree = "<group>"; };
+		960F55FB29E11F030061C51F /* BXDetailInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXDetailInfoVC.swift; sourceTree = "<group>"; };
+		960F55FC29E11F030061C51F /* BXDetailInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXDetailInfoVC.xib; sourceTree = "<group>"; };
+		960F55FF29E161A90061C51F /* TravelOtherFeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelOtherFeeCell.swift; sourceTree = "<group>"; };
+		960F560029E161A90061C51F /* TravelOtherFeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelOtherFeeCell.xib; sourceTree = "<group>"; };
 		961D172F29C7066800853FCB /* CompanyInviteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInviteAlert.swift; sourceTree = "<group>"; };
 		961D173129C70B8000853FCB /* CommonInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputCell.swift; sourceTree = "<group>"; };
 		961D173229C70B8000853FCB /* CommonInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInputCell.xib; sourceTree = "<group>"; };
@@ -316,6 +330,10 @@
 		9690FC7829C8983F008E88CF /* McPickerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPickerBarButtonItem.swift; sourceTree = "<group>"; };
 		9690FC7929C8983F008E88CF /* McTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McTextField.swift; sourceTree = "<group>"; };
 		9690FC7A29C8983F008E88CF /* McPickerPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McPickerPopoverViewController.swift; sourceTree = "<group>"; };
+		969424C629E195DA0028F800 /* SubsidyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsidyConfig.swift; sourceTree = "<group>"; };
+		969424C829E19DE50028F800 /* CreteTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreteTravelVC.swift; sourceTree = "<group>"; };
+		969424C929E19DE50028F800 /* CreteTravelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreteTravelVC.xib; sourceTree = "<group>"; };
+		969424CC29E1DC6F0028F800 /* BXCompleteInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXCompleteInfoVC.swift; sourceTree = "<group>"; };
 		96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolBox-Bridging-Header.h"; sourceTree = "<group>"; };
 		96A374DB29C3445500B4727C /* AppAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccount.swift; sourceTree = "<group>"; };
 		96A374DD29C34C1D00B4727C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -432,6 +450,8 @@
 		96AB711129C210D100244F40 /* BXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXViewController.swift; sourceTree = "<group>"; };
 		96AB711329C210DF00244F40 /* SPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPViewController.swift; sourceTree = "<group>"; };
 		96AB711529C210EB00244F40 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		96C1240329E1741F000B7716 /* ChangeSubsidyStandardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSubsidyStandardVC.swift; sourceTree = "<group>"; };
+		96C1240429E1741F000B7716 /* ChangeSubsidyStandardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeSubsidyStandardVC.xib; sourceTree = "<group>"; };
 		96DA538A29D0033E00958209 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		96DA538C29D018A900958209 /* BXListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXListVC.swift; sourceTree = "<group>"; };
 		96DA538E29D019DD00958209 /* BaoxiaoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaoxiaoCell.swift; sourceTree = "<group>"; };
@@ -1106,6 +1126,13 @@
 				96DA538C29D018A900958209 /* BXListVC.swift */,
 				96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */,
 				96FBC92029D9C161002889C6 /* BXEditInfoVC.xib */,
+				960F55FB29E11F030061C51F /* BXDetailInfoVC.swift */,
+				960F55FC29E11F030061C51F /* BXDetailInfoVC.xib */,
+				96C1240329E1741F000B7716 /* ChangeSubsidyStandardVC.swift */,
+				96C1240429E1741F000B7716 /* ChangeSubsidyStandardVC.xib */,
+				969424C829E19DE50028F800 /* CreteTravelVC.swift */,
+				969424C929E19DE50028F800 /* CreteTravelVC.xib */,
+				969424CC29E1DC6F0028F800 /* BXCompleteInfoVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1115,6 +1142,7 @@
 			children = (
 				96DA539429D01C8A00958209 /* BaoXiaoListModel.swift */,
 				96FEB0E629DF0B0100076D44 /* BXInfoModel.swift */,
+				969424C629E195DA0028F800 /* SubsidyConfig.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1126,6 +1154,8 @@
 				96DA538F29D019DD00958209 /* BaoxiaoCell.xib */,
 				96FEB0E829DF185A00076D44 /* BXFapiaoCell.swift */,
 				96FEB0E929DF185A00076D44 /* BXFapiaoCell.xib */,
+				960F55FF29E161A90061C51F /* TravelOtherFeeCell.swift */,
+				960F560029E161A90061C51F /* TravelOtherFeeCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1279,11 +1309,13 @@
 				960F343529CB3C77000149A2 /* ML_DepartmentCell.xib in Resources */,
 				96AB70C329C2088E00244F40 /* grayArrow.png in Resources */,
 				96AB70F129C2088E00244F40 /* PhotoAlbumSelectView.xib in Resources */,
+				96C1240629E1741F000B7716 /* ChangeSubsidyStandardVC.xib in Resources */,
 				96DA53A129D0361B00958209 /* SPUnchckedCell.xib in Resources */,
 				96AB70C229C2088E00244F40 /* blueArrow@2x.png in Resources */,
 				96673C0B29D1F9B300AB7602 /* ImportFPVC.xib in Resources */,
 				96FBC92229D9C161002889C6 /* BXEditInfoVC.xib in Resources */,
 				96AB70C629C2088E00244F40 /* blackArrow@2x.png in Resources */,
+				969424CB29E19DE50028F800 /* CreteTravelVC.xib in Resources */,
 				96DA539129D019DE00958209 /* BaoxiaoCell.xib in Resources */,
 				964E71E529C6ED5200118D43 /* BaseHeightBottomView.xib in Resources */,
 				96AB70C429C2088E00244F40 /* whiteArrow@2x.png in Resources */,
@@ -1308,6 +1340,7 @@
 				96DA53A729D03A0700958209 /* SPInfoCell.xib in Resources */,
 				96AB70A529C2088E00244F40 /* ImagePicker.xcassets in Resources */,
 				96262B8029D9608700A2B974 /* FPDetailInfoVC.xib in Resources */,
+				960F560229E161A90061C51F /* TravelOtherFeeCell.xib in Resources */,
 				965208A129CE94CB00A5175F /* FilterEntraceView.xib in Resources */,
 				965208D429CEEABF00A5175F /* FilterVC.xib in Resources */,
 				96AB6FCE29C1FBB800244F40 /* Assets.xcassets in Resources */,
@@ -1317,6 +1350,7 @@
 				964E71DC29C6BC6A00118D43 /* AboutVC.xib in Resources */,
 				9690147829CB3206008E88CF /* MemberListVC.xib in Resources */,
 				960F343D29CB61AC000149A2 /* SelectDepartVC.xib in Resources */,
+				960F55FE29E11F030061C51F /* BXDetailInfoVC.xib in Resources */,
 				96AB70F229C2088E00244F40 /* PhotoAlbumSelectCell.xib in Resources */,
 				96AB70C729C2088E00244F40 /* blueArrow.png in Resources */,
 				96A374EE29C36E7800B4727C /* Toast.xcassets in Resources */,
@@ -1433,6 +1467,7 @@
 				96AB70B429C2088E00244F40 /* AppRouter.swift in Sources */,
 				96AB70B529C2088E00244F40 /* EmptyPlaceholder.swift in Sources */,
 				96AB70CA29C2088E00244F40 /* BGWaterfallsFlowLayout.swift in Sources */,
+				96C1240529E1741F000B7716 /* ChangeSubsidyStandardVC.swift in Sources */,
 				96AB70D629C2088E00244F40 /* AppCommon.swift in Sources */,
 				96AB70F429C2088E00244F40 /* AppInfo.swift in Sources */,
 				96AB70CC29C2088E00244F40 /* AppSecurity.swift in Sources */,
@@ -1448,6 +1483,7 @@
 				96AB70EA29C2088E00244F40 /* ZoomingScrollView.swift in Sources */,
 				96AB711429C210DF00244F40 /* SPViewController.swift in Sources */,
 				96AB70F329C2088E00244F40 /* AppContansts.swift in Sources */,
+				969424CA29E19DE50028F800 /* CreteTravelVC.swift in Sources */,
 				965208A629CEB0A900A5175F /* FapiaoCell.swift in Sources */,
 				96AB702D29C2087A00244F40 /* EApiConfig.swift in Sources */,
 				96AB70D829C2088E00244F40 /* PhotoAlbumSelectView.swift in Sources */,
@@ -1483,6 +1519,7 @@
 				96AB711029C210BA00244F40 /* FPViewController.swift in Sources */,
 				961D178329C764DC00853FCB /* CompanyInfoConfig.swift in Sources */,
 				96AB702B29C2087A00244F40 /* DataBase.swift in Sources */,
+				960F55FD29E11F030061C51F /* BXDetailInfoVC.swift in Sources */,
 				965208CE29CEE98100A5175F /* GYSideMaskView.swift in Sources */,
 				96AB70D529C2088E00244F40 /* OrderedDictionary.swift in Sources */,
 				9690147729CB3206008E88CF /* MemberListVC.swift in Sources */,
@@ -1516,6 +1553,7 @@
 				96AB70E929C2088E00244F40 /* JHPhotoBrowserProtocol.swift in Sources */,
 				964E71E329C6ED3D00118D43 /* BaseHeightBottomView.swift in Sources */,
 				965208D329CEEABF00A5175F /* FilterVC.swift in Sources */,
+				960F560129E161A90061C51F /* TravelOtherFeeCell.swift in Sources */,
 				96DA53A929D044AC00958209 /* TabBarItemView.swift in Sources */,
 				96AB711629C210EB00244F40 /* MineViewController.swift in Sources */,
 				96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */,
@@ -1528,6 +1566,7 @@
 				96AB70DB29C2088E00244F40 /* PhotoAlbumTool.swift in Sources */,
 				96AB70D429C2088E00244F40 /* RDevice.swift in Sources */,
 				9658210029C5721D0005C6AA /* CommonInfoModel.swift in Sources */,
+				969424C729E195DA0028F800 /* SubsidyConfig.swift in Sources */,
 				96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */,
 				96AB70BA29C2088E00244F40 /* WebViewController.swift in Sources */,
 				96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */,
@@ -1542,6 +1581,7 @@
 				9670574629D99112004FB0B3 /* FPEditInfoVC.swift in Sources */,
 				96DA53AE29D0807E00958209 /* CamareImportVC.swift in Sources */,
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
+				969424CD29E1DC6F0028F800 /* BXCompleteInfoVC.swift in Sources */,
 				964E71D029C5F3B800118D43 /* TwoInputAlert.swift in Sources */,
 				965208CC29CEE98100A5175F /* GYSideAnimatedTransitioning.swift in Sources */,
 				964E71DF29C6EBCF00118D43 /* CompanyListVC.swift in Sources */,

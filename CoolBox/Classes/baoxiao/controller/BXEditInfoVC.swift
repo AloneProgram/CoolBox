@@ -15,7 +15,7 @@ class BXEditInfoVC: EViewController, PresentFromBottom {
     
     private var list: [[Any]] = []
     
-    //创建报销单
+    //1: 差旅费报销; 2: 费用报销
     var type = ""
     var ids = ""
     
@@ -57,6 +57,11 @@ class BXEditInfoVC: EViewController, PresentFromBottom {
         tableView.register(infoNib, forCellReuseIdentifier: "CommonInfoCell")
         let inputNib = UINib(nibName: "CommonInputCell", bundle: nil)
         tableView.register(inputNib, forCellReuseIdentifier: "CommonInputCell")
+        let fpNib = UINib(nibName: "BXFapiaoCell", bundle: nil)
+        tableView.register(fpNib, forCellReuseIdentifier: "BXFapiaoCell")
+        
+        let trNib = UINib(nibName: "TravelOtherFeeCell", bundle: nil)
+        tableView.register(trNib, forCellReuseIdentifier: "TravelOtherFeeCell")
         
         tableView.estimatedRowHeight = 56
         tableView.separatorStyle = .none
@@ -68,14 +73,9 @@ class BXEditInfoVC: EViewController, PresentFromBottom {
             }
         }else {
             //获取报销单信息
+            getExpeneInfo(eId: eid)
         }
 
-        
-        if type == "1" { //差旅费
-            list = defaultTravleList()
-        }else {  //费用报销
-            list = defaultFeeList()
-        }
     }
     
     func defaultTravleList() -> [[Any]] {
@@ -106,13 +106,158 @@ class BXEditInfoVC: EViewController, PresentFromBottom {
 
 
     @IBAction func saveAction(_ sender: Any) {
+        setExInfo()
+    }
+    
+    
+    @objc func changeTravelStandard() {
+        push(ChangeSubsidyStandardVC())
+    }
+    
+    @objc func createTravel() {
+        guard let info = bxInfo else {return}
+        let vc = CreteTravelVC(isPre: isCreateEx, eid: info.id)
+        vc.createTravleBlock = { [weak self] in
+            if let isCreateEx = self?.isCreateEx, isCreateEx {
+                self?.getPreExpeneInfo(eId: info.id, reloadTravle: true)
+            }else {
+                self?.getExpeneInfo(eId: info.id, reloadTravle: true)
+            }
+        }
+        push(vc)
+    }
+    
+    func editTravel(index: Int, travle: TravleData) {
+        guard let info = bxInfo else {return}
+        let vc = CreteTravelVC(isPre: isCreateEx, eid: info.id, travel: travle)
+        vc.createTravleBlock = { [weak self]  in
+            if let isCreateEx = self?.isCreateEx, isCreateEx {
+                self?.getPreExpeneInfo(eId: info.id, reloadTravle: true)
+            }else {
+                self?.getExpeneInfo(eId: info.id, reloadTravle: true)
+            }
+        }
+        push(vc)
+    }
+}
+
+// request
+extension BXEditInfoVC {
+    
+    func getPreExpeneInfo(eId: String, reloadTravle: Bool = false){
+        BXApi.getPreExpenseInfo(eid: eId) { [weak self] info in
+            self?.bxInfo = info
+            self?.type = info.type
+            if reloadTravle {
+                self?.list[2] = info.travelData
+                self?.tableView.reloadData()
+                return
+            }
+            
+            
+            if info.type == "1" { //差旅费
+                self?.list = self?.defaultTravleList() ?? []
+            }else {  //费用报销
+                self?.list = self?.defaultFeeList() ?? []
+            }
+
+            if info.type == "1" {
+                self?.list.append(info.travelData)
+            }
+            if info.invoiceData.count > 0 {
+                self?.list.append(info.invoiceData)
+            }
+            
+            (self?.list[1][0] as! CommonInputModel).tfText  = info.department.length > 0 ? info.department : (UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? "")
+
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date
+            (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
+            (self?.list[1][3] as! CommonInputModel).tfText = info.reason
+            if info.type == "1" {
+                (self?.list[1][4] as! CommonInputModel).tfText = info.preGetFee
+            }else {
+                (self?.list[1][4] as! CommonInputModel).tfText = GlobalConfigManager.getValue(with: info.itemType, in: GlobalConfigManager.shared.systemoInfoConfig?.invoidceItemType)
+            }
+           
+            
+            self?.tableView.reloadData()
+        }
+    }
+    
+    func deleteExpenseFP(fpId: String){
+        guard let info = bxInfo else {return}
+        BXApi.deleteExpenseFP(isPre: isCreateEx, fpid: fpId, eid: info.id) { [weak self] _ in
+            if self?.type == "2" {
+                var list = self?.list[2]
+                list?.removeAll(where: {($0 as! InvoiceData).list.first?.id == fpId})
+                self?.list[2] = list ?? []
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    func setExInfo() {
+        guard let info = bxInfo else {return}
+        var params: [String: String] = [:]
+        if type == "1" {
+            params = ["date": (list[1][1] as! CommonInputModel).tfText,
+                      "reason": (list[1][3] as! CommonInputModel).tfText,
+                      "type":"1",
+                      "department": (list[1][0] as! CommonInputModel).tfText ,
+                      "expense_id": info.id,
+                      "pre_get_fee": (list[1][4] as! CommonInputModel).tfText,
+                      "username":  (list[1][2] as! CommonInputModel).tfText
+            ]
+           
+        }else {
+            params = ["date": (list[1][1] as! CommonInputModel).tfText,
+                      "reason": (list[1][3] as! CommonInputModel).tfText,
+                      "item_type": GlobalConfigManager.getKey(with: (list[1][4] as! CommonInputModel).tfText, in: GlobalConfigManager.shared.systemoInfoConfig?.invoidceItemType),
+                      "type":"2",
+                      "department": (list[1][0] as! CommonInputModel).tfText ,
+                      "expense_id": info.id,
+                      "username":  (list[1][2] as! CommonInputModel).tfText
+            ]
+        }
+        
+        UserDefaults.standard.set((list[1][0] as! CommonInputModel).tfText, forKey: "BaoXiao_Depatement")
+        UserDefaults.standard.set((list[1][2] as! CommonInputModel).tfText, forKey: "BaoXiao_Username")
+        
+        BXApi.setExpenseInfo(isPre: isCreateEx, params: params) { [weak self]_ in
+            if let isCreateEx = self?.isCreateEx, isCreateEx {  //预报销单点击保存需要生成报销单
+                self?.createEXpense()
+            }else {
+                self?.popViewController()
+            }
+        }
         
     }
     
-    func getPreExpeneInfo(eId: String){
-        BXApi.getPreExpenseInfo(eid: eId) { [weak self] info in
+    func createEXpense() {
+        guard let info = bxInfo else {return}
+        BXApi.createExpenseRequest(eid: info.id) {[weak self] eid in
+            self?.removeCurrentAndPush(viewController: BXDetailInfoVC(eid: eid))
+        }
+    }
+    
+    func getExpeneInfo(eId: String, reloadTravle: Bool = false){
+        BXApi.getExpenseInfo(eid: eId) { [weak self] info in
             self?.bxInfo = info
-            if info.travelData.count > 0 {
+            self?.type = info.type
+            
+            if reloadTravle {
+                self?.list[2] = info.travelData
+                self?.tableView.reloadData()
+                return
+            }
+            
+            if info.type == "1" { //差旅费
+                self?.list = self?.defaultTravleList() ?? []
+            }else {  //费用报销
+                self?.list = self?.defaultFeeList() ?? []
+            }
+            
+            if info.type == "1" {
                 self?.list.append(info.travelData)
             }
             if info.invoiceData.count > 0 {
@@ -120,21 +265,28 @@ class BXEditInfoVC: EViewController, PresentFromBottom {
             }
             
             (self?.list[1][0] as! CommonInputModel).tfText  = UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? ""
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "zh")
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            //将选定的值转换为string格式以设定格式输出
-            let dateStr = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(Double(info.createdAt) ?? 0)))
-            (self?.list[1][1] as! CommonInputModel).tfText = dateStr
-            (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? "")
-            (self?.list[1][4] as! CommonInputModel).tfText = GlobalConfigManager.getValue(with: info.itemType, in: GlobalConfigManager.shared.systemoInfoConfig?.invoidceItemType)
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date
+            (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
+            (self?.list[1][3] as! CommonInputModel).tfText = info.reason
+            if info.type == "1" {
+                (self?.list[1][4] as! CommonInputModel).tfText = info.preGetFee
+            }else {
+                (self?.list[1][4] as! CommonInputModel).tfText = GlobalConfigManager.getValue(with: info.itemType, in: GlobalConfigManager.shared.systemoInfoConfig?.invoidceItemType)
+            }
             
             self?.tableView.reloadData()
         }
     }
     
-    @objc func changeTravelStandard() {
-        
+    
+    func deleteTravle(tId: String){
+        guard let info = bxInfo else {return}
+        BXApi.deleteTravel(isPre: isCreateEx, tid: tId, eid: info.id) { [weak self] _ in
+            var tmp: [TravleData] = self?.list[2] as! [TravleData]
+            tmp.removeAll(where: {$0.id == tId})
+            self?.list[2] = tmp
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -159,7 +311,37 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
             let cell: CommonInputCell = tableView.dequeueReusableCell(withIdentifier: "CommonInputCell", for: indexPath) as! CommonInputCell
             cell.selectionStyle = .none
             cell.bindInputModel(list[1][indexPath.row] as! CommonInputModel)
-            
+            cell.textEndEditBlock = { [weak self]text in
+                (self?.list[indexPath.section][indexPath.row] as! CommonInputModel).tfText = text
+            }
+            return cell
+        case 2:
+            if type == "2" {
+                let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
+                cell.selectionStyle = .none
+                cell.bindInvoice(list[2][indexPath.row] as! InvoiceData)
+                return cell
+            }else {
+                let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
+                cell.selectionStyle = .none
+                cell.bindTravel(list[2][indexPath.row] as! TravleData)
+                return cell
+            }
+        case 3:
+            let cell: TravelOtherFeeCell = tableView.dequeueReusableCell(withIdentifier: "TravelOtherFeeCell", for: indexPath) as! TravelOtherFeeCell
+            cell.selectionStyle = .none
+            cell.bindInvoice(list[3][indexPath.row] as! InvoiceData)
+            cell.tapBlock = { [weak self] in
+                guard var invoice = self?.list[3][indexPath.row] as? InvoiceData else {
+                    return
+                }
+                invoice.isExapnded = !invoice.isExapnded
+                self?.list[3][indexPath.row] = invoice
+                tableView.reloadData()
+            }
+            cell.clickFPBlock = { [weak self] fpId in
+                self?.push(FPEditInfoVC(fpId))
+            }
             return cell
         default :
             return UITableViewCell()
@@ -172,7 +354,7 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            //TODO: 切换类型
+            //TODO: 切换报销单类型
         }else if indexPath.section == 1 {
             if indexPath.row == 1 {
                 let result: DatePicker.DatePickerClosure = { [weak self] dateStr in
@@ -204,8 +386,16 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
                     self?.tableView.reloadData()
                 })
             }
+        }else if indexPath.section == 2 {
+            if type == "1" {
+                let travel = list[indexPath.section][indexPath.row] as! TravleData
+                editTravel(index: indexPath.row, travle: travel)
+            }else {
+                let tmp = list[indexPath.section][indexPath.row] as! InvoiceData
+                guard let fp = tmp.list.first else { return}
+                push(FPEditInfoVC(fp.id))
+            }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -213,7 +403,7 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 0:    text = "报销类型"
         case 1:    text = "基本信息"
-        case 2:    text = type == "1" ? "发票列表" : "差旅行程"
+        case 2:    text = type == "2" ? "发票列表" : "差旅行程"
         case 3:    text = "其他费用"
         default:break
         }
@@ -227,7 +417,7 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
             make.left.equalTo(15)
         }
         
-        if type == "2", section == 2 {
+        if type == "1", section == 2 {
             let btn = UIButton(type: .custom)
             btn.setTitle("修改出差补贴标准", for: .normal)
             btn.titleLabel?.font = Font(14)
@@ -249,10 +439,56 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        var height: CGFloat = 0
+        if  type == "1", section == 2 {
+            height = 40
+        }
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: height))
+        if type == "1", section == 2 {
+            let btn = UIButton(type: .custom)
+            btn.setTitle("添加行程", for: .normal)
+            btn.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
+            btn.titleLabel?.font = Font(14)
+            btn.addTarget(self, action: #selector(createTravel), for: .touchUpInside)
+            view.addSubview(btn)
+            btn.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return  0.01
+        var height: CGFloat = 0.01
+        if  type == "1", section == 2 {
+            height = 40
+        }
+        return height
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "删除") { [weak self] (action, view, completion) in
+            if self?.type == "2" {
+                guard let fp = (self?.list[indexPath.section][indexPath.row] as! InvoiceData).list.first else { return }
+                //删除发票
+                self?.deleteExpenseFP(fpId: fp.id)
+            }else {
+                guard let travel = self?.list[indexPath.section][indexPath.row] as? TravleData else { return }
+                //删除行程
+                self?.deleteTravle(tId: travel.id)
+            }
+            
+            completion(true)
+        }
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }
+
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 2
     }
 }

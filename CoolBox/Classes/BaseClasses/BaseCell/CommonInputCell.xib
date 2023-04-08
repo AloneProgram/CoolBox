@@ -23,8 +23,8 @@
                         <color key="textColor" red="0.97647058823529409" green="0.22352941176470587" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYO-wp-ZKS">
-                        <rect key="frame" x="17.666666666666671" y="12" width="40" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预借旅费 ¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYO-wp-ZKS">
+                        <rect key="frame" x="17.666666666666664" y="12" width="79.333333333333343" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="JPN-92-Kxi"/>
                         </constraints>
@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-F5-54I">
-                        <rect key="frame" x="85.666666666666671" y="14.666666666666666" width="153.33333333333331" height="18.666666666666671"/>
+                        <rect key="frame" x="117" y="14.666666666666666" width="122" height="18.666666666666671"/>
                         <color key="textColor" red="0.30588235294117649" green="0.34901960784313724" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -72,7 +72,7 @@
                     <constraint firstAttribute="trailing" secondItem="mkW-j7-e45" secondAttribute="trailing" constant="24" id="K9x-mI-CYe"/>
                     <constraint firstItem="mkW-j7-e45" firstAttribute="leading" secondItem="HPg-F5-54I" secondAttribute="trailing" constant="40" id="R8t-2r-BwD"/>
                     <constraint firstAttribute="trailing" secondItem="arC-gO-lRe" secondAttribute="trailing" id="WuH-2b-SgE"/>
-                    <constraint firstItem="HPg-F5-54I" firstAttribute="leading" secondItem="KYO-wp-ZKS" secondAttribute="trailing" constant="28" id="ZQP-Ec-MGl"/>
+                    <constraint firstItem="HPg-F5-54I" firstAttribute="leading" secondItem="KYO-wp-ZKS" secondAttribute="trailing" constant="20" id="ZQP-Ec-MGl"/>
                     <constraint firstItem="arC-gO-lRe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZXu-rZ-PfS"/>
                     <constraint firstItem="HPg-F5-54I" firstAttribute="centerY" secondItem="Nhz-HO-PnX" secondAttribute="centerY" id="hkm-YO-85H"/>
                     <constraint firstItem="KYO-wp-ZKS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nZZ-eI-vP7"/>

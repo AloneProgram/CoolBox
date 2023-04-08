@@ -243,11 +243,18 @@ struct Template {
             value = detailJson["data"]["remark"].stringValue
         }
         else {
-            if type == "datetime" {
-                value = detailJson[field].stringValue
+//            if type == "datetime" {
+//                value = detailJson[field].stringValue
+//            }else {
+//
+//            }
+            let v = detailJson[field].stringValue
+            if v.length > 0 {
+                value = v
             }else {
                 value = detailJson["data"][field].stringValue
             }
+            
             
         }
         

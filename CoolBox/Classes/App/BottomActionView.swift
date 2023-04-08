@@ -11,16 +11,15 @@ enum BottomActionType {
     case fp_normal
     case fp_delete
     case fp_unNeed  //无需报销
+    
+    case bx_detail  //报销单详情
 }
 
 class BottomActionView: UIView {
     
     var actionBlock: ((Int) -> Void)?
     
-    var type: BottomActionType = .fp_normal {
-        didSet {
-        }
-    }
+    var type: BottomActionType = .fp_normal
     
     init( type: BottomActionType = .fp_normal, frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +49,12 @@ class BottomActionView: UIView {
         case .fp_delete:
             viewArray = [
                 actionBtn(color: UIColor(hexString: "#F53F3F"), title: "删除发票", titleColor: UIColor(hexString: "#F53F3F"), selector: #selector(deletFP)),
+            ]
+        case .bx_detail:
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#F53F3F"), title: "删除报销单", titleColor: UIColor(hexString: "#F53F3F"), selector: #selector(deletBx)),
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "修改报销单", titleColor: UIColor(hexString: "#165DFF"), selector: #selector(editBx)),
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "发起审批", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(createSP))
             ]
         }
         
@@ -89,6 +94,22 @@ class BottomActionView: UIView {
     //创建报销单
     @objc func createBX() {
         actionBlock?(2)
+        
+    }
+    
+    //删除报销单
+    @objc func deletBx() {
+        actionBlock?(3)
+    }
+    
+    // 修改报销单
+    @objc func editBx() {
+        actionBlock?(4)
+    }
+    
+    //发起审批
+    @objc func createSP() {
+        actionBlock?(5)
         
     }
 }

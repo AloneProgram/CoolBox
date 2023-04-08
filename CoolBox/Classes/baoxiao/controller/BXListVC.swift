@@ -144,7 +144,7 @@ extension BXListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let bdx = list[indexPath.row]
-
+        AppCommon.getCurrentVC()?.push(BXDetailInfoVC(eid: bdx.id))
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -26,9 +26,11 @@ class FPEditInfoVC: EViewController, PresentFromBottom {
     private var invoiceId = ""
     
     var list: [[Template]] = []
+    var hiddenBottom = false
     
-    init(_ invoiceId: String) {
+    init(_ invoiceId: String, hiddenBottom: Bool = false) {
         self.invoiceId = invoiceId
+        self.hiddenBottom = hiddenBottom
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,13 +42,18 @@ class FPEditInfoVC: EViewController, PresentFromBottom {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        leftTitle = "编辑发票信息"
+        leftTitle = hiddenBottom ? "发票信息" : "编辑发票信息"
         
         view.backgroundColor = EColor.viewBgColor
         tableView.backgroundColor = .clear
         
-        bttomViewHeight.constant = 48 + kBottomSpace
-        
+        bottomView.isHidden = hiddenBottom
+        if hiddenBottom {
+            bttomViewHeight.constant = 0
+        }else {
+            bttomViewHeight.constant = 48 + kBottomSpace
+        }
+                
         
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
