@@ -32,6 +32,10 @@ class FPViewController: EViewController, PresentToCenter {
     var list: [String] = [ "未报销","报销中","已报销", "无需报销"]
     
     var listVC: [FPListVC] = [ ]
+    
+    var clickGuidCount = 0
+    
+    private var imageViw = UIImageView(image: UIImage(named: "step_1"))
         
     lazy private var pagingViewController: PagingViewController = {
         let pagingVC = PagingViewController()
@@ -108,7 +112,31 @@ class FPViewController: EViewController, PresentToCenter {
         NotificationCenter.default.addObserver(self, selector: #selector(aliPayImportRequest(_:)), name: Notification.Name("AliImportFaPiao"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(wxImportRequest(_:)), name: Notification.Name("WXImportFaPiao"), object: nil)
+        
+        let hasShowGuide = UserDefaults.standard.bool(forKey: "HasShowGuide")
+        
+        if !hasShowGuide {
+            UserDefaults.standard.set(true, forKey: "HasShowGuide")
+           
+            let tap = UITapGestureRecognizer(target: self, action: #selector(clickGuide))
+            imageViw.isUserInteractionEnabled = true
+            imageViw.addGestureRecognizer(tap)
+            UIApplication.shared.keyWindow?.addSubview(imageViw)
+            imageViw.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
     }
+    
+    @objc func clickGuide() {
+        clickGuidCount += 1
+        if clickGuidCount == 1 {
+            imageViw.image = UIImage(named: "step_2")
+        }else {
+            imageViw.removeFromSuperview()
+        }
+    }
+    
     
     func importAction(_ tag: Int) {
         switch tag {
