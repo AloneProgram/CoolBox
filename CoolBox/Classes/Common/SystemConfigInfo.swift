@@ -9,7 +9,9 @@ import UIKit
 
 struct SystemConfigInfo {
     
-    var openScreenAds: [String] = []
+    var openScreenAds: [String] = ["https://oss.kubaoxiao.com/launch-image/1920-1080/1.jpg",
+                                   "https://oss.kubaoxiao.com/launch-image/1920-1080/2.jpg",
+                                   "https://oss.kubaoxiao.com/launch-image/1920-1080/3.jpg"]
     
     var invoidceType: [String: String] = [:]
     var invoidceCatId: [String: String] = [:]

@@ -10,10 +10,13 @@ import UIKit
 class MemberCellItem: ZJExpandTreeCellItem {
     var title: String?
     var id = ""
+    var userId = ""
     var type = ""
     var isSelectShenpi = false
     var status = ""
     var isBeSelectd = false
+    
+    var inviteBlock: (() -> Void)?
 }
 
 
@@ -32,7 +35,7 @@ class ML_MemberCell: UITableViewCell, ZJCellProtocol {
     var item: MemberCellItem!
 
     typealias ZJCellItemClass = MemberCellItem
-
+    
     func cellPrepared() {
         nameLabel.text = item.title
         
@@ -65,6 +68,7 @@ class ML_MemberCell: UITableViewCell, ZJCellProtocol {
     
     
     @IBAction func inviteAction(_ sender: Any) {
+        item.inviteBlock?()
     }
     
 }

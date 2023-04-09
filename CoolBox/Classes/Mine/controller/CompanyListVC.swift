@@ -33,6 +33,8 @@ class CompanyListVC: EViewController, PresentToCenter {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getCompanylist()
+        
+        MineApi.getUserInfo(result: {_ in })
     }
     
     override func viewDidLoad() {

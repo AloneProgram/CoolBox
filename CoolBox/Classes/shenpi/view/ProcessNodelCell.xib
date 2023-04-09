@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProcessNodelCell" customModule="CoolBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQs-R9-i6N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发起审批" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCz-eO-KFb">
+                                <rect key="frame" x="16" y="17.333333333333336" width="65.333333333333329" height="19.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-Hc-SQd">
+                                <rect key="frame" x="269" y="12.666666666666664" width="86" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="向下添加节点">
+                                    <color key="titleColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" title="取消添加"/>
+                                <connections>
+                                    <action selector="addNodeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wHF-02-dnZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pxi-Hc-SQd" secondAttribute="trailing" constant="20" id="8c4-4D-ETg"/>
+                            <constraint firstItem="pxi-Hc-SQd" firstAttribute="centerY" secondItem="JQs-R9-i6N" secondAttribute="centerY" id="AVo-2S-trv"/>
+                            <constraint firstItem="vCz-eO-KFb" firstAttribute="leading" secondItem="JQs-R9-i6N" secondAttribute="leading" constant="16" id="EPL-lH-FWw"/>
+                            <constraint firstItem="vCz-eO-KFb" firstAttribute="centerY" secondItem="JQs-R9-i6N" secondAttribute="centerY" id="jUX-tg-HkP"/>
+                            <constraint firstAttribute="height" constant="54" id="qvC-Rr-dHy"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVR-2e-2oa">
+                        <rect key="frame" x="0.0" y="54" width="375" height="54"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入节点名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JE1-vU-RvA">
+                                <rect key="frame" x="16" y="17.666666666666671" width="200" height="18.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LJM-u5-Qx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-Qi-bef">
+                                <rect key="frame" x="325" y="12.666666666666671" width="30" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q7I-6E-7cW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="4PN-a7-C1q"/>
+                            <constraint firstItem="JE1-vU-RvA" firstAttribute="centerY" secondItem="RVR-2e-2oa" secondAttribute="centerY" id="jbU-om-rvb"/>
+                            <constraint firstItem="Z3A-Qi-bef" firstAttribute="centerY" secondItem="RVR-2e-2oa" secondAttribute="centerY" id="u0y-U9-QSg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="RVR-2e-2oa" secondAttribute="bottom" id="2h2-EY-9rM"/>
+                    <constraint firstItem="Z3A-Qi-bef" firstAttribute="trailing" secondItem="pxi-Hc-SQd" secondAttribute="trailing" id="8Ua-BC-XcV"/>
+                    <constraint firstItem="JQs-R9-i6N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H3Y-66-XPw"/>
+                    <constraint firstAttribute="trailing" secondItem="RVR-2e-2oa" secondAttribute="trailing" id="ZhM-nf-N7i"/>
+                    <constraint firstItem="JQs-R9-i6N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gmU-hO-lS3"/>
+                    <constraint firstItem="JQs-R9-i6N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="imx-Zg-8sE"/>
+                    <constraint firstAttribute="trailing" secondItem="JQs-R9-i6N" secondAttribute="trailing" id="owY-4b-zoS"/>
+                    <constraint firstItem="RVR-2e-2oa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vtP-j6-bBz"/>
+                    <constraint firstItem="JE1-vU-RvA" firstAttribute="leading" secondItem="vCz-eO-KFb" secondAttribute="leading" id="xbf-8d-gtv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addNodebtn" destination="pxi-Hc-SQd" id="xzC-w5-jdP"/>
+                <outlet property="bottomView" destination="RVR-2e-2oa" id="dVI-Ii-gB7"/>
+                <outlet property="bottomViewHeight" destination="4PN-a7-C1q" id="PF7-Jt-hoS"/>
+                <outlet property="infpuTF" destination="JE1-vU-RvA" id="p7B-Kj-AKk"/>
+                <outlet property="nodeName" destination="vCz-eO-KFb" id="fdG-Kv-SYB"/>
+                <outlet property="saveBtn" destination="Z3A-Qi-bef" id="nbB-b7-Awp"/>
+            </connections>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

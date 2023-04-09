@@ -30,6 +30,7 @@ struct MemberModel {
     var status : String!
     var type : String!
     var userId : String!
+    var inviteUrl = ""
 
 
     /**
@@ -50,5 +51,6 @@ struct MemberModel {
         status = json["status"].stringValue
         type = json["type"].stringValue
         userId = json["user_id"].stringValue
+        inviteUrl = json["invitation_url"].stringValue
     }
 }

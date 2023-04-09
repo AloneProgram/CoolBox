@@ -9,12 +9,54 @@
 import UIKit
 
 class GuidVC: EViewController {
+    
+    private var scrollview = UIScrollView()
+    var clickCount = 0
+    
+    var ads: [String] = GlobalConfigManager.shared.systemoInfoConfig?.openScreenAds ??  ["https://oss.kubaoxiao.com/launch-image/1920-1080/1.jpg",  "https://oss.kubaoxiao.com/launch-image/1920-1080/2.jpg", "https://oss.kubaoxiao.com/launch-image/1920-1080/3.jpg"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let hasShowAds = UserDefaults.standard.bool(forKey: "HasShowAds")
+        
         setGuideImg()
         
-        setRootViewController()
+        if !hasShowAds {
+            UserDefaults.standard.set(true, forKey: "HasShowAds")
+            scrollview.isPagingEnabled = true
+            scrollview.contentSize = CGSize(width: CGFloat(ads.count) * kScreenWidth, height: kScreenHeight)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(clickScrollview))
+            scrollview.addGestureRecognizer(tap)
+            view.addSubview(scrollview)
+            scrollview.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            ads.enumerated().forEach { idx, str in
+                let imageView = UIImageView()
+                imageView.kf.setImage(with: URL(string: str))
+                imageView.contentMode = .scaleToFill
+                scrollview.addSubview(imageView)
+                imageView.snp.makeConstraints { make in
+                    make.left.equalTo(CGFloat(idx) * kScreenWidth)
+                    make.top.equalToSuperview()
+                    make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight))
+                }
+            }
+        }else {
+            setRootViewController()
+        }
+       
+    }
+    
+    @objc func clickScrollview() {
+        clickCount += 1
+        if clickCount < ads.count {
+            scrollview.setContentOffset(CGPoint(x: CGFloat(clickCount) * kScreenWidth, y: 0), animated: true)
+        }else {
+            setRootViewController()
+        }
     }
     
     func setGuideImg() {

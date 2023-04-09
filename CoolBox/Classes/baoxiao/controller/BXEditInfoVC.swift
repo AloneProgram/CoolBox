@@ -412,7 +412,6 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            //TODO: 切换报销单类型
             let alert = CustomAlert(title: "系统提示", content: "切换类型后,已填写的内容将会丢失,是否确认切换?", cancleTitle: "取消", confirmTitle: "确定", confirm:  { [weak self] in
                 self?.changetTypeAlert()
             })

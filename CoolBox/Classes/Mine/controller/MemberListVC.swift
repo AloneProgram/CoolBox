@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberListVC: EViewController {
+class MemberListVC: EViewController, PresentFromBottom {
     
     
     @IBOutlet weak var searchView: UIView!
@@ -32,6 +32,7 @@ class MemberListVC: EViewController {
     var manager: ZJTableViewManager!
     var section = ZJTableViewSection()
     
+    var selectUserBlock: ((MemberCellItem) -> Void)?
     
     init(isMemberList: Bool = true) {
         self.isMemberList = isMemberList
@@ -53,6 +54,12 @@ class MemberListVC: EViewController {
         
         searchView.isHidden = isMemberList
         searchViewHeight.constant = searchView.isHidden ? 0 : 68
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        let lectIcon = UIImageView(image: UIImage(named: "icon_search"))
+        lectIcon.frame = CGRect(x: 9, y: 9, width: 18, height: 18)
+        leftView.addSubview(lectIcon)
+        searchTextField.leftView = leftView
+        searchTextField.leftViewMode = .always
 
         view.backgroundColor = EColor.viewBgColor
         tableView.backgroundColor = .clear
@@ -77,7 +84,6 @@ class MemberListVC: EViewController {
             tableView.sectionHeaderTopPadding = 0
         }
 
-        
         leftTitle = isMemberList ? "添加成员" : "选择审批人"
         botomViewHeight.constant = 76 + kBottomSpace
         
@@ -101,8 +107,8 @@ class MemberListVC: EViewController {
         
         //第一级固定为企业
         let item0 = DepartmentCellItem()
-        item0.title = memberList.first?.departmentName ?? ""
-        item0.d_Id = memberList.first?.departmentId ?? ""
+        item0.title = departmentList.first?.name ?? ""
+        item0.d_Id = departmentList.first?.parentId ?? ""
         item0.isExpand = true
         item0.cellHeight = 47
         section.add(item: item0)
@@ -111,10 +117,29 @@ class MemberListVC: EViewController {
             memberItem.title = member.name
             memberItem.type = member.type
             memberItem.id = member.id
+            memberItem.userId = member.userId
             memberItem.status = member.status
-            memberItem.isSelectShenpi = false
+            memberItem.isSelectShenpi = !isMemberList
             memberItem.isBeSelectd = false
             memberItem.cellHeight = 54
+            memberItem.setSelectionHandler { [weak self] callBackItem in
+                if let isMemberList = self?.isMemberList, !isMemberList {
+                    self?.selectUserBlock?(callBackItem as! MemberCellItem)
+                    self?.popViewController()
+                }
+            }
+            memberItem.inviteBlock = { [weak self] in
+                guard let strongSelf = self else { return }
+                var content = ShareContent()
+                content.title = "邀请你加入\(Login.currentAccount().companyName)"
+                content.shareUrl = member.inviteUrl
+                content.description = "立即加入，受一键报销"
+                content.viewController = strongSelf
+                content.completed = {type in
+                    EToast.showSuccess("分享成功")
+                }
+                ShareTool.do(content, config: ShareUIConfig(title: "分享到", cornerRadius: 18), at: strongSelf)
+            }
             item0.addSub(item: memberItem, section: section)
         }
         
@@ -136,16 +161,46 @@ class MemberListVC: EViewController {
                 memberItem.title = member.name
                 memberItem.type = member.type
                 memberItem.id = member.id
+                memberItem.userId = member.userId
                 memberItem.status = member.status
-                memberItem.isSelectShenpi = false
+                memberItem.isSelectShenpi = !isMemberList
                 memberItem.isBeSelectd = false
                 memberItem.cellHeight = 54
+                memberItem.setSelectionHandler { [weak self] callBackItem in
+                    if let isMemberList = self?.isMemberList, !isMemberList {
+                        self?.selectUserBlock?(callBackItem as! MemberCellItem)
+                        self?.popViewController()
+                    }
+                }
+                memberItem.inviteBlock = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    var content = ShareContent()
+                    content.title = "邀请你加入\(Login.currentAccount().companyName)"
+                    content.shareUrl = member.inviteUrl
+                    content.description = "立即加入，享受一键报销"
+                    content.viewController = strongSelf
+                    content.completed = {type in
+                        EToast.showSuccess("分享成功")
+                    }
+                    ShareTool.do(content, config: ShareUIConfig(title: "分享到", cornerRadius: 18), at: strongSelf)
+                }
                 subItem.addSub(item: memberItem, section: section)
             }
             
             handleItems(subItem, list: depart.children, memberList: memberList)
         }
     }
+    
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        guard let text = searchTextField.text, text.length > 0 else {
+            handleData(memberList)
+            return
+        }
+        
+        let tmpList = memberList.filter({$0.name.contains(text)})
+        handleData(tmpList)
+    }
+    
 }
 
 

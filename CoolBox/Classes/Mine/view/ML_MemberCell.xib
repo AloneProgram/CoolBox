@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99E-VI-h47">
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99E-VI-h47">
                         <rect key="frame" x="16" y="16" width="20" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="Dr4-iQ-5hj"/>
@@ -25,6 +25,7 @@
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="ic_member_unselected"/>
+                        <state key="disabled" image="ic_blue_circle"/>
                         <state key="selected" image="ic_member_selected"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-Ag-SoB">
@@ -84,6 +85,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_blue_circle" width="20" height="20"/>
         <image name="ic_member_selected" width="20" height="20"/>
         <image name="ic_member_unselected" width="20" height="20"/>
         <image name="icon_share" width="16" height="16"/>

@@ -295,18 +295,7 @@ fileprivate extension WebViewController {
     }
     
     func shareAction() {
-        
-        var shareContent: ShareContent?
-        if let content = webShareContent {
-            shareContent = ShareContent(json: JSON(parseJSON: content))
-        }
-        else {
-            guard let linkUrl = webViewUrl?.absoluteString else { return }
-            shareContent = ShareContent(title: webViewOriginTitle, linkUrl: linkUrl)
-        }
-        
-        guard let content = shareContent else { return }
-        ShareTool.do(content, at: self)
+
     }
 }
 

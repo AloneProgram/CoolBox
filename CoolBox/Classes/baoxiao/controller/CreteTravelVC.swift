@@ -60,7 +60,7 @@ class CreteTravelVC: EViewController, PresentFromBottom {
         let inputNib = UINib(nibName: "CommonInputCell", bundle: nil)
         tableVIew.register(inputNib, forCellReuseIdentifier: "CommonInputCell")
         
-        tableVIew.estimatedRowHeight = 56
+        tableVIew.estimatedRowHeight = 54
         tableVIew.separatorStyle = .none
         
         if let travle = travel {

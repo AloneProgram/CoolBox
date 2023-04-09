@@ -58,7 +58,7 @@ class SPViewController: EViewController {
         button.setTitle("设置审批流", for: .normal)
         button.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
         button.titleLabel?.font = SCFont(16)
-        button.addTarget(self, action: #selector(setSehnpiProcess), for: .touchUpInside)
+       
         return button
     }()
     
@@ -91,7 +91,12 @@ class SPViewController: EViewController {
             stack.axis = .horizontal
             navigationItem.titleView = stack
         }
+        
+        
+        
+        NotificationCenter.default.post(name: Notification.Name("BackToReloadSPListData"), object: nil)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +104,6 @@ class SPViewController: EViewController {
       
         listVC = [fistVC, secVC, thirdVC]
         
-   
         view.addSubview(pagingViewController.view)
         pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
         pagingViewController.view.snp.makeConstraints { make in
@@ -117,6 +121,8 @@ class SPViewController: EViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadPaggingItem), name: Notification.Name("ReloadSPPagingItem"), object: nil)
+        
+        spBtn.addTarget(self, action: #selector(setSehnpiProcess), for: .touchUpInside)
         
     }
 
@@ -140,7 +146,7 @@ class SPViewController: EViewController {
     }
     
     @objc func setSehnpiProcess() {
-        
+        push(SetProcessListVC())
     }
     
     func getMySPList() {

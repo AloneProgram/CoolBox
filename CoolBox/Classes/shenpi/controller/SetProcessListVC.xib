@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetProcessListVC" customModule="CoolBox" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomViewHeight" destination="N5A-QB-rHy" id="hva-3x-pCP"/>
+                <outlet property="tableView" destination="96o-Vu-ttn" id="D3k-1J-AEk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="96o-Vu-ttn">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="780"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acu-ON-Ta2">
+                    <rect key="frame" x="0.0" y="780" width="393" height="72"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-Lv-DwC">
+                            <rect key="frame" x="16" y="8" width="361" height="32"/>
+                            <color key="backgroundColor" red="0.086274509799999996" green="0.36470588240000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="i6y-kK-CGm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="保存"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="hsw-99-C22"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="nAR-Lv-DwC" firstAttribute="leading" secondItem="acu-ON-Ta2" secondAttribute="leading" constant="16" id="HcC-qm-bTe"/>
+                        <constraint firstAttribute="height" constant="72" id="N5A-QB-rHy"/>
+                        <constraint firstItem="nAR-Lv-DwC" firstAttribute="top" secondItem="acu-ON-Ta2" secondAttribute="top" constant="8" id="Sz5-kT-nYu"/>
+                        <constraint firstAttribute="trailing" secondItem="nAR-Lv-DwC" secondAttribute="trailing" constant="16" id="YCU-q4-TgJ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="cus_ShadowOffset">
+                            <size key="value" width="0.0" height="-3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.52549019610000003" green="0.56470588239999997" blue="0.61176470589999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="acu-ON-Ta2" secondAttribute="bottom" id="0hp-bu-QHd"/>
+                <constraint firstItem="96o-Vu-ttn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Eql-AP-2fj"/>
+                <constraint firstAttribute="trailing" secondItem="96o-Vu-ttn" secondAttribute="trailing" id="KiR-rR-cZ5"/>
+                <constraint firstItem="acu-ON-Ta2" firstAttribute="top" secondItem="96o-Vu-ttn" secondAttribute="bottom" id="Phv-v5-1sl"/>
+                <constraint firstAttribute="trailing" secondItem="acu-ON-Ta2" secondAttribute="trailing" id="ROm-bB-HKa"/>
+                <constraint firstItem="96o-Vu-ttn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="U5L-Cz-6xx"/>
+                <constraint firstItem="acu-ON-Ta2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qdz-5y-jgD"/>
+            </constraints>
+            <point key="canvasLocation" x="6808" y="-282"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

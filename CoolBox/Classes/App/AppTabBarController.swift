@@ -106,6 +106,9 @@ class AppTabBarController: BaseTabBarController {
         }else {
             item.frame = CGRect(x: CGFloat(index + 1) * width, y: 0, width: width, height: height)
         }
+        if index == 2 {
+            item.showBadge = true
+        }
        
         item.addTarget(self,
                        action: #selector(onTouchItemView(_:)),

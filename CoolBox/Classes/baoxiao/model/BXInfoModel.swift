@@ -25,8 +25,9 @@ struct BXInfoModel {
     var userId = ""
     var username = ""
     var pdfUrl = ""
-    //报销状态 0未审批 1审核中 3已报销 5审核驳回
+    //报销状态 0未审批 1审核中 3已报销 5审核驳回 
     var status = ""
+    var eid = ""
 
     /**
      * Instantiate the instance using the passed json values to set the properties values
@@ -62,6 +63,8 @@ struct BXInfoModel {
         
         userId = json["user_id"].stringValue
         username = json["username"].stringValue
+        
+        eid = json["expense_id"].stringValue
     }
 
 }

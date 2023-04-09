@@ -13,6 +13,14 @@ enum BottomActionType {
     case fp_unNeed  //无需报销
     
     case bx_detail  //报销单详情
+    
+    case sp_first  //发起人非审批人
+    case sp_second  //发起人且审批人
+    case sp_third  //审批人非发起人
+    case sp_fourth  //审批人--已审批——审批通过
+    case sp_fifth  //审批人--已审批——审批拒绝
+    case sp_sixth   //发起人---已拒绝
+    case sp_seventh   //发起人---已通过
 }
 
 class BottomActionView: UIView {
@@ -33,6 +41,8 @@ class BottomActionView: UIView {
     
     func setupView() {
         var viewArray: [UIView] = []
+        
+        var distribution: UIStackView.Distribution = .fillProportionally
         
         switch type {
         case .fp_normal:
@@ -56,13 +66,51 @@ class BottomActionView: UIView {
                 actionBtn(color: UIColor(hexString: "#165DFF"), title: "修改报销单", titleColor: UIColor(hexString: "#165DFF"), selector: #selector(editBx)),
                 actionBtn(color: UIColor(hexString: "#165DFF"), title: "发起审批", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(createSP))
             ]
+        case .sp_first:
+            distribution = .fillEqually
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#FF5722"), title: "撤回", titleColor: UIColor(hexString: "#FF5722"), selector: #selector(deleteSP)),
+            ]
+        case .sp_second:
+            distribution = .fillEqually
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#FF5722"), title: "撤回", titleColor: UIColor(hexString: "#FF5722"), selector: #selector(deleteSP)),
+                actionBtn(color: UIColor(hexString: "#FF5722"), title: "拒绝", bgColor: UIColor(hexString: "#FF5722"), titleColor: .white, selector: #selector(refuseSP)),
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "通过", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(passSP))
+            ]
+        case .sp_third:
+            distribution = .fillEqually
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#FF5722"), title: "拒绝", bgColor: UIColor(hexString: "#FF5722"), selector: #selector(refuseSP)),
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "通过", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(passSP))
+            ]
+        case .sp_fourth:
+            distribution = .fillEqually
+            viewArray = [
+                UILabel(text: "已通过", font: Font(18), nColor: UIColor(hexString: "#165DFF")),
+            ]
+        case .sp_fifth:
+            distribution = .fillEqually
+            viewArray = [
+                UILabel(text: "已拒绝", font: Font(18), nColor: UIColor(hexString: "#FF5722")),
+            ]
+        case .sp_sixth:
+            distribution = .fillEqually
+            viewArray = [
+                actionBtn(color: UIColor(hexString: "#165DFF"), title: "再次提交", bgColor: UIColor(hexString: "#165DFF"), selector: #selector(resendSP))
+            ]
+        case .sp_seventh:
+            distribution = .fillEqually
+            viewArray = [
+                UILabel(text: "已通过", font: Font(18), nColor: UIColor(hexString: "#165DFF")),
+            ]
         }
         
         
         let stackView = UIStackView(arrangedSubviews: viewArray)
         stackView.axis = .horizontal
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = distribution
         stackView.spacing = 32
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
@@ -111,5 +159,30 @@ class BottomActionView: UIView {
     @objc func createSP() {
         actionBlock?(5)
         
+    }
+    
+    //撤回审批
+    @objc func deleteSP() {
+        actionBlock?(6)
+    }
+    //拒绝审批
+    @objc func refuseSP() {
+        actionBlock?(7)
+    }
+    //通过审批
+    @objc func passSP() {
+        actionBlock?(8)
+    }
+    //上一个
+    @objc func lastSP() {
+        actionBlock?(9)
+    }
+    //下一个
+    @objc func nextSP() {
+        actionBlock?(10)
+    }
+    //重新发起审批
+    @objc func resendSP() {
+        actionBlock?(11)
     }
 }

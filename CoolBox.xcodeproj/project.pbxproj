@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960C071229E2B1F40010CC65 /* SPDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C071129E2B1F40010CC65 /* SPDetailModel.swift */; };
+		960C071529E2EC310010CC65 /* SetProcessListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C071329E2EC300010CC65 /* SetProcessListVC.swift */; };
+		960C071629E2EC310010CC65 /* SetProcessListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960C071429E2EC300010CC65 /* SetProcessListVC.xib */; };
+		960C071929E2F09B0010CC65 /* ProcessNodelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C071729E2F09B0010CC65 /* ProcessNodelCell.swift */; };
+		960C071A29E2F09B0010CC65 /* ProcessNodelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960C071829E2F09B0010CC65 /* ProcessNodelCell.xib */; };
 		960F342C29CB3BBC000149A2 /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342529CB3BBC000149A2 /* ZJDefaultCell.swift */; };
 		960F342D29CB3BBC000149A2 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342629CB3BBC000149A2 /* ZJTableViewSection.swift */; };
 		960F342E29CB3BBD000149A2 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F342729CB3BBC000149A2 /* ZJProtocol.swift */; };
@@ -83,6 +88,7 @@
 		96673C0E29D476BC00AB7602 /* FPSelectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */; };
 		96673C0F29D476BC00AB7602 /* FPSelectListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */; };
 		96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96673C1029D4786600AB7602 /* BottomActionView.swift */; };
+		966A7FD429E326EA009F3E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966A7FD329E326EA009F3E15 /* LaunchScreen.storyboard */; };
 		9670574629D99112004FB0B3 /* FPEditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670574429D99112004FB0B3 /* FPEditInfoVC.swift */; };
 		9670574729D99112004FB0B3 /* FPEditInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9670574529D99112004FB0B3 /* FPEditInfoVC.xib */; };
 		9690147229CB2F40008E88CF /* DepartmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9690147129CB2F40008E88CF /* DepartmentListModel.swift */; };
@@ -97,6 +103,8 @@
 		969424CA29E19DE50028F800 /* CreteTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424C829E19DE50028F800 /* CreteTravelVC.swift */; };
 		969424CB29E19DE50028F800 /* CreteTravelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969424C929E19DE50028F800 /* CreteTravelVC.xib */; };
 		969424CD29E1DC6F0028F800 /* BXCompleteInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424CC29E1DC6F0028F800 /* BXCompleteInfoVC.swift */; };
+		969424CF29E263100028F800 /* SPDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969424CE29E263100028F800 /* SPDetailVC.swift */; };
+		969424D129E264DC0028F800 /* SPDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969424D029E264DC0028F800 /* SPDetailVC.xib */; };
 		96A374DC29C3445500B4727C /* AppAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DB29C3445500B4727C /* AppAccount.swift */; };
 		96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A374DD29C34C1D00B4727C /* LoginVC.swift */; };
 		96A374E029C34C2700B4727C /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A374DF29C34C2700B4727C /* LoginVC.xib */; };
@@ -230,6 +238,9 @@
 		96DA53AB29D057F100958209 /* SP_RefuseReasonAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53AA29D057F100958209 /* SP_RefuseReasonAlert.swift */; };
 		96DA53AE29D0807E00958209 /* CamareImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53AC29D0807E00958209 /* CamareImportVC.swift */; };
 		96DA53AF29D0807E00958209 /* CamareImportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA53AD29D0807E00958209 /* CamareImportVC.xib */; };
+		96DA64AB29E291FA00526BAF /* ProcessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA64AA29E291FA00526BAF /* ProcessModel.swift */; };
+		96DA64AE29E296D200526BAF /* SPProcessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA64AC29E296D200526BAF /* SPProcessCell.swift */; };
+		96DA64AF29E296D200526BAF /* SPProcessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA64AD29E296D200526BAF /* SPProcessCell.xib */; };
 		96E11F5B29CC9F8E00E29681 /* ImportEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E11F5A29CC9F8E00E29681 /* ImportEntranceView.swift */; };
 		96E11F5D29CC9F9B00E29681 /* ImportEntranceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */; };
 		96FBC92129D9C161002889C6 /* BXEditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */; };
@@ -241,6 +252,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960C071129E2B1F40010CC65 /* SPDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDetailModel.swift; sourceTree = "<group>"; };
+		960C071329E2EC300010CC65 /* SetProcessListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProcessListVC.swift; sourceTree = "<group>"; };
+		960C071429E2EC300010CC65 /* SetProcessListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetProcessListVC.xib; sourceTree = "<group>"; };
+		960C071729E2F09B0010CC65 /* ProcessNodelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessNodelCell.swift; sourceTree = "<group>"; };
+		960C071829E2F09B0010CC65 /* ProcessNodelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessNodelCell.xib; sourceTree = "<group>"; };
 		960F342529CB3BBC000149A2 /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
 		960F342629CB3BBC000149A2 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
 		960F342729CB3BBC000149A2 /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
@@ -320,6 +336,7 @@
 		96673C0C29D476BC00AB7602 /* FPSelectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSelectListVC.swift; sourceTree = "<group>"; };
 		96673C0D29D476BC00AB7602 /* FPSelectListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPSelectListVC.xib; sourceTree = "<group>"; };
 		96673C1029D4786600AB7602 /* BottomActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionView.swift; sourceTree = "<group>"; };
+		966A7FD329E326EA009F3E15 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9670574429D99112004FB0B3 /* FPEditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPEditInfoVC.swift; sourceTree = "<group>"; };
 		9670574529D99112004FB0B3 /* FPEditInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPEditInfoVC.xib; sourceTree = "<group>"; };
 		9690147129CB2F40008E88CF /* DepartmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListModel.swift; sourceTree = "<group>"; };
@@ -334,6 +351,8 @@
 		969424C829E19DE50028F800 /* CreteTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreteTravelVC.swift; sourceTree = "<group>"; };
 		969424C929E19DE50028F800 /* CreteTravelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreteTravelVC.xib; sourceTree = "<group>"; };
 		969424CC29E1DC6F0028F800 /* BXCompleteInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXCompleteInfoVC.swift; sourceTree = "<group>"; };
+		969424CE29E263100028F800 /* SPDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDetailVC.swift; sourceTree = "<group>"; };
+		969424D029E264DC0028F800 /* SPDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPDetailVC.xib; sourceTree = "<group>"; };
 		96A374D729C342E900B4727C /* CoolBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolBox-Bridging-Header.h"; sourceTree = "<group>"; };
 		96A374DB29C3445500B4727C /* AppAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccount.swift; sourceTree = "<group>"; };
 		96A374DD29C34C1D00B4727C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -470,6 +489,9 @@
 		96DA53AA29D057F100958209 /* SP_RefuseReasonAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SP_RefuseReasonAlert.swift; sourceTree = "<group>"; };
 		96DA53AC29D0807E00958209 /* CamareImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamareImportVC.swift; sourceTree = "<group>"; };
 		96DA53AD29D0807E00958209 /* CamareImportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CamareImportVC.xib; sourceTree = "<group>"; };
+		96DA64AA29E291FA00526BAF /* ProcessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessModel.swift; sourceTree = "<group>"; };
+		96DA64AC29E296D200526BAF /* SPProcessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPProcessCell.swift; sourceTree = "<group>"; };
+		96DA64AD29E296D200526BAF /* SPProcessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPProcessCell.xib; sourceTree = "<group>"; };
 		96E11F5A29CC9F8E00E29681 /* ImportEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportEntranceView.swift; sourceTree = "<group>"; };
 		96E11F5C29CC9F9B00E29681 /* ImportEntranceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportEntranceView.xib; sourceTree = "<group>"; };
 		96FBC91F29D9C161002889C6 /* BXEditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXEditInfoVC.swift; sourceTree = "<group>"; };
@@ -705,6 +727,7 @@
 				96AB6FD229C1FBB800244F40 /* Info.plist */,
 				96AB70FC29C208F900244F40 /* App.xcassets */,
 				96AB6FCD29C1FBB800244F40 /* Assets.xcassets */,
+				966A7FD329E326EA009F3E15 /* LaunchScreen.storyboard */,
 			);
 			path = SupportFile;
 			sourceTree = "<group>";
@@ -1164,6 +1187,8 @@
 			isa = PBXGroup;
 			children = (
 				96DA539C29D0323B00958209 /* SPListModel.swift */,
+				96DA64AA29E291FA00526BAF /* ProcessModel.swift */,
+				960C071129E2B1F40010CC65 /* SPDetailModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1173,6 +1198,10 @@
 			children = (
 				96AB711329C210DF00244F40 /* SPViewController.swift */,
 				96DA539629D0257600958209 /* SPListVC.swift */,
+				969424CE29E263100028F800 /* SPDetailVC.swift */,
+				969424D029E264DC0028F800 /* SPDetailVC.xib */,
+				960C071329E2EC300010CC65 /* SetProcessListVC.swift */,
+				960C071429E2EC300010CC65 /* SetProcessListVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1186,6 +1215,10 @@
 				96DA53A429D03A0700958209 /* SPInfoCell.swift */,
 				96DA53A529D03A0700958209 /* SPInfoCell.xib */,
 				96DA53AA29D057F100958209 /* SP_RefuseReasonAlert.swift */,
+				96DA64AC29E296D200526BAF /* SPProcessCell.swift */,
+				96DA64AD29E296D200526BAF /* SPProcessCell.xib */,
+				960C071729E2F09B0010CC65 /* ProcessNodelCell.swift */,
+				960C071829E2F09B0010CC65 /* ProcessNodelCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1311,11 +1344,14 @@
 				96AB70F129C2088E00244F40 /* PhotoAlbumSelectView.xib in Resources */,
 				96C1240629E1741F000B7716 /* ChangeSubsidyStandardVC.xib in Resources */,
 				96DA53A129D0361B00958209 /* SPUnchckedCell.xib in Resources */,
+				960C071629E2EC310010CC65 /* SetProcessListVC.xib in Resources */,
 				96AB70C229C2088E00244F40 /* blueArrow@2x.png in Resources */,
 				96673C0B29D1F9B300AB7602 /* ImportFPVC.xib in Resources */,
 				96FBC92229D9C161002889C6 /* BXEditInfoVC.xib in Resources */,
 				96AB70C629C2088E00244F40 /* blackArrow@2x.png in Resources */,
+				960C071A29E2F09B0010CC65 /* ProcessNodelCell.xib in Resources */,
 				969424CB29E19DE50028F800 /* CreteTravelVC.xib in Resources */,
+				969424D129E264DC0028F800 /* SPDetailVC.xib in Resources */,
 				96DA539129D019DE00958209 /* BaoxiaoCell.xib in Resources */,
 				964E71E529C6ED5200118D43 /* BaseHeightBottomView.xib in Resources */,
 				96AB70C429C2088E00244F40 /* whiteArrow@2x.png in Resources */,
@@ -1328,6 +1364,7 @@
 				96A374E829C364A100B4727C /* CompleteInfoVC.xib in Resources */,
 				96AB70C529C2088E00244F40 /* whiteArrow.png in Resources */,
 				96FEB0EB29DF185A00076D44 /* BXFapiaoCell.xib in Resources */,
+				96DA64AF29E296D200526BAF /* SPProcessCell.xib in Resources */,
 				96AB710229C208FA00244F40 /* App.xcassets in Resources */,
 				96DA53AF29D0807E00958209 /* CamareImportVC.xib in Resources */,
 				961D173829C738C300853FCB /* CreateVC.xib in Resources */,
@@ -1349,6 +1386,7 @@
 				96AB70C129C2088E00244F40 /* blackArrow.png in Resources */,
 				964E71DC29C6BC6A00118D43 /* AboutVC.xib in Resources */,
 				9690147829CB3206008E88CF /* MemberListVC.xib in Resources */,
+				966A7FD429E326EA009F3E15 /* LaunchScreen.storyboard in Resources */,
 				960F343D29CB61AC000149A2 /* SelectDepartVC.xib in Resources */,
 				960F55FE29E11F030061C51F /* BXDetailInfoVC.xib in Resources */,
 				96AB70F229C2088E00244F40 /* PhotoAlbumSelectCell.xib in Resources */,
@@ -1478,6 +1516,7 @@
 				96DA539729D0257600958209 /* SPListVC.swift in Sources */,
 				961D177E29C763E500853FCB /* CommonApi.swift in Sources */,
 				96DA53AB29D057F100958209 /* SP_RefuseReasonAlert.swift in Sources */,
+				960C071929E2F09B0010CC65 /* ProcessNodelCell.swift in Sources */,
 				9690FC7F29C8983F008E88CF /* McPickerBarButtonItem.swift in Sources */,
 				96673BC129D0872E00AB7602 /* ScaneVIew.swift in Sources */,
 				96AB70EA29C2088E00244F40 /* ZoomingScrollView.swift in Sources */,
@@ -1535,6 +1574,7 @@
 				96AB70DA29C2088E00244F40 /* PhotoAlbumViewController.swift in Sources */,
 				9658210C29C5B4AF0005C6AA /* SingelInputAlert.swift in Sources */,
 				96AB70D329C2088E00244F40 /* RImageCropperViewController.swift in Sources */,
+				96DA64AB29E291FA00526BAF /* ProcessModel.swift in Sources */,
 				96DA539529D01C8A00958209 /* BaoXiaoListModel.swift in Sources */,
 				96AB6FC529C1FBB700244F40 /* AppDelegate.swift in Sources */,
 				96AB70B829C2088E00244F40 /* EWebViewController.swift in Sources */,
@@ -1555,6 +1595,7 @@
 				965208D329CEEABF00A5175F /* FilterVC.swift in Sources */,
 				960F560129E161A90061C51F /* TravelOtherFeeCell.swift in Sources */,
 				96DA53A929D044AC00958209 /* TabBarItemView.swift in Sources */,
+				960C071529E2EC310010CC65 /* SetProcessListVC.swift in Sources */,
 				96AB711629C210EB00244F40 /* MineViewController.swift in Sources */,
 				96A374DE29C34C1D00B4727C /* LoginVC.swift in Sources */,
 				964E71D629C6B42500118D43 /* DeleteAccountAlert.swift in Sources */,
@@ -1569,6 +1610,7 @@
 				969424C729E195DA0028F800 /* SubsidyConfig.swift in Sources */,
 				96AB70AB29C2088E00244F40 /* CusCodeBtn.swift in Sources */,
 				96AB70BA29C2088E00244F40 /* WebViewController.swift in Sources */,
+				969424CF29E263100028F800 /* SPDetailVC.swift in Sources */,
 				96673C1129D4786600AB7602 /* BottomActionView.swift in Sources */,
 				960F343429CB3C77000149A2 /* ML_DepartmentCell.swift in Sources */,
 				964E718C29C5C48200118D43 /* OSSConfigModel.swift in Sources */,
@@ -1579,6 +1621,7 @@
 				96AB70DE29C2088E00244F40 /* CropOverlayView.swift in Sources */,
 				9690FC8029C8983F008E88CF /* McTextField.swift in Sources */,
 				9670574629D99112004FB0B3 /* FPEditInfoVC.swift in Sources */,
+				960C071229E2B1F40010CC65 /* SPDetailModel.swift in Sources */,
 				96DA53AE29D0807E00958209 /* CamareImportVC.swift in Sources */,
 				96AB70EE29C2088E00244F40 /* UploadImageCell.swift in Sources */,
 				969424CD29E1DC6F0028F800 /* BXCompleteInfoVC.swift in Sources */,
@@ -1601,6 +1644,7 @@
 				96AB70B029C2088E00244F40 /* ShareTool.swift in Sources */,
 				96A374DC29C3445500B4727C /* AppAccount.swift in Sources */,
 				960F342F29CB3BBD000149A2 /* ZJTableViewItem.swift in Sources */,
+				96DA64AE29E296D200526BAF /* SPProcessCell.swift in Sources */,
 				96AB70ED29C2088E00244F40 /* UploadPhotoProtocol.swift in Sources */,
 				96673C0E29D476BC00AB7602 /* FPSelectListVC.swift in Sources */,
 				965208D029CEE98100A5175F /* GYSideTransitioningDelegate.swift in Sources */,
@@ -1745,7 +1789,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -1790,7 +1834,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "允许应用访问您的相机，来进行头像设置";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要您的同意才能读取您的照片，来选择图片进行上传";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

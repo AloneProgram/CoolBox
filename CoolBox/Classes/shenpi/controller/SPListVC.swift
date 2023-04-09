@@ -58,6 +58,8 @@ class SPListVC: ETableViewController, PresentFromBottom {
         loadSP(page: 1, block: refreshBlock)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAction(_:)), name: Notification.Name("ReloadBaoxiaoListData"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadList), name: Notification.Name("BackToReloadSPListData"), object: nil)
     }
     
     override func makePlaceHolderView() -> UIView! {
@@ -158,6 +160,10 @@ class SPListVC: ETableViewController, PresentFromBottom {
             }
         }
     }
+    
+    @objc func reloadList() {
+        loadData(self.refreshBlock)
+    }
 }
 
 extension SPListVC: UITableViewDelegate, UITableViewDataSource {
@@ -194,8 +200,9 @@ extension SPListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let bdx = list[indexPath.row]
-
+        let spd = list[indexPath.row]
+        let id = tag == 2 ?  spd.id : spd.examineId
+        AppCommon.getCurrentVC()?.push(SPDetailVC(exId: id))
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

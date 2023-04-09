@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class BXDetailInfoVC: EViewController {
+class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
     
     @IBOutlet weak var tableVIew: UITableView!
     
@@ -125,12 +125,35 @@ class BXDetailInfoVC: EViewController {
     }
     
     func sendSP() {
-        //TODO: 发起审批
+        if Login.currentAccount().type == "1" {
+            let alert = CustomAlert(title: "您还没有加入组织", content: "您当前是个人用户，请先加入一个组织", cancleTitle: "加入组织", single: true, cancle:  { [weak self] in
+                self?.push(CompanyListVC())
+            })
+            presentToCenter(alert)
+            
+            return
+        }else {
+            if bxInfo?.pdfUrl != nil {
+                removeCurrentAndPush(viewController: SPDetailVC(eId: eid))
+            }else {
+                EToast.showInfo("请先生成报销单")
+            }
+        }
     }
-    
-    
+
     @objc func importPDFAction() {
-        //TODO: 导出报销单
+        guard let info = bxInfo else { return}
+        
+        var content = ShareContent()
+        content.title = "\(Date().timeIntervalSince1970).pdf"
+        content.shareUrl = info.pdfUrl
+        content.viewController = self
+        content.shareScenes = [.local, .wx, .more]
+        content.completed = {type in
+            EToast.showSuccess("导出成功")
+        }
+        ShareTool.do(content, config: ShareUIConfig(title: "导出到", cornerRadius: 18), at: self)
+        
     }
 
     
