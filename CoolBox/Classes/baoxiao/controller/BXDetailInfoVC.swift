@@ -114,13 +114,14 @@ class BXDetailInfoVC: EViewController {
     func deleteBX() {
         guard let info = bxInfo else { return }
         BXApi.deleteBX(eid: info.id) {[weak self] _ in
+            EToast.showSuccess("删除成功")
             self?.popViewController()
         }
     }
     
     func editBx() {
         guard let info = bxInfo else { return }
-        push(BXEditInfoVC(eId: info.id))
+         removeCurrentAndPush(viewController: BXEditInfoVC(eId: info.id))
     }
     
     func sendSP() {

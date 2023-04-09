@@ -220,7 +220,6 @@ struct BXApi {
     static func deleteBX(eid: String, result: @escaping (Bool)->Void) {
         let target = ApiTarget.deleteExpense(eid: eid)
         ENetworking.request(target, success: { (json) in
-            EToast.showSuccess("删除成功")
             result(true)
         }) { (err, json) in
         }

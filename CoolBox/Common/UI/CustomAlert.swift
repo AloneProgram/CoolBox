@@ -17,7 +17,7 @@ class CustomAlert: PresentCenterVC {
     }    
     
     override var controllerSize: CGSize {
-        let height = 13 + titleHeight + 12 + contentHeight + 57
+        let height = 13 + titleHeight + 20 + contentHeight + 64
         return CGSize(width: 270 , height: height)
     }
     
@@ -92,16 +92,16 @@ private extension CustomAlert {
         }
         
         let contentLab = UILabel()
-        contentLab.textAlignment = .left
+        contentLab.textAlignment = .center
         contentLab.font = Font(14)
         contentLab.text = contentStr
         contentLab.numberOfLines = 0
-        contentLab.textColor = UIColor(rgb: 51)
+        contentLab.textColor = UIColor(hexString: "#86909C")
         view.addSubview(contentLab)
         contentLab.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.left.greaterThanOrEqualTo(16)
-            make.top.equalTo(titleLab.snp.bottom).offset(12)
+            make.top.equalTo(titleLab.snp.bottom).offset(20)
             make.height.equalTo(contentHeight)
         }
         
@@ -112,7 +112,7 @@ private extension CustomAlert {
             make.left.equalTo(0)
             make.centerX.equalToSuperview()
             make.height.equalTo(0.5)
-            make.top.equalTo(contentLab.snp.bottom).offset(13)
+            make.top.equalTo(contentLab.snp.bottom).offset(20)
         }
         
         if isSingle {
@@ -149,7 +149,7 @@ private extension CustomAlert {
         verLine.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalTo(1)
-            make.height.equalTo(16)
+            make.bottom.equalToSuperview()
             make.top.equalTo(lineLab.snp.bottom)
         }
 

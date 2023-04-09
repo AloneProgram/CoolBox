@@ -107,7 +107,7 @@ extension BXCompleteInfoVC: UITableViewDelegate, UITableViewDataSource {
         case 2:
             let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
             cell.selectionStyle = .none
-            cell.bindTravel(list[2][indexPath.row] as! TravleData)
+            cell.bindTravel(list[2][indexPath.row] as! TravleData, showRightArrow: false)
             return cell
         case 3:
             let cell: TravelOtherFeeCell = tableView.dequeueReusableCell(withIdentifier: "TravelOtherFeeCell", for: indexPath) as! TravelOtherFeeCell

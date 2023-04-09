@@ -66,11 +66,11 @@ class BXFapiaoCell: UITableViewCell {
         
     }
     
-    func bindTravel(_ travel: TravleData) {
+    func bindTravel(_ travel: TravleData, showRightArrow: Bool = true) {
         topMargin.constant = 34
         topLabel.isHidden = false
         
-        rightArrow.isHidden = true
+        rightArrow.isHidden = !showRightArrow
         
         if travel.startTime.length > 0, travel.endTime.length > 0 {
             topLabel.textColor = UIColor(hexString: "#86909C")

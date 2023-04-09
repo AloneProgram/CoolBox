@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BXEditInfoVC: EViewController, PresentFromBottom {
+class BXEditInfoVC: EViewController, PresentFromBottom, PresentToCenter {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -170,7 +170,7 @@ extension BXEditInfoVC {
             
             (self?.list[1][0] as! CommonInputModel).tfText  = info.department.length > 0 ? info.department : (UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? "")
 
-            (self?.list[1][1] as! CommonInputModel).tfText = info.date
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? "" : info.date
             (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
             (self?.list[1][3] as! CommonInputModel).tfText = info.reason
             if info.type == "1" {
@@ -265,7 +265,7 @@ extension BXEditInfoVC {
             }
             
             (self?.list[1][0] as! CommonInputModel).tfText  = UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? ""
-            (self?.list[1][1] as! CommonInputModel).tfText = info.date
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? "" : info.date
             (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
             (self?.list[1][3] as! CommonInputModel).tfText = info.reason
             if info.type == "1" {
@@ -286,6 +286,64 @@ extension BXEditInfoVC {
             tmp.removeAll(where: {$0.id == tId})
             self?.list[2] = tmp
             self?.tableView.reloadData()
+        }
+    }
+    
+    func changetTypeAlert() {
+        let alert = SelectAlert(alertTitle: "选择报销类型")
+        let cancel = SelectAlertAction(title: "取消", type: .cancel)
+
+       
+        let travleBX = SelectAlertAction(title: "差旅费报销") { [weak self] in
+            self?.type = "1"
+            self?.handleChangeType()
+        }
+        let feeBX = SelectAlertAction(title: "费用报销") { [weak self] in
+            self?.type = "2"
+            self?.handleChangeType()
+        }
+        
+        alert.addAction(travleBX)
+        alert.addAction(feeBX)
+        alert.addAction(cancel)
+        alert.show()
+    }
+    
+    //修改报销单类型: 1. 预报销单先重新生成报销单再获取预报销单信息;  2.报销单: 先删除报销单再重新生预报销单,再生成报销单
+    func handleChangeType() {
+        guard let info = bxInfo else { return }
+        if isCreateEx {
+            var ids = ""
+            info.invoiceData.forEach { tmp in
+                tmp.list.forEach { fp in
+                    ids += "\(fp.id),"
+                }
+            }
+            if ids.hasSuffix(",") {
+                ids = ids.subString(start: 0, length: ids.length - 1)
+            }
+            
+            BXApi.createPreExpenseRequest(invoiceIds: ids, type: type) {[weak self] exId in
+                self?.getPreExpeneInfo(eId: exId)
+            }
+        }else {
+           
+            BXApi.deleteBX(eid: info.id) {[weak self] _ in
+                var ids = ""
+                info.invoiceData.forEach { tmp in
+                    tmp.list.forEach { fp in
+                        ids += "\(fp.id),"
+                    }
+                }
+                if ids.hasSuffix(",") {
+                    ids = ids.subString(start: 0, length: ids.length - 1)
+                }
+                
+                BXApi.createPreExpenseRequest(invoiceIds: ids, type: self?.type ?? "") {[weak self] exId in
+                    self?.getPreExpeneInfo(eId: exId)
+                    self?.isCreateEx = true
+                }
+            }
         }
     }
 }
@@ -355,6 +413,12 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             //TODO: 切换报销单类型
+            let alert = CustomAlert(title: "系统提示", content: "切换类型后,已填写的内容将会丢失,是否确认切换?", cancleTitle: "取消", confirmTitle: "确定", confirm:  { [weak self] in
+                self?.changetTypeAlert()
+            })
+            
+            presentToCenter(alert)
+            
         }else if indexPath.section == 1 {
             if indexPath.row == 1 {
                 let result: DatePicker.DatePickerClosure = { [weak self] dateStr in

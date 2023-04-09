@@ -44,6 +44,11 @@ class BXViewController: EViewController {
     
     var filterModels: [[FIlterModel]] = [ ]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name("BackToReloadBXListData"), object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = EColor.viewBgColor

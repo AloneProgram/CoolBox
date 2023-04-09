@@ -57,6 +57,8 @@ class BXListVC: ETableViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAction(_:)), name: Notification.Name("ReloadBaoxiaoListData"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadList), name: Notification.Name("BackToReloadBXListData"), object: nil)
     }
     
     override func makePlaceHolderView() -> UIView! {
@@ -121,6 +123,10 @@ class BXListVC: ETableViewController {
     @objc func reloadAction(_ noci: Notification){
         filterModels = noci.object as? [[FIlterModel]] ?? []
         tableView.mj_header?.beginRefreshing()
+    }
+    
+    @objc func reloadList() {
+        loadData(self.refreshBlock)
     }
     
 }
