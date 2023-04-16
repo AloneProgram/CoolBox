@@ -191,7 +191,8 @@ private extension EmailImportAlert {
     }
     
     @objc func copyAction() {
-        
+        UIPasteboard.general.string = Login.currentAccount().email
+        EToast.showSuccess("复制成功")
     }
     
     

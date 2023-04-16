@@ -108,6 +108,7 @@ class AppTabBarController: BaseTabBarController {
         }
         if index == 2 {
             item.showBadge = true
+            item.observerShoppingBagCount()
         }
        
         item.addTarget(self,

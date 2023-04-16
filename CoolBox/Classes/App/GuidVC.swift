@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuidVC: EViewController {
+class GuidVC: EViewController, PresentToCenter, UIScrollViewDelegate {
     
     private var scrollview = UIScrollView()
     var clickCount = 0
@@ -26,6 +26,7 @@ class GuidVC: EViewController {
             UserDefaults.standard.set(true, forKey: "HasShowAds")
             scrollview.isPagingEnabled = true
             scrollview.contentSize = CGSize(width: CGFloat(ads.count) * kScreenWidth, height: kScreenHeight)
+            scrollview.delegate = self
             let tap = UITapGestureRecognizer(target: self, action: #selector(clickScrollview))
             scrollview.addGestureRecognizer(tap)
             view.addSubview(scrollview)
@@ -51,12 +52,16 @@ class GuidVC: EViewController {
     }
     
     @objc func clickScrollview() {
-        clickCount += 1
-        if clickCount < ads.count {
-            scrollview.setContentOffset(CGPoint(x: CGFloat(clickCount) * kScreenWidth, y: 0), animated: true)
-        }else {
-            setRootViewController()
+        
+        if scrollview.contentOffset.x >= 2.0 * kScreenWidth {
+            let alert = PrivacyProtocolAlert()
+            presentToCenter(alert)
+            return
         }
+
+        clickCount += 1
+        scrollview.setContentOffset(CGPoint(x: CGFloat(clickCount) * kScreenWidth, y: 0), animated: true)
+
     }
     
     func setGuideImg() {
@@ -94,5 +99,10 @@ class GuidVC: EViewController {
         else {
             keyWindow??.rootViewController = LoginVC()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        clickCount = Int(offset.x / kScreenWidth)
     }
 }

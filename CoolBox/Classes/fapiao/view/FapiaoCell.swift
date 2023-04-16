@@ -94,7 +94,7 @@ class FapiaoCell: UITableViewCell {
         
 
         titleLabel.text = fapiao.title
-        dateLabel.text = "消费时间:" + fapiao.productionDate
+        dateLabel.text = "消费时间:" + fapiao.time
         amountLabel.text = "¥ " + fapiao.fee
         
         selectBtn.isHidden = fapiao.invalidTitle.length > 0

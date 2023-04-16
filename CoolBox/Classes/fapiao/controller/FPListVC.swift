@@ -160,7 +160,7 @@ class FPListVC: ETableViewController, PresentToCenter {
         let fp = list[row]
         let vc = FPSelectListVC(fp.id, status: status)
         vc.modalPresentationStyle = .fullScreen
-        AppCommon.getCurrentVC()?.present(vc, animated: true)
+        AppCommon.getCurrentVC()?.present(vc, animated: false)
     }
 }
 

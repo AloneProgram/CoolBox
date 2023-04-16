@@ -8,7 +8,7 @@
 import UIKit
 import TZImagePickerController
 
-class CamareImportVC: EViewController {
+class CamareImportVC: EViewController, PresentToCenter {
     
     @IBOutlet weak var dismissBtn: UIButton!
     
@@ -50,6 +50,22 @@ class CamareImportVC: EViewController {
         view.backgroundColor = .black
         
         isScaneImport ? changeToScaneView() : changeToTakePhotoView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            if self.isScaneImport {
+                let hasShow = UserDefaults.standard.bool(forKey: "HasShowScaneTipsAlert")
+                if !hasShow {
+                    let alert = ScaneTipsAlert()
+                    self.presentToCenter(alert)
+                }
+            }else {
+                let hasShow = UserDefaults.standard.bool(forKey: "HasShowTpTipsAlert")
+                if !hasShow {
+                    let alert = tpTipsAlert()
+                    self.presentToCenter(alert)
+                }
+            }
+        }
     }
     
     func changeToTakePhotoView() {
@@ -106,6 +122,7 @@ class CamareImportVC: EViewController {
         func doit() {
             guard let imagePicker = TZImagePickerController(maxImagesCount: 1, delegate: self) else { return }
             imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.allowPickingVideo = false
             present(imagePicker, animated: true, completion: nil)
         }
         SystemHelper.verifyPhotoLibraryAuthorization({ doit() })

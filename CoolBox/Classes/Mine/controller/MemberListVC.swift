@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberListVC: EViewController, PresentFromBottom {
+class MemberListVC: EViewController, PresentFromBottom, CYLTableViewPlaceHolderDelegate, PresentToCenter {
     
     
     @IBOutlet weak var searchView: UIView!
@@ -89,9 +89,27 @@ class MemberListVC: EViewController, PresentFromBottom {
         
         bottomContentView.bottomType = .addMember
         bottomContentView.leftBlock = { [weak self] in
+            let cid = Login.currentAccount().companyId
+            guard cid.length > 0 else {
+                let alert = CustomAlert(title: "您还没有加入组织", content: "您当前是个人用户，请先加入一个组织", cancleTitle: "加入组织", single: true, cancle:  { [weak self] in
+                    self?.push(CompanyListVC())
+                })
+                self?.presentToCenter(alert)
+                return
+            }
+
             self?.push(CreateVC(.addDepart))
         }
         bottomContentView.rightBlock = { [weak self] in
+            let cid = Login.currentAccount().companyId
+            guard cid.length > 0 else {
+                let alert = CustomAlert(title: "您还没有加入组织", content: "您当前是个人用户，请先加入一个组织", cancleTitle: "加入组织", single: true, cancle:  { [weak self] in
+                    self?.push(CompanyListVC())
+                })
+                self?.presentToCenter(alert)
+                return
+            }
+
             self?.push(CreateVC(.addMemeber))
         }
         bottomView.addSubview(bottomContentView)
@@ -107,8 +125,8 @@ class MemberListVC: EViewController, PresentFromBottom {
         
         //第一级固定为企业
         let item0 = DepartmentCellItem()
-        item0.title = departmentList.first?.name ?? ""
-        item0.d_Id = departmentList.first?.parentId ?? ""
+        item0.title = Login.currentAccount().companyName
+        item0.d_Id = "0"
         item0.isExpand = true
         item0.cellHeight = 47
         section.add(item: item0)
@@ -201,16 +219,24 @@ class MemberListVC: EViewController, PresentFromBottom {
         handleData(tmpList)
     }
     
+    func makePlaceHolderView() -> UIView! {
+        return UIView.blankMsgView("你可以创建一个组织，或者加入一个组织")
+    }
 }
 
 
 //MARK: Request
 extension MemberListVC {
     func requestDepartmentList() {
+        let cid = Login.currentAccount().companyId
+        guard cid.length > 0 else {
+            tableView.cyl_reloadData()
+            return
+        }
+        
         departmentList = []
         memberList = []
         
-        let cid = Login.currentAccount().companyId
         MineApi.requestDepartmentList(cid: cid) { [weak self] model in
             self?.departmentList = model.list
             self?.requestMemberList()

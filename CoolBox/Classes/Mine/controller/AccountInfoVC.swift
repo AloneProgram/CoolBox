@@ -125,6 +125,7 @@ extension AccountInfoVC {
         func doit() {
             guard let imagePicker = TZImagePickerController(maxImagesCount: 1, delegate: self) else { return }
             imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.allowPickingVideo = false
             present(imagePicker, animated: true, completion: nil)
         }
         SystemHelper.verifyPhotoLibraryAuthorization({ doit() })

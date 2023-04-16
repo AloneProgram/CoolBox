@@ -12,7 +12,7 @@ struct BXInfoModel {
     var date = ""
     var department = ""
     var id = ""
-    var invoiceData : [InvoiceData] = []
+    var invoiceData : [Any] = []
     var invoiceIds = ""
     var itemType = ""
     var preGetFee = ""
@@ -44,7 +44,7 @@ struct BXInfoModel {
         if type == "2" { //费用报销
             let invoice = InvoiceData(fromJson: json["invoice_data"])
             if invoice.list != nil {
-                invoiceData = [invoice]
+                invoiceData = invoice.list
             }
         }else {
             invoiceData = json["invoice_data"].arrayValue.map({InvoiceData(fromJson: $0)})

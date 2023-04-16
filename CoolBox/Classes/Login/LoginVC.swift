@@ -59,7 +59,7 @@ class LoginVC: EViewController {
         selectBtn.snp.makeConstraints { (make) in
             make.right.equalTo(tipsLabel.snp.left).offset(-9)
             make.centerY.equalTo(tipsLabel)
-            make.size.equalTo(CGSize(width: 22, height: 22))
+            make.size.equalTo(CGSize(width: 25, height: 25))
         }
     }
     

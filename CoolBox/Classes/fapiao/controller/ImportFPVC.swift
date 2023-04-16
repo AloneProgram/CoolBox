@@ -30,6 +30,8 @@ class ImportFPVC: EViewController {
         
         leftTitle = "确定导入"
 
+        bottomViewHeight.constant = 48 + kBottomSpace
+        
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
@@ -113,7 +115,7 @@ extension ImportFPVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             str = "可导入的发票（\(list[section].count)）"
         }else {
-            str = "无法可导入的发票（\(list[section].count)）"
+            str = "无法导入的发票（\(list[section].count)）"
         }
         
         let labe = UILabel(text: str, font: MediumFont(18), nColor: UIColor(hexString: "#1D2129"))

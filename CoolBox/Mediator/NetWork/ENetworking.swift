@@ -68,10 +68,7 @@ struct ENetworking {
                     success(json["data"])
                 }
                 else if code == .needLogin {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        EToast.showFailed(json["message"].stringValue)
-                        NotificationCenter.default.post(name: AppNeedLoginNotificationKey, object: json)
-                    }
+                    NotificationCenter.default.post(name: AppNeedLoginNotificationKey, object: json)
                 }
                 else {
                     failure(MoyaError.statusCode(moyaResponse), json)

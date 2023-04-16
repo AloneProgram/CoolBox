@@ -15,7 +15,7 @@ class PrivacyProtocolAlert: PresentCenterVC {
     }
     
     override var controllerSize: CGSize {
-        return CGSize(width: 267 , height: 420 )
+        return CGSize(width: 270 , height: 225 )
     }
     
     override func viewDidLoad() {
@@ -30,6 +30,15 @@ class PrivacyProtocolAlert: PresentCenterVC {
         }else if sender.tag == 20 {
             UserDefaults.standard.set(true, forKey: "AgreePrivacyProtocol")
             dismiss(animated: true, completion: nil)
+            
+            let keyWindow = UIApplication.shared.delegate?.window
+            if Login.isLogged() {
+            //去除登陆限制，增加游客模式
+                keyWindow??.rootViewController = AppTabBarController()
+            }
+            else {
+                keyWindow??.rootViewController = LoginVC()
+            }
         }
     }
 }
@@ -44,18 +53,18 @@ private extension PrivacyProtocolAlert {
         contentView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
-            make.size.equalTo(CGSize(width: 267, height: 420))
+            make.size.equalTo(CGSize(width: 267, height: 225))
         }
         
         let titleLab = UILabel()
         titleLab.textAlignment = .center
-        titleLab.font = MediumFont(16)
-        titleLab.text = "用户协议与隐私政策"
+        titleLab.font = Font(17)
+        titleLab.text = "服务协议和隐私政策"
         titleLab.textColor = UIColor(rgb: 51)
         contentView.addSubview(titleLab)
         titleLab.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(34 * kHeightScale)
+            make.top.equalTo(16)
             make.height.equalTo(22)
         }
 
@@ -66,54 +75,77 @@ private extension PrivacyProtocolAlert {
         introTv.font = Font(14)
         introTv.delegate = self
         introTv.showsVerticalScrollIndicator = false
-        introTv.appendLinkString(string: "感谢您选择欢电APP！\n我们非常重视您的个人信息和隐私保护，为了更好地保障您的权益，请您在使用我们的产品前，务必审慎阅读我们的")
-        introTv.appendLinkString(string: "《用户协议》", withURLString: UserAreegemnt)
+        introTv.appendLinkString(string: "请你务必审慎阅读、充分理解“服务协议”和“隐私政策”各条款。 你可阅读")
+        introTv.appendLinkString(string: "《服务协议》", withURLString: UserAreegemnt)
         introTv.appendLinkString(string: "和")
         introTv.appendLinkString(string: "《隐私政策》", withURLString: PrivacyPlice)
-        introTv.appendLinkString(string: "内的所有条款。\n如果您同意以上协议内容，请点击“同意并继续”，开始体验我们的产品和服务！\n您点击“同意并继续”的行为即表示您已阅读完毕并同意以上协议的全部内容。")
+        introTv.appendLinkString(string: "了解详细信息。如你同意，请点击“同意”开始接受我们的服务。")
+
+        var attrString:NSMutableAttributedString = NSMutableAttributedString(attributedString: introTv.attributedText)
+        attrString.addAttributes([NSAttributedString.Key.font: BoldFont(14)], range: NSRange(location: 13, length: 6))
+        attrString.addAttributes([NSAttributedString.Key.font: BoldFont(14)], range: NSRange(location: 20, length: 6))
+        introTv.attributedText = attrString
         introTv.backgroundColor = .clear
-        introTv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#FF6B01"),
-                                      NSAttributedString.Key.font: Font(14)]
+        introTv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#165DFF"),
+                                      NSAttributedString.Key.font: BoldFont(14)]
         contentView.addSubview(introTv)
-        
-        let unAgreeBtn = UIButton(borderTitle: "不同意", font: Font(13), titleColor: UIColor(hexString: "#FF6B00"))
-        unAgreeBtn.tag = 10
-        unAgreeBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
-        contentView.addSubview(unAgreeBtn)
-        unAgreeBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(26)
-            make.bottom.equalTo(-15)
-            make.height.equalTo(36)
-//            make.size.equalTo(CGSize(width: 95, height: 50))
-        }
         
         introTv.snp.makeConstraints { (make) in
             make.top.equalTo(titleLab.snp.bottom).offset(5)
             make.left.equalTo(10)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(unAgreeBtn.snp.top).offset(-20)
+            make.bottom.equalTo(-45)
         }
         
-        let agreeBtn = UIButton(title: "同意并继续", bgColor: UIColor(hexString: "#FF6B00"), font: Font(13))
-        agreeBtn.tag = 20
-        agreeBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
-        contentView.addSubview(agreeBtn)
-        agreeBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(-26)
-            make.bottom.equalTo(unAgreeBtn)
-            make.height.equalTo(unAgreeBtn)
-            make.width.equalTo(unAgreeBtn)
-            make.left.equalTo(unAgreeBtn.snp.right).offset(15)
-        }
         
         let lineLab = UILabel()
-        lineLab.backgroundColor = UIColor(hexString: "#F0F0F0")
-        contentView.addSubview(lineLab)
+        lineLab.backgroundColor = UIColor(hexString: "#000000", alpha: 0.1)
+        view.addSubview(lineLab)
         lineLab.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.height.equalTo(1)
-            make.bottom.equalTo(unAgreeBtn.snp.top).offset(-11)
+            make.left.equalTo(0)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(0.5)
+            make.bottom.equalTo(-44)
         }
+
+
+        let cancleBtn = UIButton(type: .custom)
+        cancleBtn.setTitle("暂不同意", for: .normal)
+        cancleBtn.titleLabel?.font = Font(16)
+        cancleBtn.setTitleColor(UIColor(hexString: "#333333"), for: .normal)
+        cancleBtn.tag = 10
+        cancleBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
+        view.addSubview(cancleBtn)
+        cancleBtn.snp.makeConstraints { (make) in
+            make.bottom.left.equalToSuperview()
+            make.top.equalTo(lineLab.snp.bottom)
+            make.height.equalTo(44)
+        }
+        
+        let verLine = UILabel()
+        verLine.backgroundColor = UIColor(hexString: "#F0F0F0")
+        view.addSubview(verLine)
+        verLine.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(1)
+            make.bottom.equalToSuperview()
+            make.top.equalTo(lineLab.snp.bottom)
+        }
+
+        let confirmBtn = UIButton(type: .custom)
+        confirmBtn.setTitle("同意", for: .normal)
+        confirmBtn.titleLabel?.font = Font(16)
+        confirmBtn.setTitleColor(UIColor(hexString: "#165DFF"), for: .normal)
+        confirmBtn.tag = 20
+        confirmBtn.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
+        view.addSubview(confirmBtn)
+        confirmBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
+            make.bottom.top.equalTo(cancleBtn)
+            make.width.equalTo(cancleBtn)
+            make.left.equalTo(cancleBtn.snp.right)
+        }
+
     }
 }
 
@@ -139,10 +171,11 @@ extension UITextView {
         //新增的文本内容（使用默认设置的字体样式）
         let paraph = NSMutableParagraphStyle()
         paraph.lineSpacing = 5
-        let attrs = [NSAttributedString.Key.font : self.font!,
+        var attrs = [NSAttributedString.Key.font : self.font!,
                      NSAttributedString.Key.paragraphStyle: paraph,
-                     NSAttributedString.Key.foregroundColor: UIColor(hexString: "#7B7E90")]
-        let appendString = NSMutableAttributedString(string: string, attributes:attrs)
+                     NSAttributedString.Key.foregroundColor: UIColor(hexString: "#1D2129")]
+    
+        var appendString = NSMutableAttributedString(string: string, attributes:attrs)
         //判断是否是链接文字
         if withURLString != "" {
             let range:NSRange = NSMakeRange(0, appendString.length)

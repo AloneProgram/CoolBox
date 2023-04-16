@@ -314,11 +314,18 @@ extension BXEditInfoVC {
         guard let info = bxInfo else { return }
         if isCreateEx {
             var ids = ""
-            info.invoiceData.forEach { tmp in
-                tmp.list.forEach { fp in
+            if type == "2" {
+                (info.invoiceData as! [FapiaoDetailModel]).forEach { fp in
                     ids += "\(fp.id),"
                 }
+            }else {
+                (info.invoiceData as! [InvoiceData]).forEach { tmp in
+                    tmp.list.forEach { fp in
+                        ids += "\(fp.id),"
+                    }
+                }
             }
+
             if ids.hasSuffix(",") {
                 ids = ids.subString(start: 0, length: ids.length - 1)
             }
@@ -330,9 +337,15 @@ extension BXEditInfoVC {
            
             BXApi.deleteBX(eid: info.id) {[weak self] _ in
                 var ids = ""
-                info.invoiceData.forEach { tmp in
-                    tmp.list.forEach { fp in
+                if self?.type == "2" {
+                    (info.invoiceData as! [FapiaoDetailModel]).forEach { fp in
                         ids += "\(fp.id),"
+                    }
+                }else {
+                    (info.invoiceData as! [InvoiceData]).forEach { tmp in
+                        tmp.list.forEach { fp in
+                            ids += "\(fp.id),"
+                        }
                     }
                 }
                 if ids.hasSuffix(",") {
@@ -377,7 +390,7 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
             if type == "2" {
                 let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
                 cell.selectionStyle = .none
-                cell.bindInvoice(list[2][indexPath.row] as! InvoiceData)
+                cell.bindInvoiceData(list[2][indexPath.row] as! FapiaoDetailModel)
                 return cell
             }else {
                 let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell

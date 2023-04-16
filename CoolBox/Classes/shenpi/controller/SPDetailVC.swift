@@ -122,7 +122,7 @@ class SPDetailVC: EViewController, PresentFromBottom, PresentToCenter {
         bxTitleLabel.text = info.reason
         feeLabel.text = "¥\(info.totalFee)"
         
-        bxInfoLabel.text = "部门:\(info.department)\n出差人:\(info.username)\n 报销日期:\(info.date)"
+        bxInfoLabel.text = "部门:\(info.department)\n出差人:\(info.username)\n报销日期:\(info.date)"
         
         //报销状态 0未审批 1审核中 3已报销 5审核驳回
         switch Int(info.status) {
@@ -203,27 +203,34 @@ class SPDetailVC: EViewController, PresentFromBottom, PresentToCenter {
                 btootomActionType = .sp_sixth
             }
         }
-                
-        bottomActionView =  BottomActionView(type: btootomActionType, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
-        bottomActionView.actionBlock = { [weak self] tag in
-            switch tag {
-            case 6:
-                self?.revocationSP()
-            case 7:
-                self?.refuseSP()
-            case 8:
-                self?.passSP()
-            case 9:
-                break
-            case 10:
-                break
-            case 11:
-                self?.resendSp()
-            default:
-                break
+        
+        if btootomActionType != .sp_seventh {
+            bottomView.isHidden = false
+            bottomActionView =  BottomActionView(type: btootomActionType, frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 48))
+            bottomActionView.actionBlock = { [weak self] tag in
+                switch tag {
+                case 6:
+                    self?.revocationSP()
+                case 7:
+                    self?.refuseSP()
+                case 8:
+                    self?.passSP()
+                case 9:
+                    break
+                case 10:
+                    break
+                case 11:
+                    self?.resendSp()
+                default:
+                    break
+                }
             }
+            bottomView.addSubview(bottomActionView)
+        }else {
+            bottomView.isHidden = true
         }
-        bottomView.addSubview(bottomActionView)
+                
+
     }
     
     @IBAction func tpChangeProcessPage(_ sender: Any) {

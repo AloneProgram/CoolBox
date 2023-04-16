@@ -22,7 +22,7 @@ class TabBarItemView: ItemView {
         didSet {
             DispatchQueue.main.async {
                 // 调整Badge样式
-                if !self.showBadge {
+                if self.showBadge {
                     self.badgeLabel.backgroundColor = UIColor(hexString: "#E74C39")
                     self.badgeLabel.font = UIFont(name: "Helvetica", size: 10)
                     self.badgeLabel.layer.cornerRadius = 8

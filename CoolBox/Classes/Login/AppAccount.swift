@@ -185,6 +185,9 @@ class Account {
         Login.logout()
         let keyWindow = UIApplication.shared.delegate?.window
         keyWindow??.rootViewController = LoginVC()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//            EToast.showFailed("token登录状态已失效请重新登录")
+//        }
     }
 }
 

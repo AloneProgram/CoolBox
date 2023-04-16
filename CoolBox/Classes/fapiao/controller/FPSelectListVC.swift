@@ -122,6 +122,7 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
     func updateFPStatus() {
         var isAllSelect = true
         
+        var totalFee: Double = 0.00
         var selectCount = 0
         list.filter({$0.isDataComplete == "1"}).forEach { fp in
             if !fp.isSelected {
@@ -129,11 +130,12 @@ class FPSelectListVC: EViewController, RefreshFor, CYLTableViewPlaceHolderDelega
             }
             if fp.isSelected {
                 selectCount += 1
+                totalFee += Double(fp.fee) ?? 0.00
             }
         }
         
         selectBtn.isSelected = isAllSelect
-        titleLabel.text = "已选\(selectCount)张发票"
+        titleLabel.text = "已选\(selectCount)张发票\n合计:￥\(totalFee)"
         
         tableView.reloadData()
     }

@@ -48,7 +48,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHf-JT-JCD">
-                    <rect key="frame" x="113.33333333333334" y="399.66666666666669" width="114.33333333333334" height="21"/>
+                    <rect key="frame" x="113.33333333333331" y="399.66666666666669" width="200" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="fsi-V7-iuN"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                 </textField>
