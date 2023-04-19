@@ -135,6 +135,7 @@ struct FPApi {
             EHUD.dismiss()
             result(true)
         }) { (err, json) in
+            EHUD.dismiss()
             result(false)
         }
     }
@@ -145,6 +146,7 @@ struct FPApi {
             EHUD.dismiss()
             result(CameraImportFaPiaoList(fromJson: json))
         }) { (err, json) in
+            EHUD.dismiss()
 //            EToast.showFailed("照片识别失败")
         }
     }
@@ -175,12 +177,13 @@ struct FPApi {
         }
     }
     
-    static func aliImportFP(token: String, result: @escaping (Bool)->Void) {
+    static func aliImportFP(token: String, result: @escaping  (CameraImportFaPiaoList)->Void) {
         let target = ApiTarget.aliImport(token: token)
         ENetworking.request(target, success: { (json) in
             EHUD.dismiss()
-            result(true)
+            result(CameraImportFaPiaoList(fromJson: json))
         }) { (err, json) in
+            EHUD.dismiss()
         }
     }
     
@@ -193,11 +196,11 @@ struct FPApi {
         }
     }
     
-    static func wxImportFP(arrStr: String, result: @escaping (Bool)->Void) {
+    static func wxImportFP(arrStr: String, result: @escaping (CameraImportFaPiaoList)->Void) {
         let target = ApiTarget.wxImport(cardArrStr: arrStr)
         ENetworking.request(target, success: { (json) in
             EHUD.dismiss()
-            result(true)
+            result(CameraImportFaPiaoList(fromJson: json))
         }) { (err, json) in
             EHUD.dismiss()
         }

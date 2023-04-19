@@ -81,6 +81,7 @@ class PhotoPreviewVC: EViewController, UIScrollViewDelegate {
         
         EHUD.show("识别中...")
         LoginApi.getOSSConfig { oss in
+            EHUD.dismiss()
             if let oss = oss {
                 QNUploadManager().put(data, key: oss.key, token: oss.token, complete: { [weak self] info, key, res in
                     if res != nil {

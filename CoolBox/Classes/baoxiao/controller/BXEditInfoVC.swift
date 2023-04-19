@@ -79,11 +79,19 @@ class BXEditInfoVC: EViewController, PresentFromBottom, PresentToCenter {
     }
     
     func defaultTravleList() -> [[Any]] {
+        let date = Date()//获取选定的值
+        //初始化日期格式化对象
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "zh")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        //将选定的值转换为string格式以设定格式输出
+        let dateStr = dateFormatter.string(from: date)
         return [
             [CommonInfoModel(leftText: "差旅费报销", rightText: "切换类型", showRightArrow: true)],
             [
                 CommonInputModel(leftText: "部门", tfPlaceHolder: "请输入部门", showLine: false, bottomLineHeight: 10),
-                CommonInputModel(leftText: "日期",canInput: false , tfPlaceHolder: "请选择日期",showLine: false,  bottomLineHeight: 10),
+                CommonInputModel(leftText: "日期",canInput: false , tfPlaceHolder: "请选择日期", tfText: dateStr,showLine: false,  bottomLineHeight: 10),
                 CommonInputModel(leftText: "报销人", tfPlaceHolder: "请输入姓名",showLine: false,  bottomLineHeight: 10),
                 CommonInputModel(leftText: "报销事由", tfPlaceHolder: "请输入报销事由",showLine: false,  bottomLineHeight: 10),
                 CommonInputModel(showRedPoint: false,leftText: "预借旅费  ¥", tfPlaceHolder: "0.00", showLine: false,  bottomLineHeight: 10),
@@ -92,11 +100,19 @@ class BXEditInfoVC: EViewController, PresentFromBottom, PresentToCenter {
     }
     
     func defaultFeeList() -> [[Any]] {
+        let date = Date()//获取选定的值
+        //初始化日期格式化对象
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "zh")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        //将选定的值转换为string格式以设定格式输出
+        let dateStr = dateFormatter.string(from: date)
         return [
             [CommonInfoModel(leftText: "费用报销", rightText: "切换类型", showRightArrow: true)],
             [
                 CommonInputModel(leftText: "部门", tfPlaceHolder: "请输入部门",showLine: false,  bottomLineHeight: 10),
-                CommonInputModel(leftText: "日期",canInput: false , tfPlaceHolder: "请选择日期", showLine: false,  bottomLineHeight: 10),
+                CommonInputModel(leftText: "日期",canInput: false, tfPlaceHolder: "请选择日期", tfText: dateStr, showLine: false,  bottomLineHeight: 10),
                 CommonInputModel(leftText: "报销人", tfPlaceHolder: "请输入姓名",showLine: false,  bottomLineHeight: 10),
                 CommonInputModel(leftText: "报销事由",tfPlaceHolder: "请输入报销事由", showLine: false, bottomLineHeight: 10),
                 CommonInputModel(leftText: "费用类型",canInput: false , tfPlaceHolder: "请选择费用类型",showLine: false,  bottomLineHeight: 10),
@@ -168,9 +184,17 @@ extension BXEditInfoVC {
                 self?.list.append(info.invoiceData)
             }
             
+            let date = Date()//获取选定的值
+            //初始化日期格式化对象
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "zh")
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            //将选定的值转换为string格式以设定格式输出
+            let dateStr = dateFormatter.string(from: date)
+            
             (self?.list[1][0] as! CommonInputModel).tfText  = info.department.length > 0 ? info.department : (UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? "")
 
-            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? "" : info.date
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? dateStr : info.date
             (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
             (self?.list[1][3] as! CommonInputModel).tfText = info.reason
             if info.type == "1" {
@@ -264,8 +288,16 @@ extension BXEditInfoVC {
                 self?.list.append(info.invoiceData)
             }
             
+            let date = Date()//获取选定的值
+            //初始化日期格式化对象
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "zh")
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            //将选定的值转换为string格式以设定格式输出
+            let dateStr = dateFormatter.string(from: date)
+            
             (self?.list[1][0] as! CommonInputModel).tfText  = UserDefaults.standard.string(forKey: "BaoXiao_Depatement") ?? ""
-            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? "" : info.date
+            (self?.list[1][1] as! CommonInputModel).tfText = info.date == "0" ? dateStr : info.date
             (self?.list[1][2] as! CommonInputModel).tfText = info.username.length > 0 ? info.username : (UserDefaults.standard.string(forKey: "BaoXiao_Username") ?? "")
             (self?.list[1][3] as! CommonInputModel).tfText = info.reason
             if info.type == "1" {
@@ -314,12 +346,12 @@ extension BXEditInfoVC {
         guard let info = bxInfo else { return }
         if isCreateEx {
             var ids = ""
-            if type == "2" {
-                (info.invoiceData as! [FapiaoDetailModel]).forEach { fp in
+            if let arr = info.invoiceData as? [FapiaoDetailModel] {
+                arr.forEach { fp in
                     ids += "\(fp.id),"
                 }
-            }else {
-                (info.invoiceData as! [InvoiceData]).forEach { tmp in
+            }else if let arr = info.invoiceData as? [InvoiceData] {
+                arr.forEach { tmp in
                     tmp.list.forEach { fp in
                         ids += "\(fp.id),"
                     }

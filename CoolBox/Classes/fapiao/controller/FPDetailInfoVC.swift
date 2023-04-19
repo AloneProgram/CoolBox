@@ -76,6 +76,7 @@ class FPDetailInfoVC: EViewController {
                 guard let imagePicker = TZImagePickerController(maxImagesCount: 1, delegate: self) else { return }
                 imagePicker.modalPresentationStyle = .fullScreen
                 imagePicker.allowPickingVideo = false
+                imagePicker.allowTakePicture = false
                 present(imagePicker, animated: true, completion: nil)
             }
             SystemHelper.verifyPhotoLibraryAuthorization({ doit() })
@@ -194,7 +195,10 @@ class FPDetailInfoVC: EViewController {
     
     func uploadimage(_ image: UIImage) {
         ImageDownloader.compressImageQuality(image, toKByte: 5 * 1024) { data in
-            guard let data = data else { return }
+            guard let data = data else {
+                EHUD.dismiss()
+                return
+            }
             DispatchQueue.main.async {
                 EHUD.dismiss()
                 LoginApi.getOSSConfig { oss in

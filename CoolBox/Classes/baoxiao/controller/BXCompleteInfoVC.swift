@@ -102,7 +102,7 @@ extension BXCompleteInfoVC: UITableViewDelegate, UITableViewDataSource {
         case 0, 1:
             let cell: CommonInfoCell = tableView.dequeueReusableCell(withIdentifier: "CommonInfoCell", for: indexPath) as! CommonInfoCell
             cell.selectionStyle = .none
-            cell.bindData(list[0][indexPath.row] as! CommonInfoModel)
+            cell.bindData(list[indexPath.section][indexPath.row] as! CommonInfoModel)
             return cell
         case 2:
             let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
@@ -153,7 +153,16 @@ extension BXCompleteInfoVC: UITableViewDelegate, UITableViewDataSource {
         view.addSubview(lab)
         lab.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
+            
             make.left.equalTo(15)
+        }
+        if section == 0 {
+            let rightlab = UILabel(text: "差旅费报销", font: SCFont(14), nColor: UIColor(hexString: "#939AA3"))
+            view.addSubview(rightlab)
+            rightlab.snp.makeConstraints { make in
+                make.centerY.equalToSuperview()
+                make.right.equalTo(-15)
+            }
         }
         
         return view

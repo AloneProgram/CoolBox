@@ -117,6 +117,14 @@ class MemberListVC: EViewController, PresentFromBottom, CYLTableViewPlaceHolderD
             make.left.right.top.equalToSuperview()
             make.height.equalTo(76)
         }
+        
+        let cid = Login.currentAccount().companyId
+        if cid.length == 0  {
+            let alert = CustomAlert(title: "您还没有加入组织", content: "您当前是个人用户，请先加入一个组织", cancleTitle: "加入组织", single: true, cancle:  { [weak self] in
+                self?.push(CompanyListVC())
+            })
+            presentToCenter(alert)
+        }
     }
     
     func handleData(_ memberList: [MemberModel]) {
@@ -146,6 +154,7 @@ class MemberListVC: EViewController, PresentFromBottom, CYLTableViewPlaceHolderD
                     self?.popViewController()
                 }
             }
+            
             memberItem.inviteBlock = { [weak self] in
                 guard let strongSelf = self else { return }
                 var content = ShareContent()

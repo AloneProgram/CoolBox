@@ -28,7 +28,9 @@ struct BXInfoModel {
     //报销状态 0未审批 1审核中 3已报销 5审核驳回 
     var status = ""
     var eid = ""
-
+    
+    var expenseDate = ""
+        
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
@@ -38,6 +40,7 @@ struct BXInfoModel {
         }
         createdAt = json["created_at"].stringValue
         date = json["date"].stringValue
+        expenseDate = json["expense_date"].stringValue
         department = json["department"].stringValue
         id = json["id"].stringValue
         type = json["type"].stringValue

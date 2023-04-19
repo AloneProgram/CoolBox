@@ -271,23 +271,26 @@ extension FPViewController {
         }
         guard let jsonStr = JSON(dicArray).rawString() else { return}
         EHUD.show("正在导入..")
-        FPApi.wxImportFP(arrStr: jsonStr) { success in
-            if success {
+        FPApi.wxImportFP(arrStr: jsonStr) {[weak self] list in
+            if list.invalidList.count == 0 {
                 EToast.showSuccess("发票导入成功")
                 NotificationCenter.default.post(name: Notification.Name("ImportFPSuccess"), object: nil)
+            }else {
+                self?.push(ImportFPVC(list))
             }
         }
-        
     }
     
     @objc func aliPayImportRequest(_ noti: Notification) {
         guard  let token = noti.object as? String else { return}
         EHUD.show("正在导入..")
-        FPApi.aliImportFP(token: token) { success in
+        FPApi.aliImportFP(token: token) { [weak self] list in
             EHUD.dismiss()
-            if success {
+            if list.invalidList.count == 0 {
                 EToast.showSuccess("发票导入成功")
                 NotificationCenter.default.post(name: Notification.Name("ImportFPSuccess"), object: nil)
+            }else {
+                self?.push(ImportFPVC(list))
             }
         }
     }

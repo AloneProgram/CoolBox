@@ -76,7 +76,7 @@ public struct ShareUIConfig {
     
 }
 
- class ShareTool: NSObject {
+class ShareTool: NSObject, UIDocumentPickerDelegate {
     
     public static var share: ShareTool {
        struct Singleton {
@@ -133,50 +133,10 @@ public struct ShareUIConfig {
      
      func shareLocal(content: ShareContent) {
          guard let url = URL(string: content.shareUrl) else { return }
-         let picker = UIDocumentPickerViewController(url: url, in: .exportToService)
-         picker.modalPresentationStyle = .formSheet
-         content.viewController?.present(picker, animated: true)
-         
-//         let configuration = URLSessionConfiguration.default
-//         let session = URLSession(configuration: configuration)
-//
-//         var fillPath = ""
-//
-//         let request = URLRequest(url: url)
-//         let downTask = session.downloadTask(with: request) {location, respons, error in
-//
-//
-//           do {
-//               //输出下载文件原来的存放目录
-//                //location位置转换
-//                let locationPath = location!.path
-//
-//
-//                //拷贝到用户目录
-//                let documnets:String = NSHomeDirectory() + "\(Date().timeIntervalSince1970).pdf"
-//                //创建文件管理器
-//                let fileManager = FileManager.default
-//               try fileManager.copyItem(atPath: locationPath, toPath: documnets)
-//                   fillPath = documnets
-//                  print("new location:\(documnets)")
-//
-//               DispatchQueue.main.async {
-//                   if let filPath = URL(string: "file://\(fillPath)") {
-//                       let picker = UIDocumentPickerViewController(url: filPath, in: .exportToService)
-//                       picker.modalPresentationStyle = .formSheet
-//                       content.viewController?.present(picker, animated: true)
-//                   }
-//               }
-//
-//           }catch  {
-//               print(123)
-//           }
-//         }
-//
-//            //使用resume方法启动任务
-//         downTask.resume()
+         let documentPicker = UIDocumentPickerViewController(url: url, in: .exportToService)
+         documentPicker.delegate = self
+         content.viewController?.present(documentPicker, animated: true, completion: nil)
      }
-    
      
      func shareWX(content: ShareContent) {
          guard WXApi.isWXAppInstalled() else {
@@ -216,6 +176,18 @@ public struct ShareUIConfig {
      func shareDD( content: ShareContent) {
          
      }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let url = urls.first else { return }
+        do {
+            let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let destinationURL = documentsDirectory.appendingPathComponent(url.lastPathComponent)
+            try FileManager.default.copyItem(at: url, to: destinationURL)
+            print("File saved to: \(destinationURL.absoluteString)")
+        } catch {
+            print("Error saving file: \(error.localizedDescription)")
+        }
+    }
   
 }
 

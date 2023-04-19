@@ -153,9 +153,7 @@ class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
             EToast.showSuccess("导出成功")
         }
         ShareTool.do(content, config: ShareUIConfig(title: "导出到", cornerRadius: 18), at: self)
-        
     }
-
     
     func addBottomView() {
         guard let info = bxInfo else { return }
@@ -179,7 +177,7 @@ class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
         }
     }
     
-    func defaulHeaderView() -> UIView {
+    func defaulHeaderView(type: String) -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth * 200.0 / 375.0 + 36))
         let lab = UILabel(text: "报销单预览", font: SCFont(14), nColor: UIColor(hexString: "#939AA3"))
         view.addSubview(lab)
@@ -188,7 +186,8 @@ class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
             make.left.equalTo(15)
         }
         
-        let imageView = UIImageView(image: UIImage(named: "baoxiao_bg"))
+        let iamgeName = type == "2" ? "baoxiao_bg" : "travle_bx_bg"
+        let imageView = UIImageView(image: UIImage(named: iamgeName))
         view.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
@@ -264,7 +263,7 @@ extension BXDetailInfoVC {
                 self?.webView.load(URLRequest(url: url))
                 self?.importBtn.isHidden = false
             }else {
-                self?.tableVIew.tableHeaderView = self?.defaulHeaderView()
+                self?.tableVIew.tableHeaderView = self?.defaulHeaderView(type: info.type)
                 self?.importBtn.isHidden = true
             }
             
@@ -288,7 +287,12 @@ extension BXDetailInfoVC: UITableViewDelegate, UITableViewDataSource {
         if bxInfo?.type == "2", indexPath.section == 1 {
             let cell: BXFapiaoCell = tableView.dequeueReusableCell(withIdentifier: "BXFapiaoCell", for: indexPath) as! BXFapiaoCell
             cell.selectionStyle = .none
-            cell.bindInvoice(list[1][indexPath.row] as! InvoiceData)
+            if let obj = list[1][indexPath.row] as? InvoiceData {
+                cell.bindInvoice(obj)
+            }else if let obj = list[1][indexPath.row] as? FapiaoDetailModel {
+                cell.bindInvoiceData(obj)
+            }
+            
             return cell
         }
         let cell: CommonInfoCell = tableView.dequeueReusableCell(withIdentifier: "CommonInfoCell", for: indexPath) as! CommonInfoCell
