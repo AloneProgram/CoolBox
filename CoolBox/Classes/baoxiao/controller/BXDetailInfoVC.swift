@@ -214,7 +214,7 @@ class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
     }
     
     func pdfHeadView() -> UIView {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 530 + 36))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth * 260.0 / 375.0 + 36))
         let lab = UILabel(text: "报销单预览", font: SCFont(14), nColor: UIColor(hexString: "#939AA3"))
         view.addSubview(lab)
         lab.snp.makeConstraints { make in
@@ -310,9 +310,15 @@ extension BXDetailInfoVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 2 {
             push(BXCompleteInfoVC(eId: info.id))
         } else if info.type == "2", indexPath.section == 1 {
-            if let tmp = list[1][indexPath.row] as? InvoiceData, let fp = tmp.list.first {
-                push(FPEditInfoVC(fp.id, hiddenBottom: true))
+            var fp: FapiaoDetailModel?
+            
+            if let tmp = list[1][indexPath.row] as? InvoiceData {
+                 fp = tmp.list.first
+            }else if let tmp = list[1][indexPath.row] as? FapiaoDetailModel {
+                fp = tmp
             }
+            guard let fp = fp else { return }
+            push(FPEditInfoVC(fp.id, hiddenBottom: true))
         }
     }
     
