@@ -122,7 +122,7 @@ class SPDetailVC: EViewController, PresentFromBottom, PresentToCenter {
         bxTitleLabel.text = info.reason
         feeLabel.text = "¥\(info.totalFee)"
         
-        bxInfoLabel.text = "部门:\(info.department)\n出差人:\(info.username)\n报销日期:\(info.expenseDate)"
+        bxInfoLabel.text = "部门:\(info.department)\n出差人:\(info.username)\n报销日期:\(info.dataString)"
         
         //报销状态 0未审批 1审核中 3已报销 5审核驳回
         switch Int(info.status) {

@@ -30,6 +30,8 @@ struct BXInfoModel {
     var eid = ""
     
     var expenseDate = ""
+    
+    var dataString = ""
         
     /**
      * Instantiate the instance using the passed json values to set the properties values
@@ -42,6 +44,7 @@ struct BXInfoModel {
         date = json["date"].stringValue
         expenseDate = json["expense_date"].stringValue
         department = json["department"].stringValue
+        dataString = date == "" ? expenseDate : date
         id = json["id"].stringValue
         type = json["type"].stringValue
         if type == "2" { //费用报销
