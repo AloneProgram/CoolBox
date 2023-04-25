@@ -251,10 +251,16 @@ extension BXEditInfoVC {
             if let isCreateEx = self?.isCreateEx, isCreateEx {  //预报销单点击保存需要生成报销单
                 self?.createEXpense()
             }else {
+                self?.deleteFile()
                 self?.popViewController()
             }
         }
         
+    }
+    
+    func deleteFile() {
+        guard let info = bxInfo else {return}
+        BXApi.deletePDFFile(eid: info.id)
     }
     
     func createEXpense() {
@@ -495,12 +501,11 @@ extension BXEditInfoVC: UITableViewDelegate, UITableViewDataSource {
                 })
             }
         }else if indexPath.section == 2 {
-            if type == "1" {
-                let travel = list[indexPath.section][indexPath.row] as! TravleData
+            if let travel = list[indexPath.section][indexPath.row] as? TravleData {
                 editTravel(index: indexPath.row, travle: travel)
-            }else {
-                let tmp = list[indexPath.section][indexPath.row] as! InvoiceData
-                guard let fp = tmp.list.first else { return}
+            }else if let tmp = list[indexPath.section][indexPath.row] as? InvoiceData,  let fp = tmp.list.first {
+                push(FPEditInfoVC(fp.id))
+            }else if let fp = list[indexPath.section][indexPath.row] as? FapiaoDetailModel {
                 push(FPEditInfoVC(fp.id))
             }
         }

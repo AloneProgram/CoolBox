@@ -27,6 +27,7 @@ fileprivate enum ApiTarget: ETargetType {
     case deleteExpense(eid: String)
     
     case putOutFile(eid: String)
+    case deleteFile(eid: String)
     
     case subsidyConfig
     case saveSubsidyConfig(params: [String: String])
@@ -55,6 +56,7 @@ fileprivate enum ApiTarget: ETargetType {
         case .deleteExpense:        return "/api/expense/delInfo"
             
         case .putOutFile:      return "/api/expense/putoutFile"
+        case .deleteFile:       return "/api/expense/deleteFile"
         case .subsidyConfig:      return "/api/expense/config"
         case .saveSubsidyConfig:        return "/api/expense/saveTravelSubsidySetting"
         
@@ -125,6 +127,11 @@ fileprivate enum ApiTarget: ETargetType {
             return [
                 "expense_id": eid
             ]
+        case .deleteFile(let eid):
+            return [
+                "expense_id": eid
+            ]
+
         case .saveSubsidyConfig(let params):
             return params
       
@@ -234,6 +241,16 @@ struct BXApi {
             EHUD.dismiss()
         }
     }
+    
+    static func deletePDFFile(eid: String) {
+        let target = ApiTarget.deleteFile(eid: eid)
+        ENetworking.request(target, success: { (json) in
+            
+        }) { (err, json) in
+           
+        }
+    }
+    
     
     static func getSubsidyConfig(result: @escaping (SubsidyConfig)->Void) {
         let target = ApiTarget.subsidyConfig

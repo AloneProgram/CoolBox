@@ -133,7 +133,7 @@ class BXDetailInfoVC: EViewController, PresentToCenter, PresentFromBottom {
             
             return
         }else {
-            if bxInfo?.pdfUrl != nil {
+            if bxInfo?.pdfUrl.length ?? 0 > 0 {
                 removeCurrentAndPush(viewController: SPDetailVC(eId: eid))
             }else {
                 EToast.showInfo("请先生成报销单")
